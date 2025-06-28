@@ -1,0 +1,187 @@
+{% for post in posts %}
+{% if post.board == board_id %}
+{% if post.visible == 1 or 'visible' not in post %}
+<article>
+    <section class="post-bar">
+        <section class="post-profile">
+            {% if post.post_user == '' or post.post_user == 'Anonymous' %}
+            <div class="post-userphoto" style="display: none;" alt=""></div><span class="material-symbols-outlined">
+                no_accounts
+            </span>
+            <p class="post-username">
+                • Anônimo
+            </p>
+            {% else %}
+            <a class="post-profile" href="">
+                <div class="post-userphoto" alt=""></div>
+                <p class="post-username">• {{ post.post_user | safe }}</p>
+            </a>
+            {% endif %}
+        </section>
+        <section class="post-title">
+            <a>Título do Post</a>
+        </section>
+        <section class="post-buttons">
+            <button class="default-button moderate">
+                <span class="material-symbols-outlined">
+                    policy
+                </span>
+            </button>
+            {% if request.remote_addr == post.user_ip %}
+            <button class="default-button delete" onclick="openModal()">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+            {% endif %}
+            <button class="default-button minimize">
+                <span class="material-symbols-outlined">
+                    keyboard_arrow_up
+                </span>
+            </button>
+        </section>
+    </section>
+
+    <section class="post-content">
+        <section class="post-media">
+            {% if '.mp4' in post.post_image or '.mov' in post.post_image or '.webm' in post.post_image %}
+            <div class="media-wrapper">
+                <img class="post_img" id="post_video_thumbnail" draggable="false"
+                    src="{{ url_for('static', filename='/post_images/thumbs/thumbnail_' + post.post_image|replace(post.post_image.split('.')[-1], 'jpg') ) }}"
+                    loading="lazy">
+                <video controls class="post_video"
+                    src="{{ url_for('static', filename='/post_images/' + post.post_image) }}"
+                    style="display: none;"></video>
+            </div>
+            {% else %}
+            <div class="media-wrapper">
+                <img draggable="false" class="post_img"
+                    src="{{ url_for('static', filename='/post_images/' + post.post_image) }}" alt="" loading="lazy">
+            </div>
+            {% endif %}
+            </div>
+        </section>
+        <section class="post-text">
+            <pre>{% if post.post_content | length >= 800 %}{{ post.post_content[:750] | safe }}...</pre>
+        </section>
+    </section>
+
+    <section class="post-bar">
+        <section class="post-engage">
+            <button class="default-button bump">
+                <span class="material-symbols-outlined">
+                    thumb_up
+                </span>Bump
+            </button>
+            <button class="default-button sage">
+                <span class="material-symbols-outlined">
+                    thumb_down
+                </span>Sage
+            </button>
+        </section>
+        <section class="post-date">
+            <a>{{ post.post_date }}</a>
+        </section>
+        <section class="post-buttons">
+            <button class="default-button comments">
+                <a href="/{{ board_id }}/thread/{{ post.post_id }}">
+                    <span class="material-symbols-outlined">
+                        chat
+                    </span>{{ replies | selectattr("post_id", "equalto", post.post_id) | list | length }}
+                </a>
+            </button>
+            {% if request.remote_addr != post.user_ip %}
+            <button class="default-button block">
+                <span class="material-symbols-outlined">
+                    visibility_off
+                </span>
+            </button>
+            <button class="default-button report">
+                <span class="material-symbols-outlined">
+                    warning
+                </span>
+            </button>
+            {% endif %}
+        </section>
+    </section>
+
+    {% set post_replies = replies|selectattr('post_id', 'equalto', post.post_id)|list %}
+    {% set last_3_replies = post_replies[-3:] %}
+    {% set hidden_replies_count = post_replies|length - 3 if post_replies|length > 3 else 0 %}
+
+    {% for reply in last_3_replies %}
+
+    <section class="reply-bar">
+        {% if reply.post_user == '' or reply.post_user == 'Anonymous' %}
+        <div class="post-userphoto" style="display: none;" alt=""></div><span class="material-symbols-outlined">
+            no_accounts
+        </span>
+        <p class="post-username">
+            • Anônimo
+        </p>
+        {% else %}
+        <a class="reply-profile" href="">
+            <div class="post-userphoto" alt=""></div>
+            <p class="post-username">• {{ reply.post_user | safe }}</p>
+        </a>
+        {% endif %}
+        <section class="post-date">
+            • <a>{{ reply.post_date }}</a>
+        </section>
+        <section class="post-buttons">
+            <button class="default-button moderate">
+                <span class="material-symbols-outlined">
+                    policy
+                </span>
+            </button>
+            {% if request.remote_addr == post.user_ip %}
+            <button class="default-button delete">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+            {% endif %}
+            {% if request.remote_addr != post.user_ip %}
+            <button class="default-button block">
+                <span class="material-symbols-outlined">
+                    visibility_off
+                </span>
+            </button>
+            <button class="default-button report">
+                <span class="material-symbols-outlined">
+                    warning
+                </span>
+            </button>
+            {% endif %}
+            <button class="default-button post">
+                <span class="material-symbols-outlined">
+                    reply
+                </span>
+            </button>
+        </section>
+    </section>
+    <section class="post-content">
+        {% if reply.image != '' %}
+        <section class="post-media">
+            <div class="media-wrapper">
+                {% if '.mp4' in reply.image %}
+                <video controls draggable="false" class="reply_img"
+                    src="{{ url_for('static', filename='/reply_images/' + reply.image) }}" alt="">
+                    {% endif %}
+                    <img draggable="false" class="reply_img"
+                        src="{{ url_for('static', filename='/reply_images/' + reply.image) }}" alt="" loading="lazy">
+            </div>
+        </section>
+        {% endif %}
+        <section class="post-text">
+            <pre>{% if reply.content | length >= 800 %}{{ reply.content[:750] | safe }}...</pre>
+        </section>
+    </section>
+
+    {% endfor %}
+
+</article>
+
+{% endif %}
+{% endif %}
+{% endfor %}

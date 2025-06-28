@@ -1,0 +1,334 @@
+/* Root */
+
+:root {
+    --ui-bg: #e5e7eb;
+    --ui-ht: #2c2e31;
+    --ui-tc: #1a202c;
+
+    --ui-c1: #fff;
+    --ui-c2: #33363D;
+    --ui-c3: #dcdcdc;
+    --ui-c4: #f5f5f5;
+
+    --ui-ac: #f5bf60;
+
+    --he-img: url(../../imgs/banners/Day.png);
+    --lo-img: url(../../imgs/decoration/logos/md-logo.png);
+}
+
+@font-face {
+    font-family: mainfont;
+    src: url(../fonts/mf.ttf);
+}
+
+@font-face {
+    font-family: textfont;
+    src: url(../fonts/tf.ttf);
+}
+
+/* Main */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    text-rendering: optimizeLegibility !important;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 80rem;
+
+    background-color: var(--ui-bg);
+
+    color: var(--ui-tc);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 14em;
+    border-radius: 0 0 3.125rem 3.125rem;
+
+    background-image: var(--he-img);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+}
+
+.header-logo {
+    user-select: none;
+    margin-top: 3em;
+    z-index: 1;
+    transition: all 0.3s ease;
+
+    content: var(--lo-img);
+    object-fit: scale-down;
+}
+
+.header-logo:hover {
+    scale: 1.05;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+
+    font-family: mainfont;
+    font-size: 0.95rem;
+
+    padding: 1rem;
+
+    margin: 0 auto;
+    margin-top: 0.5em;
+    max-width: 80rem;
+
+    border-radius: 1rem;
+    user-select: none;
+}
+
+.navbar>ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--ui-c1);
+
+    margin: 0;
+    padding: 0.25rem;
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+
+    border-radius: 1rem;
+}
+
+.navbar ul li {
+    border-radius: 1rem;
+
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a {
+    display: inline-block;
+
+    text-decoration: none;
+
+    border-radius: 1rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+}
+
+.navbar ul li>a {
+    color: var(--ui-ht);
+}
+
+.navbar>ul>li>a {
+    padding: 0.75rem;
+}
+
+.navbar ul li:focus a:hover {
+    cursor: pointer;
+}
+
+.navbar ul li:not(:focus)>a:hover {
+    scale: 1.05;
+    background-color: var(--ui-c3);
+    cursor: pointer;
+}
+
+li:has(.others-dropdown) {
+    position: relative;
+}
+
+li:has(.others-dropdown):focus-within {
+    scale: 1.05;
+    background-color: var(--ui-ac);
+}
+
+li:has(.others-dropdown):focus-within .others-dropdown {
+    display: flex;
+}
+
+.others-dropdown {
+    display: none;
+    flex-direction: column;
+    white-space: nowrap;
+
+    position: absolute;
+    top: 135%;
+    right: 0;
+    z-index: 10;
+
+    border-radius: 1rem;
+    padding: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    background-color: var(--ui-c1);
+
+    border: 0.063rem solid #ffffff14;
+}
+
+.others-dropdown li {
+    width: 100%;
+}
+
+.others-dropdown li a {
+    width: 100%;
+
+    border-radius: 1rem;
+    padding: 0.65rem;
+
+    box-sizing: border-box;
+    text-align: center;
+}
+
+li:has(.account-dropdown) {
+    position: relative;
+}
+
+li:has(.account-dropdown):focus-within {
+    scale: 1.05;
+    background-color: var(--ui-ac);
+}
+
+li:has(.account-dropdown):focus-within .account-dropdown {
+    display: flex;
+}
+
+.account-dropdown {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    white-space: nowrap;
+
+    position: absolute;
+    top: 135%;
+    right: 0;
+    z-index: 10;
+
+    border-radius: 1rem;
+    padding: 0.65rem;
+    gap: 1rem;
+
+    background-color: var(--ui-c1);
+
+    border: 0.063rem solid #ffffff14;
+}
+
+.account-dropdown>div {
+    display: flex;
+
+    color: var(--ui-tc);
+    gap: 0.5rem;
+}
+
+.account-dropdown div a {
+    font-size: 0.85rem;
+
+    color: var(--ui-tc);
+}
+
+.account-dropdown div a:hover {
+    text-decoration: underline;
+
+    filter: brightness(115%);
+}
+
+.account-dropdown form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    gap: 1rem;
+}
+
+.account-dropdown form div {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--ui-c4);
+    color: var(--ui-tc);
+
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    padding: 0.35rem;
+
+    transition: all 0.3s ease;
+}
+
+.account-dropdown form input {
+    flex: 1;
+
+    background-color: transparent;
+    color: var(--ui-tc);
+
+    border: none;
+    outline: none;
+
+    margin: auto;
+
+    font-size: 1rem;
+    font-family: textfont;
+    margin-left: 0.5rem;
+
+    transition: all 0.3s ease;
+}
+
+.account-dropdown form button {
+    display: flex;
+    margin: auto;
+
+    font-size: 1rem;
+    font-family: textfont;
+
+    gap: 0.65rem;
+    padding: 0.5rem;
+
+    border: none;
+    border-radius: 0.65rem;
+
+    background-color: var(--ui-ac);
+
+    transition: all 0.3s ease;
+}
+
+.account-dropdown form button:hover {
+    cursor: pointer;
+
+    filter: brightness(75%);
+}
+
+.account-dropdown form button .material-symbols-outlined {
+    color: var(--ui-tc);
+}
+
+.material-symbols-outlined {
+    color: var(--ui-tc);
+    font-size: 1.5rem !important;
+
+    transition: all 0.3s ease;
+}
+
+.account-dropdown form div:focus-within {
+    outline: 0.2rem solid var(--ui-ac);
+}
+
+.account-dropdown form div:focus-within input {
+    color: black;
+}
+
+.account-dropdown form div:focus-within .material-symbols-outlined {
+    color: black;
+}

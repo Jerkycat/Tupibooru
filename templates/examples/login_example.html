@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Tupibooru</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <main class="other-main">
+        <div class="other-cover">
+            <div class="other-content register-page">
+                <div class="other-title">
+                    Login
+                </div>
+                <form action="">
+                    <div>
+                        <span class="material-symbols-outlined">
+                            mail
+                        </span>
+                        <input type="text" placeholder="Usuário ou Email">
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined">
+                            key
+                        </span>
+                        <input type="password" placeholder="Senha">
+                    </div>
+                    <button type="submit">Logar-se<span class="material-symbols-outlined">
+                            login
+                        </span></button>
+                </form>
+                <div class="extras"><a href="">Esqueceu a senha?</a>&nbsp;•&nbsp;<a href="register_example.html">Crie uma conta</a></div>
+            </div>
+            <button class="return" onclick="window.history.go(-1); return false;">
+                Fuck, go back!
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

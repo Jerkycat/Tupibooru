@@ -1,0 +1,29 @@
+<dialog class="popup-post">
+    <form action="/new_post" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="board_id" value="{{ board_id }}">
+        <input type="hidden" name="thread_id" value="{{ thread_id }}">
+        <input type="hidden" name="post_mode" value="{{ post_mode }}">
+        <input type="hidden" name="name" value="{{ session['username'] }}">
+        <input type="hidden" name="embed" value="fodase">
+
+        <div class="popup-title">Criar Post</div>
+        <div class="popup-context">
+            <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
+        </div>
+        <div class="popup-context">
+            <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="4000"></textarea>
+        </div>
+        <div class="popup-context">
+            <input type="file" id="fileInput" multiple accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
+                style="display: none;">
+            <button type="button" class="select-file-button"
+                onclick="document.getElementById('fileInput').click()">Selecione um arquivo</button>
+            <div class="file-previews-container">
+            </div>
+            <div class="popup-buttons">
+                <button class="underline-button cancel" type="button"
+                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+                <button class="default-button create">Publicar</button>
+            </div>
+    </form>
+</dialog>
