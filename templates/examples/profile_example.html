@@ -488,11 +488,8 @@
     </dialog>
     <dialog class="popup-warn">
         <form action="">
-            <div class="popup-title">Advertir Post</div>
+            <div class="popup-title">Advertir Usuário</div>
             <select name="warn-type" id="warn-type">
-                <option value="0">
-                    <p>Sem advertência de perfil</p>
-                </option>
                 <option value="1">
                     <p>Quebra de regras de board/global</p>
                 </option>
@@ -520,14 +517,6 @@
         <form action="">
             <div class="popup-title">Banir Usuário</div>
             <div class="popup-context">Deseja banir este usuário? Selecione uma duração.
-                <select name="ban-type" id="ban-type">
-                    <option value="local">
-                        <p>Banir usuário apenas nesta board</p>
-                    </option>
-                    <option value="global">
-                        <p>Banir usuário globalmente</p>
-                    </option>
-                </select>
                 <div class="delban">
                     <input type="checkbox" id="delban">
                     <label for="delban">Excluir o histórico de posts deste usuário</label>
@@ -633,7 +622,7 @@ Possui um único anexo.</pre>
                 <div class="popup-manage-sidebar">
                     <ul class="popup-manage-options">
                         <li class="popup-manage-option active" data-option="boards">Boards</li>
-                        <li class="popup-manage-option" data-option="outra-opcao">Outra Opção</li>
+                        <li class="popup-manage-option" data-option="moderação">Moderação</li>
                     </ul>
                 </div>
 
@@ -662,8 +651,11 @@ Possui um único anexo.</pre>
                                         </div>
                                     </div>
                                     <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
+                                    <div class="side-buttons">
+                                        <button type="button" class="default-button add-moderator">Adicionar como
+                                            moderador</button>
+                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
+                                    </div>
                                 </div>
                             </section>
 
@@ -678,8 +670,11 @@ Possui um único anexo.</pre>
                                 <div class="side-content collapsed">
                                     <div class="moderator-list"></div>
                                     <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
+                                    <div class="side-buttons">
+                                        <button type="button" class="default-button add-moderator">Adicionar como
+                                            moderador</button>
+                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
+                                    </div>
                                 </div>
                             </section>
 
@@ -693,8 +688,11 @@ Possui um único anexo.</pre>
                                 <div class="side-content collapsed">
                                     <div class="moderator-list"></div>
                                     <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
+                                    <div class="side-buttons">
+                                        <button type="button" class="default-button add-moderator">Adicionar como
+                                            moderador</button>
+                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
+                                    </div>
                                 </div>
                             </section>
 
@@ -708,8 +706,11 @@ Possui um único anexo.</pre>
                                 <div class="side-content collapsed">
                                     <div class="moderator-list"></div>
                                     <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
+                                    <div class="side-buttons">
+                                        <button type="button" class="default-button add-moderator">Adicionar como
+                                            moderador</button>
+                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
+                                    </div>
                                 </div>
                             </section>
 
@@ -723,8 +724,11 @@ Possui um único anexo.</pre>
                                 <div class="side-content collapsed">
                                     <div class="moderator-list"></div>
                                     <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
+                                    <div class="side-buttons">
+                                        <button type="button" class="default-button add-moderator">Adicionar como
+                                            moderador</button>
+                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
+                                    </div>
                                 </div>
                             </section>
 
@@ -738,15 +742,18 @@ Possui um único anexo.</pre>
                                 <div class="side-content collapsed">
                                     <div class="moderator-list"></div>
                                     <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
+                                    <div class="side-buttons">
+                                        <button type="button" class="default-button add-moderator">Adicionar como
+                                            moderador</button>
+                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
+                                    </div>
                                 </div>
                             </section>
                         </div>
                     </div>
 
                     <!-- Conteúdo da outra opção -->
-                    <div class="popup-manage-tab" data-tab="outra-opcao">
+                    <div class="popup-manage-tab" data-tab="moderação">
                         Conteúdo da outra opção aqui
                     </div>
                 </div>
@@ -1210,18 +1217,20 @@ Possui um único anexo.</pre>
         // Add moderator functionality
         document.querySelectorAll('.add-moderator').forEach(button => {
             button.addEventListener('click', function () {
-                const input = this.previousElementSibling;
+                // Agora precisamos subir até o side-content e então encontrar o input
+                const sideContent = this.closest('.side-content');
+                const input = sideContent.querySelector('.add-moderator-input');
                 const moderatorName = input.value.trim();
 
                 if (moderatorName) {
-                    const moderatorList = this.closest('.side-content').querySelector('.moderator-list');
+                    const moderatorList = sideContent.querySelector('.moderator-list');
 
                     const moderatorItem = document.createElement('div');
                     moderatorItem.className = 'moderator-item';
                     moderatorItem.innerHTML = `
-                    <span>${moderatorName}</span>
-                    <button type="button" class="remove-moderator">X</button>
-                `;
+                <span>${moderatorName}</span>
+                <button type="button" class="remove-moderator">X</button>
+            `;
 
                     moderatorList.appendChild(moderatorItem);
                     input.value = '';
@@ -1239,6 +1248,25 @@ Possui um único anexo.</pre>
             button.addEventListener('click', function () {
                 this.closest('.moderator-item').remove();
             });
+        });
+    });
+</script>
+
+<script>
+    // Seleciona TODOS os botões CAPTCHA da página
+    document.querySelectorAll('.add-captcha').forEach(button => {
+        button.addEventListener('click', function () {
+            // Alterna a classe 'active' apenas neste botão específico
+            this.classList.toggle('button-active');
+
+            // Altera texto e cor APENAS para este botão
+            if (this.classList.contains('button-active')) {
+                this.textContent = 'Desativar CAPTCHA';
+                this.style.backgroundColor = 'var(--ui-c3)'; // Vermelho
+            } else {
+                this.textContent = 'Ativar CAPTCHA';
+                this.style.backgroundColor = ''; // Volta ao padrão
+            }
         });
     });
 </script>

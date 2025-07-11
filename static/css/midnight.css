@@ -2524,3 +2524,17 @@ dialog .side-content {
 dialog .side-content button {
     width: fit-content;
 }
+
+.side-buttons {
+    display: flex;
+}
+
+.add-captcha {
+    margin-left: auto;
+
+    color: var(--ui-ac);
+}
+
+button.button-active.add-captcha {
+    color: var(--ui-cc) !important;
+}
