@@ -16,16 +16,23 @@
             </a>
             {% endif %}
         </section>
+        <section class="mobile-date">
+            <a href="/{{ board_id }}/thread/{{ post.post_id }}">
+                {{ post.post_date }}
+            </a>
+        </section>
         <section class="post-title">
             <a>Título do Post</a>
         </section>
         <section class="post-buttons">
+            {% if is_board_owner or is_moderator %}
             <button class="default-button moderate">
                 <span class="material-symbols-outlined">
                     policy
                 </span>
             </button>
-            {% if request.remote_addr == post.user_ip %}
+            {% endif %}
+            {% if request.remote_addr == post.user_ip or is_board_owner or is_moderator %}
             <button class="default-button delete" onclick="openModal()">
                 <span class="material-symbols-outlined">
                     delete
@@ -37,6 +44,47 @@
                     keyboard_return
                 </span>
             </button>
+        </section>
+        <section class="mobile-button" tabindex="0">
+            <button class="default-button">
+                <span class="material-symbols-outlined">
+                    more_vert
+                </span>
+            </button>
+            <div class="dropdown mobile-options">
+                {% if is_board_owner or is_moderator %}
+                <button class="default-button moderate">
+                    <span class="material-symbols-outlined">
+                        policy
+                    </span>Moderar
+                </button>
+                {% endif %}
+                {% if request.remote_addr == post.user_ip or is_board_owner or is_moderator %}
+                <button class="default-button delete">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>Excluir Post
+                </button>
+                {% endif %}
+                {% if request.remote_addr != post.user_ip %}
+                <button class="default-button block">
+                    <span class="material-symbols-outlined">
+                        visibility_off
+                    </span>Bloquear
+                </button>
+                <button class="default-button report">
+                    <span class="material-symbols-outlined">
+                        warning
+                    </span>Denûnciar
+                </button>
+                {% endif %}
+            </div>
+        </section>
+    </section>
+
+    <section class="post-bar mobile-bar">
+        <section class="mobile-title">
+            <a href="">Título do Post, fica aqui no mobile</a>
         </section>
     </section>
 
@@ -120,13 +168,18 @@
         <section class="post-date">
             • <a>{{ reply.post_date }}</a>
         </section>
+        <section class="mobile-date">
+            <a>{{ reply.post_date }}</a>
+        </section>
         <section class="post-buttons">
+            {% if is_board_owner or is_moderator %}
             <button class="default-button moderate">
                 <span class="material-symbols-outlined">
                     policy
                 </span>
             </button>
-            {% if request.remote_addr == post.user_ip %}
+            {% endif %}
+            {% if request.remote_addr == post.user_ip or is_board_owner or is_moderator %}
             <button class="default-button delete">
                 <span class="material-symbols-outlined">
                     delete
@@ -150,6 +203,41 @@
                     reply
                 </span>
             </button>
+        </section>
+        <section class="mobile-button" tabindex="0">
+            <button class="default-button">
+                <span class="material-symbols-outlined">
+                    more_vert
+                </span>
+            </button>
+            <div class="dropdown mobile-options">
+                {% if is_board_owner or is_moderator %}
+                <button class="default-button moderate">
+                    <span class="material-symbols-outlined">
+                        policy
+                    </span>Moderar
+                </button>
+                {% endif %}
+                {% if request.remote_addr == post.user_ip or is_board_owner or is_moderator %}
+                <button class="default-button delete">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>Excluir Post
+                </button>
+                {% endif %}
+                {% if request.remote_addr != post.user_ip %}
+                <button class="default-button block">
+                    <span class="material-symbols-outlined">
+                        visibility_off
+                    </span>Bloquear
+                </button>
+                <button class="default-button report">
+                    <span class="material-symbols-outlined">
+                        warning
+                    </span>Denûnciar
+                </button>
+                {% endif %}
+            </div>
         </section>
     </section>
     <section class="post-content">

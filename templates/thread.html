@@ -20,17 +20,7 @@
         </header>
         <main class="thread-main">
             <div class="page-content">
-                {% include 'utils/board-ads.html' %}
-                {% include 'utils/board-posts.html' %}
-
-                <div class="pagination-container">
-                    <div class="pagination">
-                        <a class="default-button button-active" data-page="1">1</a>
-                        <a class="default-button" data-page="2">2</a>
-                        <span class="divider">-</span>
-                        <a class="default-button" data-page="20">20</a>
-                    </div>
-                </div>
+                {% include 'utils/thread-posts.html' %}
             </div>
 
             {% include 'utils/new-thread_box.html' %}

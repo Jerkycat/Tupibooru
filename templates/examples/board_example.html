@@ -36,7 +36,7 @@
                     </li>
                     <li tabindex="0">
                         <a>Conta</a>
-                        <div class="login-dropdown">
+                        <div class="dropdown login-dropdown">
                             <p>Login</p>
                             <form action="">
                                 <div>
@@ -61,6 +61,56 @@
                     </li>
                 </ul>
             </nav>
+            <nav class="navbar-mobile">
+                <section>
+                    <button class="default-mb mobile-menu">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                    </button>
+                    <aside class="nav-menu">
+                        <ul>Menu de Boards
+                            <li><a href="">/bo/ - Boteco</a></li>
+                            <li><a href="">/an/ - Animangá</a></li>
+                            <li><a href="">/tv/ - Filmes e Séries</a></li>
+                            <li><a href="">/cri/ - Criações</a></li>
+                            <li><a href="">/pc/ - Computarias</a></li>
+                            <li><a href="">/flb/ - Faria Lima Bets</a></li>
+                        </ul>
+                    </aside>
+                </section>
+                <section class="dropdown-menu">
+                    <button class="default-mb">
+                        <img class="dropdown-logo" alt="">
+                        <span class="material-symbols-outlined">
+                            keyboard_arrow_down
+                        </span>
+                    </button>
+                    <div class="dropdown">
+                        <div>
+                            <a href="">
+                                <span class="material-symbols-outlined">
+                                    home
+                                </span>Homepage
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <span class="material-symbols-outlined">
+                                    view_list
+                                </span>Catálogo - Board
+                            </a>
+                        </div>
+                        <div>
+                            <button class="post">
+                                <span class="material-symbols-outlined">
+                                    add
+                                </span>Criar Post
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </nav>
         </header>
         <main class="board-main">
             <div class="page-content">
@@ -82,6 +132,9 @@
                                 <p class="post-username">• Anônimo</p>
                             </a>
                         </section>
+                        <section class="mobile-date">
+                            <a href="">• Data do Post</a>
+                        </section>
                         <section class="post-title">
                             <a href="thread_example.html">Título do Post</a>
                         </section>
@@ -101,6 +154,41 @@
                                     keyboard_arrow_up
                                 </span>
                             </button>
+                        </section>
+                        <section class="mobile-button" tabindex="0">
+                            <button class="default-button">
+                                <span class="material-symbols-outlined">
+                                    more_vert
+                                </span>
+                            </button>
+                            <div class="dropdown mobile-options">
+                                <button class="default-button moderate">
+                                    <span class="material-symbols-outlined">
+                                        policy
+                                    </span>Moderar
+                                </button>
+                                <button class="default-button delete">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>Excluir Post
+                                </button>
+                                <button class="default-button block">
+                                    <span class="material-symbols-outlined">
+                                        visibility_off
+                                    </span>Bloquear
+                                </button>
+                                <button class="default-button report">
+                                    <span class="material-symbols-outlined">
+                                        warning
+                                    </span>Denûnciar
+                                </button>
+                            </div>
+                        </section>
+                    </section>
+                    
+                    <section class="post-bar mobile-bar">
+                        <section class="mobile-title">
+                            <a href="">Título do Post, fica aqui no mobile</a>
                         </section>
                     </section>
 
@@ -158,6 +246,9 @@ Possui um único anexo.</pre>
                             <div class="post-userphoto" alt=""></div>
                             <p class="post-username">• Mymy</p>
                         </a>
+                        <section class="mobile-date" style="display: none;">
+                            <a href="">• Data do Post</a>
+                        </section>
                         <section class="post-date">
                             • <a href="">Data do Post</a>
                         </section>
@@ -176,6 +267,9 @@ Possui um único anexo.</pre>
                             </span>
                             <p class="post-username">• Anônimo</p>
                         </a>
+                        <section class="mobile-date" style="display: none;">
+                            <a href="">• Data do Post</a>
+                        </section>
                         <section class="post-date">
                             • <a href="">Data do Post</a>
                         </section>
@@ -198,6 +292,9 @@ Possui um único anexo.</pre>
                                 <p class="post-username">• Anônimo</p>
                             </a>
                         </section>
+                        <section class="mobile-date" style="display: none;">
+                            <a href="">• Data do Post</a>
+                        </section>
                         <section class="post-title">
                             <a href="">Título do Post</a>
                         </section>
@@ -217,6 +314,40 @@ Possui um único anexo.</pre>
                                     keyboard_arrow_up
                                 </span>
                             </button>
+                        </section>
+                        <section class="mobile-button">
+                            <button class="default-button">
+                                <span class="material-symbols-outlined">
+                                    more_vert
+                                </span>
+                            </button>
+                            <div class="dropdown mobile-options">
+                                <button class="default-button moderate">
+                                    <span class="material-symbols-outlined">
+                                        policy
+                                    </span>Moderar
+                                </button>
+                                <button class="default-button delete">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>Excluir Post
+                                </button>
+                                <button class="default-button block">
+                                    <span class="material-symbols-outlined">
+                                        visibility_off
+                                    </span>Bloquear
+                                </button>
+                                <button class="default-button report">
+                                    <span class="material-symbols-outlined">
+                                        warning
+                                    </span>Denûnciar
+                                </button>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="post-bar mobile-bar">
+                        <section class="mobile-title">
+                            <a href="">Título do Post da pra ser bem longo aqui</a>
                         </section>
                     </section>
 
@@ -281,7 +412,7 @@ Possui um único anexo.</pre>
                     </div>
                 </div>
             </div>
-            <aside>
+            <aside class="desktop-menu">
                 <section>
                     <div class="side-button">
                         <button class="default-button post">
