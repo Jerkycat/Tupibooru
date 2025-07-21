@@ -1233,7 +1233,7 @@ button.button-active.sage {
     background-color: var(--ui-c4);
 }
 
-.reply-bar div {
+.reply-bar .reply-profile div {
     background-image: url(../imgs/decoration/anon.png);
     background-size: cover;
     background-position: center;
@@ -1273,11 +1273,15 @@ button.button-active.sage {
     padding-left: 1rem;
 }
 
+.reply-bar .mobile-button {
+    gap: 0.5rem;
+}
+
 .reply-bar .material-symbols-outlined {
     font-size: 1.25rem;
 }
 
-.reply-bar>section * {
+.reply-bar > section:not(.mobile-button) * {
     display: flex;
     align-items: center;
     color: var(--ui-ht);
@@ -1952,12 +1956,16 @@ dialog.popup-avatar {
         font-size: 0.875rem;
 
 
-        margin: 0 0.1rem;
+        margin: 0;
 
 
         gap: 2rem;
 
 
+    }
+
+    .index-main > div {
+        border-radius: 0rem;
     }
 
 
@@ -1973,7 +1981,7 @@ dialog.popup-avatar {
     .trending-board {
 
 
-        font-size: 9pt;
+        font-size: 0.65rem;
 
 
     }
