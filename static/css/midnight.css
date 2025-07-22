@@ -2144,6 +2144,10 @@ dialog.popup-avatar {
         display: none;
     }
 
+    .user-profile {
+        border-radius: 0 !important;
+    }
+
 
     .profile-content {
 
@@ -2153,6 +2157,16 @@ dialog.popup-avatar {
 
     }
 
+    .settings-dropdown {
+        top: 25% !important;
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    .account-info {
+        gap: 1rem;
+    }
+
 
     .account-badges {
 
@@ -2160,6 +2174,20 @@ dialog.popup-avatar {
         flex-wrap: wrap;
 
 
+    }
+
+    .comment-type {
+        border-radius: 0 !important;
+    }
+
+    .comment-type .comment-picture {
+        display: none !important;
+    }
+
+    .comments-dropdown {
+        left: auto !important;
+
+        right: 0 !important;
     }
 
 
