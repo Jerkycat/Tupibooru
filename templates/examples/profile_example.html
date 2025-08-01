@@ -122,6 +122,9 @@
                                             <button class="default-button manage">
                                                 Painel ADM
                                             </button>
+                                            <button class="default-button trust">
+                                                Tornar Mod. Geral
+                                            </button>
                                             <button class="default-button warn">
                                                 Advertir Usuário
                                             </button>
@@ -134,7 +137,8 @@
                                 <div class="account-badges">
                                     <div class="badge supporter">Apoiador</div>
                                     <div class="badge pioneer">Pioneiro</div>
-                                    <div class="badge mod">Moderador</div>
+                                    <div class="badge mod">Mod. Geral</div>
+                                    <div class="badge mod">Mod. de /bo/</div>
                                     <div class="badge admin">Administrador</div>
                                 </div>
                                 <div class="account-date">
@@ -802,6 +806,18 @@ Possui um único anexo.</pre>
             </div>
         </form>
     </dialog>
+
+    <dialog class="popup-trust">
+        <form action="">
+            <div class="popup-title">Tornar Moderador Geral</div>
+            <div class="popup-context">Deseja tornar este usuário num moderador?<br><strong>Pense bem antes de realizar esta ação.<strong></div>
+            <div class="popup-buttons">
+                <button class="underline-button cancel" type="button"
+                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+                <button class="default-button submit">Excluir</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 
 <script>
@@ -871,7 +887,7 @@ Possui um único anexo.</pre>
         }
     }
 
-    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'manage'];
+    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'manage', 'trust'];
 
     document.addEventListener('click', function (event) {
         const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');

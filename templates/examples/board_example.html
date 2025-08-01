@@ -134,11 +134,21 @@
                         </section>
                         <section class="mobile-date">
                             <a href="">• Data do Post</a>
+                            <button class="pin-button">
+                                <span class="material-symbols-outlined">
+                                    keep
+                                </span>
+                            </button>
                         </section>
                         <section class="post-title">
                             <a href="thread_example.html">Título do Post</a>
                         </section>
                         <section class="post-buttons">
+                            <button class="pin-button">
+                                <span class="material-symbols-outlined">
+                                    keep
+                                </span>
+                            </button>
                             <button class="default-button moderate">
                                 <span class="material-symbols-outlined">
                                     policy
@@ -185,7 +195,7 @@
                             </div>
                         </section>
                     </section>
-                    
+
                     <section class="post-bar mobile-bar">
                         <section class="mobile-title">
                             <a href="">Título do Post, fica aqui no mobile</a>
@@ -563,6 +573,7 @@ Possui um único anexo.</pre>
                 <button class="underline-button cancel" type="button"
                     onclick="closeModal(this.closest('dialog'))">Cancelar</button>
                 <button class="default-button lock" onclick="openModal()">Trancar</button>
+                <button class="default-button move" onclick="openModal()">Mover</button>
                 <button class="default-button pin" onclick="openModal()">Fixar</button>
                 <button class="default-button warn" onclick="openModal()">Advertir</button>
                 <button class="default-button ban" onclick="openModal()">Banir</button>
@@ -577,6 +588,36 @@ Possui um único anexo.</pre>
                 <button class="underline-button cancel" type="button"
                     onclick="closeModal(this.closest('dialog'))">Cancelar</button>
                 <button class="default-button submit">Trancar</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="popup-move">
+        <form action="">
+            <div class="popup-title">Mover Post para</div>
+            <select name="board-type" id="board-type">
+                <option value="an">
+                    <p>/an/ - Animangá</p>
+                </option>
+                <option value="tv">
+                    <p>/tv/ - Filmes e Séries</p>
+                </option>
+                <option value="cri">
+                    <p>/cri/ - Criações</p>
+                </option>
+                <option value="pc">
+                    <p>/pc/ - Computarias</p>
+                </option>
+                <option value="flb">
+                    <p>/flb/ - Faria Lima Bets</p>
+                </option>
+            </select>
+            <div class="popup-context">
+                <textarea name="warn" placeholder="Adicionar mensagem . . ." rows="3" maxlength="255"></textarea>
+            </div>
+            <div class="popup-buttons">
+                <button class="underline-button cancel" type="button"
+                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+                <button class="default-button submit">Mover</button>
             </div>
         </form>
     </dialog>
@@ -783,7 +824,7 @@ Possui um único anexo.</pre>
         }
     }
 
-    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post'];
+    const triggerClasses = ['delete', 'pin', 'move', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post'];
 
     document.addEventListener('click', function (event) {
         const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');

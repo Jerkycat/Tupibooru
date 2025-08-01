@@ -22,11 +22,21 @@
             <a href="/{{ board_id }}/thread/{{ post.post_id }}">
                 {{ post.post_date }}
             </a>
+            <button class="pin-button">
+                <span class="material-symbols-outlined">
+                    keep
+                </span>
+            </button>
         </section>
         <section class="post-title">
             <a>Título do Post</a>
         </section>
         <section class="post-buttons">
+            <button class="pin-button">
+                <span class="material-symbols-outlined">
+                    keep
+                </span>
+            </button>
             {% if is_board_owner or is_moderator %}
             <button class="default-button moderate">
                 <span class="material-symbols-outlined">
@@ -83,7 +93,7 @@
             </div>
         </section>
     </section>
-    
+
     <section class="post-bar mobile-bar">
         <section class="mobile-title">
             <a href="">Título do Post, fica aqui no mobile</a>

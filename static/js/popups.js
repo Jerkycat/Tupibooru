@@ -5,7 +5,7 @@ function closeModal(dialogElement) {
     }
 }
 
-const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post', 'review', 'avatar'];
+const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'trust'];
 
 document.addEventListener('click', function (event) {
     const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');

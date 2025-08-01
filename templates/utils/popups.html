@@ -3,8 +3,8 @@
         <div class="popup-title">Excluir Post</div>
         <div class="popup-context">Deseja mesmo excluir este post?<br>Esta ação é irreversível.</div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Excluir</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Excluir</button>
         </div>
     </form>
 </dialog>
@@ -14,8 +14,8 @@
         <div class="popup-title">Bloquear Usuário</div>
         <div class="popup-context">Deseja bloquear este usuário?<br>Você não verá mais posts dele(a).</div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Bloquear</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Bloquear</button>
         </div>
     </form>
 </dialog>
@@ -27,8 +27,8 @@
             <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
         </div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Denunciar</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Denunciar</button>
         </div>
     </form>
 </dialog>
@@ -51,11 +51,12 @@
             </article>
         </div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="lock" onclick="openModal()">Trancar</button>
-            <button class="pin" onclick="openModal()">Fixar</button>
-            <button class="warn" onclick="openModal()">Advertir</button>
-            <button class="ban" onclick="openModal()">Banir</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button lock" onclick="openModal()">Trancar</button>
+            <button class="default-button move" onclick="openModal()">Mover</button>
+            <button class="default-button pin" onclick="openModal()">Fixar</button>
+            <button class="default-button warn" onclick="openModal()">Advertir</button>
+            <button class="default-button ban" onclick="openModal()">Banir</button>
         </div>
     </div>
 </dialog>
@@ -65,10 +66,41 @@
         <div class="popup-title">Trancar Post</div>
         <div class="popup-context">Deseja trancar este post?<br>Outros usuários não poderão mais respondê-lo.</div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Trancar</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Trancar</button>
         </div>
     </form>
+</dialog>
+
+<dialog class="popup-move">
+    <form action="">
+            <div class="popup-title">Mover Post para</div>
+            <select name="board-type" id="board-type">
+                <option value="an">
+                    <p>/an/ - Animangá</p>
+                </option>
+                <option value="tv">
+                    <p>/tv/ - Filmes e Séries</p>
+                </option>
+                <option value="cri">
+                    <p>/cri/ - Criações</p>
+                </option>
+                <option value="pc">
+                    <p>/pc/ - Computarias</p>
+                </option>
+                <option value="flb">
+                    <p>/flb/ - Faria Lima Bets</p>
+                </option>
+            </select>
+            <div class="popup-context">
+                <textarea name="warn" placeholder="Adicionar mensagem . . ." rows="3" maxlength="255"></textarea>
+            </div>
+            <div class="popup-buttons">
+                <button class="underline-button cancel" type="button"
+                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+                <button class="default-button submit">Mover</button>
+            </div>
+        </form>
 </dialog>
 
 <dialog class="popup-pin">
@@ -76,8 +108,8 @@
         <div class="popup-title">Fixar Post</div>
         <div class="popup-context">Deseja fixar este post a página inicial?</div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Fixar</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Fixar</button>
         </div>
     </form>
 </dialog>
@@ -89,8 +121,8 @@
             <textarea name="Warn" placeholder="Motivo da advertência . . ." rows="3" maxlength="255"></textarea>
         </div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Advertir</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Advertir</button>
         </div>
     </form>
 </dialog>
@@ -105,13 +137,13 @@
             </div>
         </div>
         <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">1d</button>
-            <button class="submit">3d</button>
-            <button class="submit">7d</button>
-            <button class="submit">1m</button>
-            <button class="submit">3m</button>
-            <button class="submit">Perma</button>
+            <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">1d</button>
+            <button class="default-button submit">3d</button>
+            <button class="default-button submit">7d</button>
+            <button class="default-button submit">1m</button>
+            <button class="default-button submit">3m</button>
+            <button class="default-button submit">Perma</button>
         </div>
     </form>
 </dialog>
@@ -133,8 +165,8 @@
             <div class="file-previews-container">
             </div>
             <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="create">Publicar</button>
+                <button class="underline-button cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+                <button class="default-button create">Publicar</button>
             </div>
     </form>
 </dialog>
@@ -337,6 +369,19 @@ Possui um único anexo.</pre>
             <button class="underline-button cancel" type="button"
                 onclick="closeModal(this.closest('dialog'))">Cancelar</button>
             <button class="default-button submit">Salvar mudanças</button>
+        </div>
+    </form>
+</dialog>
+
+<dialog class="popup-trust">
+    <form action="">
+        <div class="popup-title">Tornar Moderador Geral</div>
+        <div class="popup-context">Deseja tornar este usuário num moderador?<br><strong>Pense bem antes de realizar esta
+                ação.<strong></div>
+        <div class="popup-buttons">
+            <button class="underline-button cancel" type="button"
+                onclick="closeModal(this.closest('dialog'))">Cancelar</button>
+            <button class="default-button submit">Confirmar</button>
         </div>
     </form>
 </dialog>
