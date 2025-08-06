@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras | Tupibooru</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+    <!--<link rel="stylesheet" href="../../static/css/custom/midday.css">-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
+            {% include 'utils/navbar.html' %}
+        </header>
+        <main class="index-main">
+
+            <div class="index-post">
+                <div class="index-title">
+                    Regras Gerais
+                </div>
+                <div class="index-content">
+                    <p>1. Não poste, discuta, solicite ou envie links para conteúdos que violam as leis brasileiras.</p>
+                    <p>2. Siga os temas propostos de cada board, evite discussões políticas e tente ao máximo de sua
+                        capacidade não enviar conteúdo NSFW.</p>
+                    - Conteúdo NSFW erótico, representações de genitálias e/ou mamilos são PROIBIDOS, porém,
+                    representações de nudez não erótica e conteúdo ecchi ainda são permitidos.
+                    <p>3. Conteúdo de qualidade é de grande importância para esta comunidade, posts que não possuem
+                        qualidade intrínseca são desincentivados, isto inclui:</p>
+                    - Copypastas. (Permitido no /bo/ e /jo/) <br>
+                    - Textos indecifráveis. <br>
+                    - Shitposts irônicos. (Permitido no /bo/ e /jo/) <br>
+                    - Spam ou Flood. <br>
+                    - Posts divulgando contas ou servidores do Discord. <br>
+                    - Discussões sobre panelinhas ou pessoas envolvidas. (Você será banido!)
+                    <p>4. Seja legal:</p> <br>
+                    - Ataque ideias, não pessoas.<br>
+                    - Não convoque raids.<br>
+                    - Não compartilhe Dox.<br>
+                    - Não reclame da Staff, nem invente histórias sobre a mesma.
+                </div>
+            </div>
+
+        </main>
+        {% include 'utils/footer.html' %}
+        {% include 'utils/popups.html' %}
+        {% include 'utils/scripts/index-scripts.html' %}
+</body>
+
+</html>
