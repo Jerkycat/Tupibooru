@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>/bo/ - Board</title>
 
-    <link rel="stylesheet" href="../../static/css/custom/highnoon.css">
-    <!--<link rel="stylesheet" href="../../static/css/custom/midday.css">-->
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+    <link rel="preload" href="../../static/css/custom/highnoon.css" as="style">
+    <link rel="preload" href="../../static/css/custom/minechan.css" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 </head>
@@ -15,7 +16,20 @@
 <body>
     <div class="container">
         <header>
-            <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
+            <div>
+                <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
+                <div tabindex="0" class="themes">
+                    <button class="themes-button">
+                        <span class="material-symbols-outlined">palette</span>
+                    </button>
+                    <div class="dropdown dropdown-themes">
+                        <button class="default-button selected-button">Midnight <span
+                                class="material-symbols-outlined">check_small</span></button>
+                        <button class="default-button">Highnoon</button>
+                        <button class="default-button">Minechan</button>
+                    </div>
+                </div>
+            </div>
             <nav class="navbar">
                 <ul>
                     <li><a href="">/bo/ - Boteco</a></li>
@@ -363,13 +377,13 @@ Possui um único anexo.</pre>
 
                     <section class="post-content">
                         <section class="post-media">
-                            <div class="media-wrapper">
+                            <div class="media-wrapper spoiler">
                                 <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
                             </div>
-                            <div class="media-wrapper">
+                            <div class="media-wrapper spoiler">
                                 <video controls src="../../static/imgs/decoration/expost2.mp4" alt="">
                             </div>
-                            <div class="media-wrapper">
+                            <div class="media-wrapper spoiler">
                                 <audio controls src="../../static/imgs/decoration/expost3.wav" alt="">
                             </div>
                         </section>
@@ -733,6 +747,42 @@ Possui um único anexo.</pre>
 </body>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1. Define o caminho da imagem de spoiler
+        const spoilerSrc = '../../static/imgs/decoration/spoilers.png';
+
+        // 2. Encontra todos os elementos que têm a classe 'media-wrapper' E 'spoiler'
+        const mediaComSpoiler = document.querySelectorAll('.media-wrapper.spoiler');
+
+        // 3. Passa por cada elemento encontrado
+        mediaComSpoiler.forEach(wrapper => {
+
+            // 4. Cria um novo elemento de imagem para ser a "cobertura"
+            const spoilerImg = document.createElement('img');
+            spoilerImg.src = spoilerSrc;
+            spoilerImg.alt = 'Conteúdo oculto (clique para revelar)';
+
+            // 5. Adiciona uma classe CSS para podermos estilizá-la
+            spoilerImg.classList.add('spoiler-overlay');
+
+            // 6. Adiciona o evento de clique na imagem de spoiler
+            spoilerImg.addEventListener('click', function () {
+                // 7. Ao clicar, a imagem de spoiler se remove
+                this.remove();
+
+                // Opcional: remove a classe 'spoiler' do wrapper pai
+                // para que a regra de CSS não se aplique mais.
+                wrapper.classList.remove('spoiler');
+
+            }, { once: true }); // { once: true } garante que o clique só funcione uma vez.
+
+            // 8. Adiciona a imagem de spoiler *dentro* do wrapper (por cima do conteúdo original)
+            wrapper.appendChild(spoilerImg);
+        });
+    });
+</script>
+
+<script>
     document.addEventListener('DOMContentLoaded', () => {
 
         // Seleciona o dialog usando sua classe. Usamos querySelector para o primeiro que encontrar.
@@ -748,7 +798,7 @@ Possui um único anexo.</pre>
         const popupImage = popupDialog.querySelector('.popup-image-img');
 
         // Seleciona todas as imagens que devem abrir o popup
-        const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img');
+        const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img:not(.spoiler-overlay)');
 
         // Adiciona o evento de clique para cada imagem
         imagesToOpenDialog.forEach(img => {
@@ -831,17 +881,30 @@ Possui um único anexo.</pre>
 </script>
 
 <script>
+    // =========================================================================
+    // FUNÇÃO DE FECHAMENTO MODIFICADA E MAIS ROBUSTA
+    // =========================================================================
     function closeModal(dialogElement) {
-        if (dialogElement && dialogElement.close) {
+        // Se o dialog não existe ou já está fechando, não faz nada.
+        // Isso evita bugs de múltiplos cliques.
+        if (!dialogElement || dialogElement.classList.contains('closing')) return;
+
+        dialogElement.classList.add('closing');
+
+        dialogElement.addEventListener('animationend', () => {
+            dialogElement.classList.remove('closing');
             dialogElement.close();
-        }
+        }, { once: true });
     }
 
-    const triggerClasses = ['delete', 'pin', 'move', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post'];
+
+    // =========================================================================
+    // LÓGICA PARA ABRIR POPUPS (permanece igual)
+    // =========================================================================
+    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'move', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'trust'];
 
     document.addEventListener('click', function (event) {
         const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');
-
         const clickedTrigger = event.target.closest(triggerSelector);
 
         if (clickedTrigger) {
@@ -857,7 +920,6 @@ Possui um único anexo.</pre>
 
             if (dialogClass) {
                 const dialog = document.querySelector('.' + dialogClass);
-
                 if (dialog) {
                     dialog.showModal();
                 } else {
@@ -865,6 +927,59 @@ Possui um único anexo.</pre>
                 }
             }
         }
+    });
+
+
+    // =========================================================================
+    // LISTENER GENÉRICO PARA BOTÕES DE FECHAR (permanece igual)
+    // =========================================================================
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('close-button')) {
+            const dialogToClose = event.target.closest('dialog');
+            if (dialogToClose) {
+                closeModal(dialogToClose);
+            }
+        }
+    });
+
+
+    // =========================================================================
+    // NOVO: LISTENER GENÉRICO PARA FECHAR QUALQUER DIALOG NO BACKDROP
+    // Este bloco agora cuida de fechar qualquer dialog ao clicar fora.
+    // =========================================================================
+    document.addEventListener('click', function (event) {
+        // Verifica se o elemento clicado é um <dialog> que está aberto.
+        // Clicar no backdrop de um <dialog> nativo faz com que o próprio
+        // dialog seja o 'event.target'.
+        if (event.target.tagName === 'DIALOG') {
+            closeModal(event.target);
+        }
+    });
+
+
+    // =========================================================================
+    // POPUP DE IMAGEM (com a lógica de fechar no backdrop REMOVIDA)
+    // =========================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+        const popupDialog = document.querySelector('.popup-image');
+        if (!popupDialog) {
+            return;
+        }
+
+        const popupImage = popupDialog.querySelector('.popup-image-img');
+        const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img:not(.spoiler-overlay)');
+
+        imagesToOpenDialog.forEach(img => {
+            img.addEventListener('click', () => {
+                if (popupImage && popupDialog) {
+                    popupImage.src = img.src;
+                    popupDialog.showModal();
+                }
+            });
+        });
+
+        // A LÓGICA DE FECHAR NO BACKDROP QUE ESTAVA AQUI FOI REMOVIDA,
+        // POIS AGORA É CONTROLADA PELO LISTENER GENÉRICO ACIMA.
     });
 </script>
 
@@ -1278,6 +1393,90 @@ Possui um único anexo.</pre>
 
         // Inicializa a paginação
         updatePagination();
+    });
+</script>
+
+<script>
+    // Configuração dos temas
+    const themeConfig = {
+        'Midnight': null, // Tema padrão (não carrega CSS adicional)
+        'Highnoon': '../../static/css/custom/highnoon.css',
+        'Minechan': '../../static/css/custom/minechan.css'
+    };
+
+    // Elementos do DOM
+    const themeButtons = document.querySelectorAll('.dropdown-themes .default-button');
+    let currentTheme = 'Midnight'; // Tema inicial
+
+    // Função para carregar um tema
+    function loadTheme(themeName) {
+        // Remove o tema anterior (se existir)
+        const existingTheme = document.getElementById('custom-theme');
+        if (existingTheme) {
+            existingTheme.remove();
+        }
+
+        // Carrega o novo tema (se não for o padrão)
+        const themePath = themeConfig[themeName];
+        if (themePath) {
+            const link = document.createElement('link');
+            link.id = 'custom-theme';
+            link.rel = 'stylesheet';
+            link.href = themePath;
+            document.head.appendChild(link);
+        }
+
+        // Atualiza o tema atual
+        currentTheme = themeName;
+
+        // Salva no localStorage
+        localStorage.setItem('selectedTheme', themeName);
+    }
+
+    // Função para atualizar a UI dos botões
+    function updateThemeButtons(selectedTheme) {
+        themeButtons.forEach(button => {
+            const buttonText = button.textContent.trim().replace('check_small', '').trim();
+
+            if (buttonText === selectedTheme) {
+                button.classList.add('selected-button');
+                // Adiciona o ícone de check se não existir
+                if (!button.querySelector('.material-symbols-outlined')) {
+                    const checkIcon = document.createElement('span');
+                    checkIcon.className = 'material-symbols-outlined';
+                    checkIcon.textContent = 'check_small';
+                    button.appendChild(checkIcon);
+                }
+            } else {
+                button.classList.remove('selected-button');
+                // Remove o ícone de check
+                const checkIcon = button.querySelector('.material-symbols-outlined');
+                if (checkIcon) {
+                    checkIcon.remove();
+                }
+            }
+        });
+    }
+
+    // Event listeners para os botões de tema
+    themeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const themeName = this.textContent.trim().replace('check_small', '').trim();
+
+            if (themeName !== currentTheme) {
+                loadTheme(themeName);
+                updateThemeButtons(themeName);
+            }
+        });
+    });
+
+    // Carregar tema salvo ao iniciar a página
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            loadTheme(savedTheme);
+            updateThemeButtons(savedTheme);
+        }
     });
 </script>
 

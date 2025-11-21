@@ -1,0 +1,244 @@
+/* Root */
+
+:root {
+    --ui-bg: #16181C;
+    --ui-ht: #D6E3F0;
+    --ui-tc: #b0bac5;
+
+    --ui-c1: #26292F;
+    --ui-c2: #33363D;
+    --ui-c3: #40444C;
+    --ui-c4: #434956;
+
+    --ui-ac: #64d8b4;
+    --ui-cc: #f5bf60;
+
+    --ui-u1: #ff918d;
+    --ui-u2: #f5deb3;
+
+    --he-img: url(../imgs/banners/Midnight.png);
+    --lo-img: url(../imgs/decoration/logos/mc-logo.png);
+
+    --ad-ts: url(../imgs/ads/ad-test.png);
+    --ad-mg: url(../imgs/ads/ad-cri.png);
+}
+
+.navbar,  .other-main>div, .other-main .return, .ko-fi button, .trending-board, .post-buttons button, .post-buttons button a, .post-engage button, .pagination *, .user-profile, .account-username>div>button, .profile-bar button{
+    font-family: minechan-main;
+}
+
+.login-dropdown form input, .login-dropdown form button, .register-page form input, .register-page form button, .popup-context.captcha input, .index-main, .trending-content pre, .text-ad p, article, .post-text pre, .desktop-menu, footer, dialog, .popup-buttons, dialog textarea, .popup-reason, .dropdown-menu .dropdown, .dropdown-menu .dropdown div>*, .nav-menu ul, .case, .comment-input>form>*, .comment-post, .comment-button textarea, .settings-dropdown, .add-moderator-input, .post {
+    font-family: minechan-text;
+}
+
+/* Main */
+
+body {
+    background: url("../../imgs/backgrounds/minechan_banner.png") no-repeat center top, 
+    url("../../imgs/backgrounds/minechan_transition.png") repeat-x center top, 
+    url("../../imgs/backgrounds/minechan_tile.png") repeat top;
+}
+
+header {
+    background-image: none;
+}
+
+.navbar {
+    border-radius: 0;
+
+    font-size: 0.8rem;
+}
+
+.navbar > ul {
+    background-color: transparent;
+
+    gap: 0.25rem;
+}
+
+.navbar ul li {
+    border-radius: 0;
+}
+
+.navbar ul li a {
+    border-radius: 0;
+
+    background-color: rgba(111, 111, 111);
+
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.navbar ul li:not(:focus) > a:hover {
+    scale: none;
+
+    color: #FFFFA0;
+
+    background-color: rgba(106, 106, 176);
+    text-shadow: 2px 2px #202013CC;
+}
+
+li:has(.others-dropdown):focus-within {
+    scale: none;
+    background-color: rgba(106, 106, 176);
+}
+
+li:has(.others-dropdown):focus-within>a {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+}
+
+.login-dropdown {
+    border-radius: 0;
+
+    border: 0.126rem solid #ffffff14;
+}
+
+.login-dropdown form div {
+    border-radius: 0;
+}
+
+.login-dropdown form button {
+    border-radius: 0;
+
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+li:has(.login-dropdown):focus-within {
+    scale: none;
+    background-color: rgba(106, 106, 176);
+}
+
+li:has(.login-dropdown):focus-within>a {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+}
+
+.themes-button {
+    border: none;
+    border-radius: 0;
+
+    background-color: rgba(111, 111, 111);
+
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.themes-button:hover {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+
+    background-color: rgba(106, 106, 176);
+}
+
+.dropdown-themes {
+    background-color: transparent;
+}
+
+.dropdown-themes .default-button {
+    background-color: rgba(111, 111, 111);
+}
+
+.dropdown .default-button:hover {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+
+    background-color: rgba(106, 106, 176);
+}
+
+/* Main - Index */
+
+.index-post {
+    border-radius: 0;
+
+    border: 0.126rem solid #ffffff14;
+}
+
+.ko-fi button {
+    border-radius: 0;
+
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+/* Main - Profile */
+
+.user-profile {
+    border-radius: 0;
+
+    border: 0.126rem solid #ffffff14;
+}
+
+.badge {
+    border-radius: 0;
+
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.settings-dropdown {
+    top: 35%;
+
+    background-color: transparent;
+
+    border: none;
+
+    gap: 0.5rem;
+}
+
+.settings-dropdown .default-button {
+    background-color: var(--ui-c1);
+}
+
+.settings-dropdown .default-button:hover {
+    background-color: var(--ui-c3);
+}
+
+/* Utility */
+
+.default-button {
+    border-radius: 0;
+
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.default-button:hover {
+    cursor: pointer;
+    color: #FFFFA0;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+button.button-active.bump {
+    color: #FFFFA0 !important;
+    background-color: var(--ui-c3) !important;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+button.button-active.sage {
+    color: #FFFFA0 !important;
+    background-color: var(--ui-c3) !important;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+@media (max-width: 600px) {
+
+    .index-main, article {
+        font-family: minechan-text;
+    }
+}
+
+/* Post */
+
+article, .desktop-menu, .board-ad {
+    border-radius: 0;
+    
+    border: 0.126rem solid #ffffff14;
+}
+
+/* Footer */
+
+footer {
+    background-image: none;
+
+    outline: none;
+}

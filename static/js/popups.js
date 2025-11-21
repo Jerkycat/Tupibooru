@@ -1,15 +1,21 @@
-// Revelar/Ocultar Popups
+
 function closeModal(dialogElement) {
-    if (dialogElement && dialogElement.close) {
+    // Se o dialog não existe ou já está fechando, não faz nada.
+    // Isso evita bugs de múltiplos cliques.
+    if (!dialogElement || dialogElement.classList.contains('closing')) return;
+
+    dialogElement.classList.add('closing');
+
+    dialogElement.addEventListener('animationend', () => {
+        dialogElement.classList.remove('closing');
         dialogElement.close();
-    }
+    }, { once: true });
 }
 
-const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'trust'];
+const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'move', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'trust'];
 
 document.addEventListener('click', function (event) {
     const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');
-
     const clickedTrigger = event.target.closest(triggerSelector);
 
     if (clickedTrigger) {
@@ -25,7 +31,6 @@ document.addEventListener('click', function (event) {
 
         if (dialogClass) {
             const dialog = document.querySelector('.' + dialogClass);
-
             if (dialog) {
                 dialog.showModal();
             } else {
@@ -35,39 +40,39 @@ document.addEventListener('click', function (event) {
     }
 });
 
-// Popup de Imagem
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('close-button')) {
+        const dialogToClose = event.target.closest('dialog');
+        if (dialogToClose) {
+            closeModal(dialogToClose);
+        }
+    }
+});
+
+document.addEventListener('click', function (event) {
+    // Verifica se o elemento clicado é um <dialog> que está aberto.
+    // Clicar no backdrop de um <dialog> nativo faz com que o próprio
+    // dialog seja o 'event.target'.
+    if (event.target.tagName === 'DIALOG') {
+        closeModal(event.target);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Seleciona o dialog usando sua classe. Usamos querySelector para o primeiro que encontrar.
     const popupDialog = document.querySelector('.popup-image');
-
-    // Se o dialog não existir na página, o script para aqui para evitar erros.
     if (!popupDialog) {
-        console.warn('Elemento de dialog com a classe "popup-image" não foi encontrado.');
         return;
     }
 
-    // Seleciona o elemento da imagem dentro do dialog
     const popupImage = popupDialog.querySelector('.popup-image-img');
+    const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img:not(.spoiler-overlay)');
 
-    // Seleciona todas as imagens que devem abrir o popup
-    const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img');
-
-    // Adiciona o evento de clique para cada imagem
     imagesToOpenDialog.forEach(img => {
         img.addEventListener('click', () => {
             if (popupImage && popupDialog) {
                 popupImage.src = img.src;
-                popupDialog.showModal(); // Abre o dialog
+                popupDialog.showModal();
             }
         });
     });
-
-    // Evento para fechar o dialog ao clicar no backdrop
-    popupDialog.addEventListener('click', (event) => {
-        if (event.target === popupDialog) {
-            popupDialog.close(); // Fecha o dialog
-        }
-    });
-
 });
