@@ -1,1483 +1,387 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/bo/ - Board</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../../static/css/midnight.css">
-    <link rel="preload" href="../../static/css/custom/highnoon.css" as="style">
-    <link rel="preload" href="../../static/css/custom/minechan.css" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div>
-                <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-                <div tabindex="0" class="themes">
-                    <button class="themes-button">
-                        <span class="material-symbols-outlined">palette</span>
-                    </button>
-                    <div class="dropdown dropdown-themes">
-                        <button class="default-button selected-button">Midnight <span
-                                class="material-symbols-outlined">check_small</span></button>
-                        <button class="default-button">Highnoon</button>
-                        <button class="default-button">Minechan</button>
-                    </div>
-                </div>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="">/bo/ - Boteco</a></li>
-                    <li><a href="">/an/ - Animangá</a></li>
-                    <li><a href="">/jo/ - Jogos e Cultura</a></li>
-                    <li><a href="">/cri/ - Criações</a></li>
-                    <li><a href="">/pc/ - Computarias</a></li>
-                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
-
-                    <li tabindex="0" style="display: none;">
-                        <a>Outros</a>
-                        <ul class="others-dropdown">
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/tv/ - Filmes e Séries</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                        </ul>
-                    </li>
-                    <li tabindex="0">
-                        <a>Conta</a>
-                        <div class="dropdown login-dropdown">
-                            <p>Login</p>
-                            <form action="">
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        mail
-                                    </span>
-                                    <input type="email" placeholder="Usuário ou Email">
-                                </div>
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        key
-                                    </span>
-                                    <input type="password" placeholder="Senha">
-                                </div>
-                                <button type="submit">Logar-se<span class="material-symbols-outlined">
-                                        login
-                                    </span></button>
-                            </form>
-                            <div><a href="">Esqueceu a senha?</a>•<a href="register_example.html">Crie uma conta</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="navbar-mobile">
-                <section>
-                    <button class="default-mb mobile-menu">
-                        <span class="material-symbols-outlined">
-                            menu
-                        </span>
-                    </button>
-                    <aside class="nav-menu">
-                        <ul>Menu de Boards
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/tv/ - Filmes e Séries</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                            <li><a href="">/pc/ - Computarias</a></li>
-                            <li><a href="">/flb/ - Faria Lima Bets</a></li>
-                        </ul>
-                    </aside>
-                </section>
-                <section class="dropdown-menu">
-                    <button class="default-mb">
-                        <img class="dropdown-logo" alt="">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                        </span>
-                    </button>
-                    <div class="dropdown">
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    home
-                                </span>Homepage
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    view_list
-                                </span>Catálogo - Board
-                            </a>
-                        </div>
-                        <div>
-                            <button class="post">
-                                <span class="material-symbols-outlined">
-                                    add
-                                </span>Criar Post
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </nav>
-        </header>
-        <main class="board-main">
-            <div class="page-content">
-                <section class="board-ad manga-ad">
-                    <a href="https://www.youtube.com/@escolamangaka" target="_blank">
-                        <div class="text-ad">
-                            <p>ADS BY REDE POTIGUARA</p>
-                        </div>
-                    </a>
-                </section>
-                <article>
-                    <section class="post-bar">
-                        <section class="post-profile">
-                            <a href="">
-                                <div class="post-userphoto" style="display: none;" alt=""></div><span
-                                    class="material-symbols-outlined">
-                                    no_accounts
-                                </span>
-                                <p class="post-username">• Anônimo</p>
-                            </a>
-                        </section>
-                        <section class="mobile-date">
-                            <a href="">• Data do Post</a>
-                            <button class="pin-button">
-                                <span class="material-symbols-outlined">
-                                    keep
-                                </span>
-                            </button>
-                        </section>
-                        <section class="post-title">
-                            <a href="thread_example.html">Título do Post</a>
-                        </section>
-                        <section class="post-buttons">
-                            <button class="pin-button">
-                                <span class="material-symbols-outlined">
-                                    keep
-                                </span>
-                            </button>
-                            <button class="default-button moderate">
-                                <span class="material-symbols-outlined">
-                                    policy
-                                </span>
-                            </button>
-                            <button class="default-button delete">
-                                <span class="material-symbols-outlined">
-                                    delete
-                                </span>
-                            </button>
-                            <button class="default-button minimize">
-                                <span class="material-symbols-outlined">
-                                    keyboard_arrow_up
-                                </span>
-                            </button>
-                        </section>
-                        <section class="mobile-button" tabindex="0">
-                            <button class="default-button">
-                                <span class="material-symbols-outlined">
-                                    more_vert
-                                </span>
-                            </button>
-                            <div class="dropdown mobile-options">
-                                <button class="default-button moderate">
-                                    <span class="material-symbols-outlined">
-                                        policy
-                                    </span>Moderar
-                                </button>
-                                <button class="default-button delete">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>Excluir Post
-                                </button>
-                                <button class="default-button block">
-                                    <span class="material-symbols-outlined">
-                                        visibility_off
-                                    </span>Bloquear
-                                </button>
-                                <button class="default-button report">
-                                    <span class="material-symbols-outlined">
-                                        warning
-                                    </span>Denunciar
-                                </button>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section class="post-bar mobile-bar">
-                        <section class="mobile-title">
-                            <a href="">Título do Post, fica aqui no mobile</a>
-                        </section>
-                    </section>
-
-                    <section class="post-content">
-                        <section class="post-media">
-                            <div class="media-wrapper">
-                                <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                            </div>
-                        </section>
-                        <section class="post-text">
-                            <pre>Este é um post de exemplo.
-Possui um único anexo.</pre>
-                        </section>
-                    </section>
-
-                    <section class="post-bar">
-                        <section class="post-engage">
-                            <button class="default-button bump">
-                                <span class="material-symbols-outlined">
-                                    thumb_up
-                                </span>Bump
-                            </button>
-                            <button class="default-button sage">
-                                <span class="material-symbols-outlined">
-                                    thumb_down
-                                </span>Sage
-                            </button>
-                        </section>
-                        <section class="post-date">
-                            <a href="thread_example.html">Data do Post</a>
-                        </section>
-                        <section class="post-buttons">
-                            <button class="default-button comments">
-                                <a href="thread_example.html">
-                                    <span class="material-symbols-outlined">
-                                        chat
-                                    </span>1
-                                </a>
-                            </button>
-                            <button class="default-button block">
-                                <span class="material-symbols-outlined">
-                                    visibility_off
-                                </span>
-                            </button>
-                            <button class="default-button report">
-                                <span class="material-symbols-outlined">
-                                    warning
-                                </span>
-                            </button>
-                        </section>
-                    </section>
-
-                    <section class="reply-bar">
-                        <a class="reply-profile" href="">
-                            <div class="post-userphoto" alt=""></div>
-                            <p class="post-username">• Mymy</p>
-                        </a>
-                        <section class="mobile-date" style="display: none;">
-                            <a href="">• Data do Post</a>
-                        </section>
-                        <section class="post-date">
-                            • <a href="">Data do Post</a>
-                        </section>
-                    </section>
-                    <section class="post-content">
-                        <section class="post-text">
-                            <pre>Isso é uma resposta de usuário, sem anexos.</pre>
-                        </section>
-                    </section>
-
-                    <section class="reply-bar">
-                        <a class="reply-anonymous">
-                            <div class="post-userphoto" style="display: none;" alt=""></div><span
-                                class="material-symbols-outlined">
-                                no_accounts
-                            </span>
-                            <p class="post-username">• Anônimo</p>
-                        </a>
-                        <section class="mobile-date" style="display: none;">
-                            <a href="">• Data do Post</a>
-                        </section>
-                        <section class="post-date">
-                            • <a href="">Data do Post</a>
-                        </section>
-                    </section>
-                    <section class="post-content">
-                        <section class="post-text">
-                            <pre>Isso é uma resposta de anônima, sem anexos.</pre>
-                        </section>
-                    </section>
-                </article>
-
-                <article>
-                    <section class="post-bar">
-                        <section class="post-profile">
-                            <a href="">
-                                <div class="post-userphoto" style="display: none;" alt=""></div><span
-                                    class="material-symbols-outlined">
-                                    no_accounts
-                                </span>
-                                <p class="post-username">• Anônimo</p>
-                            </a>
-                        </section>
-                        <section class="mobile-date" style="display: none;">
-                            <a href="">• Data do Post</a>
-                        </section>
-                        <section class="post-title">
-                            <a href="">Título do Post</a>
-                        </section>
-                        <section class="post-buttons">
-                            <button class="default-button moderate">
-                                <span class="material-symbols-outlined">
-                                    policy
-                                </span>
-                            </button>
-                            <button class="default-button delete">
-                                <span class="material-symbols-outlined">
-                                    delete
-                                </span>
-                            </button>
-                            <button class="default-button minimize">
-                                <span class="material-symbols-outlined">
-                                    keyboard_arrow_up
-                                </span>
-                            </button>
-                        </section>
-                        <section class="mobile-button">
-                            <button class="default-button">
-                                <span class="material-symbols-outlined">
-                                    more_vert
-                                </span>
-                            </button>
-                            <div class="dropdown mobile-options">
-                                <button class="default-button moderate">
-                                    <span class="material-symbols-outlined">
-                                        policy
-                                    </span>Moderar
-                                </button>
-                                <button class="default-button delete">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>Excluir Post
-                                </button>
-                                <button class="default-button block">
-                                    <span class="material-symbols-outlined">
-                                        visibility_off
-                                    </span>Bloquear
-                                </button>
-                                <button class="default-button report">
-                                    <span class="material-symbols-outlined">
-                                        warning
-                                    </span>Denûnciar
-                                </button>
-                            </div>
-                        </section>
-                    </section>
-                    <section class="post-bar mobile-bar">
-                        <section class="mobile-title">
-                            <a href="">Título do Post da pra ser bem longo aqui</a>
-                        </section>
-                    </section>
-
-                    <section class="post-content">
-                        <section class="post-media">
-                            <div class="media-wrapper spoiler">
-                                <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                            </div>
-                            <div class="media-wrapper spoiler">
-                                <video controls src="../../static/imgs/decoration/expost2.mp4" alt="">
-                            </div>
-                            <div class="media-wrapper spoiler">
-                                <audio controls src="../../static/imgs/decoration/expost3.wav" alt="">
-                            </div>
-                        </section>
-                        <section class="post-text">
-                            <pre>Este é um post anônimo que possui três anexos.</pre>
-                        </section>
-                    </section>
-
-                    <section class="post-bar">
-                        <section class="post-engage">
-                            <button class="default-button bump">
-                                <span class="material-symbols-outlined">
-                                    thumb_up
-                                </span>Bump
-                            </button>
-                            <button class="default-button sage">
-                                <span class="material-symbols-outlined">
-                                    thumb_down
-                                </span>Sage
-                            </button>
-                        </section>
-                        <section class="post-date">
-                            <a href="">Data do Post</a>
-                        </section>
-                        <section class="post-buttons">
-                            <button class="default-button comments">
-                                <span class="material-symbols-outlined">
-                                    chat
-                                </span>
-                            </button>
-                            <button class="default-button block">
-                                <span class="material-symbols-outlined">
-                                    visibility_off
-                                </span>
-                            </button>
-                            <button class="default-button report">
-                                <span class="material-symbols-outlined">
-                                    warning
-                                </span>
-                            </button>
-                        </section>
-                    </section>
-                </article>
-                <div class="pagination-container">
-                    <div class="pagination">
-                        <a class="default-button button-active" data-page="1">1</a>
-                        <a class="default-button" data-page="2">2</a>
-                        <span class="divider">-</span>
-                        <a class="default-button" data-page="20">20</a>
-                    </div>
-                </div>
-            </div>
-            <aside class="desktop-menu">
-                <section>
-                    <div class="side-button">
-                        <button class="default-button post">
-                            <span class="material-symbols-outlined">
-                                add_circle
-                            </span>Criar um Post
-                        </button>
-                    </div>
-                </section>
-                <section>
-                    <div class="side-title">
-                        <p>Informações</p>
-                        <button class="default-button minimize">
-                            <span class="material-symbols-outlined">
-                                keyboard_arrow_up
-                            </span>
-                        </button>
-                    </div>
-                    <div class="side-content">
-                        <p>Board para reunir a galera do boteco.<br><br>Poste sobre oque quiser, contanto que siga as
-                            regras
-                            globais.</p>
-                    </div>
-                </section>
-                <section>
-                    <div class="side-title">
-                        <p>Regras Globais</p>
-                        <button class="default-button minimize">
-                            <span class="material-symbols-outlined">
-                                keyboard_arrow_up
-                            </span>
-                        </button>
-                    </div>
-                    <div class="side-content">
-                        <ul>
-                            <li>
-                                1. Não poste, discuta, solicite ou
-                                envie links para conteúdos que
-                                violam as leis brasileiras.
-                            </li>
-                            <li>
-                                2. Siga os temas propostos de
-                                cada board, evite discussões
-                                políticas e tente
-                                ao máximo de sua capacidade
-                                não enviar conteúdo NSFW.
-                            </li>
-                            <li>
-                                3. Conteúdo de qualidade é de
-                                grande importância para esta
-                                comunidade, posts que não
-                                possuem qualidade intrínseca
-                                são desincentivados, isto inclui: <br>
-                                - Coppypastas. <br>
-                                &nbsp;&nbsp;(Permitido no /bo/ e /jo/) <br>
-                                - Textos indecifráveis. <br>
-                                - Shitposts irônicos. <br>
-                                &nbsp;&nbsp;(Permitido no /bo/ e /jo/) <br>
-                                - Spam ou Flood. <br>
-                                - Posts divulgando contas ou
-                                servidores do Discord. <br>
-                                - Discussões sobre panelinhas ou pessoas envolvidas. <br>
-                                &nbsp;&nbsp;(Você vai ser banido!)
-                            </li>
-                            <li>
-                                4. Seja legal:<br>
-                                - Ataque ideias, não pessoas.<br>
-                                - Não convoque raids.<br>
-                                - Não compartilhe Dox.<br>
-                                - Não reclame da Staff, nem invente histórias sobre a mesma.
-                            </li> <br>
-                        </ul>
-                    </div>
-                </section>
-            </aside>
-        </main>
-        <footer>
-            <section>
-                <div class="footer-socials">
-                    <a href=""><img class="footer-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-                    <div></div>
-                </div>
-                <div class="footer-copyright">
-                    <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
-                    </p>
-                    <p>© 2025 Rede Autumn.</p>
-                </div>
-            </section>
-            <section>
-                <div class="footer-extras">
-                    <p class="footer-title">Sobre</p>
-                    <a href="">F.A.Q</a>
-                    <a href="rules_example.html">Regras</a>
-                </div>
-            </section>
-        </footer>
-    </div>
-
-    <dialog class="popup-delete">
-        <form action="">
-            <div class="popup-title">Excluir Post</div>
-            <div class="popup-context">Deseja mesmo excluir este post?<br>Esta ação é irreversível.</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Excluir</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-block">
-        <form action="">
-            <div class="popup-title">Bloquear Usuário</div>
-            <div class="popup-context">Deseja bloquear este usuário?<br>Você não verá mais posts dele(a).</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Bloquear</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-report">
-        <form action="">
-            <div class="popup-title">Denunciar Post</div>
-            <div class="popup-context">
-                <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Denunciar</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-moderate">
+    <header>
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
         <div>
-            <div class="popup-title">Moderar Post</div>
-            <div class="popup-context">
-                <article>
-                    <section class="post-content">
-                        <section class="post-media">
-                            <div class="media-wrapper">
-                                <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                            </div>
-                        </section>
-                        <section class="post-text">
-                            <pre>Este é um post de exemplo.Possui um único anexo.</pre>
-                        </section>
-                    </section>
-                </article>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button lock" onclick="openModal()">Trancar</button>
-                <button class="default-button move" onclick="openModal()">Mover</button>
-                <button class="default-button pin" onclick="openModal()">Fixar</button>
-                <button class="default-button warn" onclick="openModal()">Advertir</button>
-                <button class="default-button ban" onclick="openModal()">Banir</button>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
+                            class="material-symbols-outlined">check_small</span></button>
+                    <button class="default-button">Highnoon</button>
+                    <button class="default-button">Minechan</button>
+                    <button class="default-button">Snowfall</button>
+                </div>
             </div>
         </div>
-    </dialog>
-    <dialog class="popup-lock">
-        <form action="">
-            <div class="popup-title">Trancar Post</div>
-            <div class="popup-context">Deseja trancar este post?<br>Outros usuários não poderão mais respondê-lo.</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Trancar</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-move">
-        <form action="">
-            <div class="popup-title">Mover Post para</div>
-            <select name="board-type" id="board-type">
-                <option value="an">
-                    <p>/an/ - Animangá</p>
-                </option>
-                <option value="jo">
-                    <p>/jo/ - Jogos e Cultura</p>
-                </option>
-                <option value="cri">
-                    <p>/cri/ - Criações</p>
-                </option>
-                <option value="pc">
-                    <p>/pc/ - Computarias</p>
-                </option>
-                <option value="flb">
-                    <p>/flb/ - Faria Lima Bets</p>
-                </option>
-            </select>
-            <div class="popup-context">
-                <textarea name="warn" placeholder="Adicionar mensagem . . ." rows="3" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Mover</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-pin">
-        <form action="">
-            <div class="popup-title">Fixar Post</div>
-            <div class="popup-context">Deseja fixar este post a página inicial?</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Fixar</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-warn">
-        <form action="">
-            <div class="popup-title">Advertir Post</div>
-            <select name="warn-type" id="warn-type">
-                <option value="0">
-                    <p>Sem advertência de perfil</p>
-                </option>
-                <option value="1">
-                    <p>Quebra de regras de board/global</p>
-                </option>
-                <option value="2">
-                    <p>Conteúdo NSFW explícito</p>
-                </option>
-                <option value="3">
-                    <p>Poluição de board/thread</p>
-                </option>
-                <option value="4">
-                    <p>Inclusão digital</p>
-                </option>
-            </select>
-            <div class="popup-context">
-                <textarea name="warn" placeholder="Mensagem de advertência . . ." rows="3" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Advertir</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-ban">
-        <form action="">
-            <div class="popup-title">Banir Usuário</div>
-            <div class="popup-context">Deseja banir este usuário? Selecione uma duração.
-                <select name="ban-type" id="ban-type">
-                    <option value="local">
-                        <p>Banir usuário apenas nesta board</p>
-                    </option>
-                    <option value="global">
-                        <p>Banir usuário globalmente</p>
-                    </option>
-                </select>
-                <div class="delban">
-                    <input type="checkbox" id="delban">
-                    <label for="delban">Excluir o histórico de posts deste usuário</label>
-                </div>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">1d</button>
-                <button class="default-button submit">3d</button>
-                <button class="default-button submit">7d</button>
-                <button class="default-button submit">1m</button>
-                <button class="default-button submit">3m</button>
-                <button class="default-button submit">Perma.</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-post">
-        <form action="">
-            <div class="popup-title">Criar Post</div>
-            <div class="popup-context">
-                <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
-            </div>
-            <div class="popup-context">
-                <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="4000"></textarea>
-            </div>
-            <div class="popup-context">
-                <input type="file" id="fileInput" multiple accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-                    style="display: none;">
-                <button type="button" class="select-file-button"
-                    onclick="document.getElementById('fileInput').click()">Selecione um arquivo</button>
-                <div class="file-previews-container">
-                </div>
-                <div class="captcha">
-                    <img src="../../static/imgs/decoration/Captcha_Example.png" alt="Captcha">
-                    <div class="popup-context captcha">
-                        <span class="material-symbols-outlined">
-                            toys_and_games
-                        </span>
-                        <input type="text" placeholder="Captcha">
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">
+                        <form action="">
+                            <section>
+                                <a>Login</a>
+                            </section>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <input type="email" placeholder="Usuário ou Email">
+                                </section>
+                            </div>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">key</span>
+                                    <input type="password" placeholder="Senha">
+                                </section>
+                            </div>
+                            <section>
+                                <button class="default-button">
+                                    Logar-se
+                                    <span class="material-symbols-outlined">login</span>
+                                </button>
+                            </section>
+                        </form>
+                        <section>
+                            <a class="underline-button" target="_blank" href="">
+                                Esqueceu a senha?
+                            </a>
+                            •
+                            <a class="underline-button" target="_blank" href="register_example.html">
+                                Crie uma conta
+                            </a>
+                        </section>
                     </div>
-                </div>
-                <div class="popup-buttons">
-                    <button class="underline-button cancel" type="button"
-                        onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                    <button class="default-button create">Publicar</button>
-                </div>
-        </form>
-    </dialog>
-    <dialog class="popup-image">
-        <img class="popup-image-img" src="" alt="Imagem em destaque">
-    </dialog>
+                </li>
+                <li tabindex="0" class="dropdown" style="display: none;">
+                    <a class="default-button" href="profile_example.html">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <article class="board-ad manga-ad">
+                <a href="https://www.youtube.com/@escolamangaka" target="_blank">
+                    <p>ADS BY REDE POTIGUARA</p>
+                </a>
+            </article>
+
+            <article>
+                <section class="section-bar">
+                    <div>
+                        <button class="faux-button post-profile">
+                            <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                        </button>
+                    </div>
+                    <div><a class="underline-button" href="thread_example.html">Título do Post</a></div>
+                    <div class="post-buttons">
+                        <button class="faux-button pinned">
+                            <span class="material-symbols-outlined">keep</span>
+                        </button>
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">policy</span>
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                        <button class="default-button minimize">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+                <section class="section-bar">
+                    <div class="post-engagement">
+                        <button class="default-button bump">
+                            <span class="material-symbols-outlined">thumb_up</span>Bump
+                        </button>
+                        <button class="default-button sage">
+                            <span class="material-symbols-outlined">thumb_down</span>Sage
+                        </button>
+                    </div>
+                    <div><a class="underline-button" href="thread_example.html">Data do Post</a></div>
+                    <div class="post-buttons">
+                        <a class="default-button" href="thread_example.html">
+                            <span class="material-symbols-outlined">chat</span>2
+                        </a>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">visibility_off</span>
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">warning</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="reply-bar">
+                    <div>
+                        <button class="underline-button post-profile">
+                            <img src="../../static/imgs/examples/anon.png" alt="">• Mymy Schoppenboer
+                        </button>
+                    </div>
+                    <div>
+                        •
+                    </div>
+                    <div>
+                        <a class="underline-button" href="thread_example.html">Data do Post</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-text">
+                        <pre>Isso é uma resposta de usuário, sem anexos.
+<span class="greentext">&gt;testando verdetexto</span>
+<span class="redtext">&lt;testando vermelhotexto</span>
+testando a função de <span class="spoiler">spoiler.</span></pre>
+                    </div>
+                </section>
+
+                <section class="reply-bar">
+                    <div>
+                        <button class="faux-button post-profile">
+                            <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                        </button>
+                    </div>
+                    <div>
+                        •
+                    </div>
+                    <div>
+                        <a class="underline-button" href="thread_example.html">Data do Post</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                        <div class="media-wrapper"><video controls src="../../static/imgs/examples/expost2.mp4"
+                                alt=""></video></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Isso é uma resposta anônima, com dois anexos.</pre>
+                    </div>
+                </section>
+            </article>
+
+            <article>
+                <section class="section-bar">
+                    <div>
+                        <button class="faux-button post-profile">
+                            <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                        </button>
+                    </div>
+                    <div><a class="underline-button" href="404_example.html">Título do Post</a></div>
+                    <div class="post-buttons">
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">policy</span>
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                        <button class="default-button minimize">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post anônimo que possui três anexos.</pre>
+                    </div>
+                </section>
+                <section class="section-bar">
+                    <div class="post-engagement">
+                        <button class="default-button bump">
+                            <span class="material-symbols-outlined">thumb_up</span>Bump
+                        </button>
+                        <button class="default-button sage">
+                            <span class="material-symbols-outlined">thumb_down</span>Sage
+                        </button>
+                    </div>
+                    <div><a class="underline-button" href="404_example.html">Data do Post</a></div>
+                    <div class="post-buttons">
+                        <a class="default-button" href="404_example.html">
+                            <span class="material-symbols-outlined">chat</span>1
+                        </a>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">visibility_off</span>
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">warning</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="reply-bar">
+                    <div>
+                        <button class="underline-button post-profile">
+                            <img src="../../static/imgs/examples/anon.png" alt="">• Mymy Schoppenboer
+                        </button>
+                    </div>
+                    <div>
+                        •
+                    </div>
+                    <div>
+                        <a class="underline-button" href="404_example.html">Data do Post</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-text">
+                        <pre>Isso é uma resposta de usuário, sem anexos.</pre>
+                    </div>
+                </section>
+            </article>
+
+            <nav class="pagination"></nav>
+
+        </div>
+        <aside>
+            <section class="aside-button">
+                <a class="default-button" href="catalog_example.html"><span class="material-symbols-outlined">browse</span></a>
+                <button class="default-button post"><span class="material-symbols-outlined">add_circle</span>Criar um
+                    Post</button>
+            </section>
+            <section class="aside-title">
+                <p>Informações</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <p>Poste sobre oque quiser, contanto que siga as Regras Globais.</p>
+            </section>
+            <section class="aside-title">
+                <p>Regras Globais</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <ul>
+                    <li>
+                        <a>1.</a>
+                        <p>Não poste, discuta, solicite ou envie links para conteúdos que violam as leis brasileiras.
+                        </p>
+                    </li>
+                    <li>
+                        <a>2.</a>
+                        <p>Conteúdos e discussões deste site são indicados exclusivamente para <strong>maiores de 16
+                                (dezesseis) anos</strong>.
+                            <br> A entrada de menores é proibida.
+                        </p>
+                    </li>
+                    <li>
+                        <a>3.</a>
+                        <p>Mantenha-se nos temas propostos de cada board, evite discussões políticas fora do /bo/ e não
+                            envie de <strong>material sexualmente explícito</strong> fora do /cri/. <br>
+                            Visite o <a href="faq_example.html">FAQ</a> para mais informações.
+                        </p>
+                    </li>
+                    <li>
+                        <a>4.</a>
+                        <p>Conteúdo de qualidade é de
+                            grande importância para esta
+                            comunidade, posts que não
+                            possuem qualidade intrínseca
+                            são desincentivados, isto inclui:<br>
+                            - Coppypastas. <br>
+                            &nbsp;&nbsp;(Permitido no /bo/ e /jo/) <br>
+                            - Textos indecifráveis. <br>
+                            - Shitposts irônicos. <br>
+                            &nbsp;&nbsp;(Permitido no /bo/ e /jo/) <br>
+                            - Spam ou Flood. <br>
+                            - Posts divulgando contas ou
+                            servidores do Discord. <br>
+                            - Discussões sobre panelinhas ou pessoas envolvidas. <br>
+                            &nbsp;&nbsp;(Você vai ser banido!)
+                        </p>
+                    </li>
+                    <li>
+                        <a>5.</a>
+                        <p>Seja legal:<br>
+                            - Ataque ideias, não pessoas.<br>
+                            - Não compartilhe Dox.<br>
+                            - Não reclame da Staff, nem invente histórias sobre a mesma.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <div id="container-popup" style="display: contents;"></div>
+
+    <script>
+        // Carrega automaticamente quando a página abre
+        async function carregarPopups() {
+            try {
+                const response = await fetch('popups_example.html');
+                const html = await response.text();
+                document.getElementById('container-popup').innerHTML = html;
+            } catch (error) {
+                console.error('Erro ao carregar popups:', error);
+            }
+        }
+
+        // Executa automaticamente
+        carregarPopups();
+    </script>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
 </body>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // 1. Define o caminho da imagem de spoiler
-        const spoilerSrc = '../../static/imgs/decoration/spoilers.png';
-
-        // 2. Encontra todos os elementos que têm a classe 'media-wrapper' E 'spoiler'
-        const mediaComSpoiler = document.querySelectorAll('.media-wrapper.spoiler');
-
-        // 3. Passa por cada elemento encontrado
-        mediaComSpoiler.forEach(wrapper => {
-
-            // 4. Cria um novo elemento de imagem para ser a "cobertura"
-            const spoilerImg = document.createElement('img');
-            spoilerImg.src = spoilerSrc;
-            spoilerImg.alt = 'Conteúdo oculto (clique para revelar)';
-
-            // 5. Adiciona uma classe CSS para podermos estilizá-la
-            spoilerImg.classList.add('spoiler-overlay');
-
-            // 6. Adiciona o evento de clique na imagem de spoiler
-            spoilerImg.addEventListener('click', function () {
-                // 7. Ao clicar, a imagem de spoiler se remove
-                this.remove();
-
-                // Opcional: remove a classe 'spoiler' do wrapper pai
-                // para que a regra de CSS não se aplique mais.
-                wrapper.classList.remove('spoiler');
-
-            }, { once: true }); // { once: true } garante que o clique só funcione uma vez.
-
-            // 8. Adiciona a imagem de spoiler *dentro* do wrapper (por cima do conteúdo original)
-            wrapper.appendChild(spoilerImg);
-        });
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // Seleciona o dialog usando sua classe. Usamos querySelector para o primeiro que encontrar.
-        const popupDialog = document.querySelector('.popup-image');
-
-        // Se o dialog não existir na página, o script para aqui para evitar erros.
-        if (!popupDialog) {
-            console.warn('Elemento de dialog com a classe "popup-image" não foi encontrado.');
-            return;
-        }
-
-        // Seleciona o elemento da imagem dentro do dialog
-        const popupImage = popupDialog.querySelector('.popup-image-img');
-
-        // Seleciona todas as imagens que devem abrir o popup
-        const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img:not(.spoiler-overlay)');
-
-        // Adiciona o evento de clique para cada imagem
-        imagesToOpenDialog.forEach(img => {
-            img.addEventListener('click', () => {
-                if (popupImage && popupDialog) {
-                    popupImage.src = img.src;
-                    popupDialog.showModal(); // Abre o dialog
-                }
-            });
-        });
-
-        // Evento para fechar o dialog ao clicar no backdrop
-        popupDialog.addEventListener('click', (event) => {
-            if (event.target === popupDialog) {
-                popupDialog.close(); // Fecha o dialog
-            }
-        });
-
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const minimizeButtons = document.querySelectorAll('.side-title .minimize');
-
-        minimizeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const sideTitleDiv = button.parentElement;
-
-                let sideContentDiv = sideTitleDiv.nextElementSibling;
-                while (sideContentDiv && !sideContentDiv.classList.contains('side-content')) {
-                    sideContentDiv = sideContentDiv.nextElementSibling;
-                }
-
-                if (sideContentDiv) {
-                    sideContentDiv.classList.toggle('collapsed');
-
-                    button.classList.toggle('collapsed');
-                }
-            });
-        });
-    });
-</script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const minimizeButtons = document.querySelectorAll('.minimize');
-
-        minimizeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const article = button.closest('article');
-                if (!article) return;
-
-                // Encontra o post-bar pai do botão clicado
-                const parentPostBar = button.closest('.post-bar');
-                if (!parentPostBar) return;
-
-                // Seleciona todas as seções que vêm depois do parentPostBar dentro do mesmo article
-                let nextElement = parentPostBar.nextElementSibling;
-                while (nextElement) {
-                    if (nextElement.tagName === 'SECTION') {
-                        if (nextElement.style.display === 'none') {
-                            nextElement.style.display = ''; // Remove 'display: none' para voltar ao padrão
-                        } else {
-                            nextElement.style.display = 'none'; // Oculta a seção
-                        }
-                    }
-                    nextElement = nextElement.nextElementSibling;
-                }
-
-                // Rotaciona o ícone do botão minimize
-                const icon = button.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.classList.toggle('rotated');
-                }
-            });
-        });
-    });
-</script>
-
-<script>
-    // =========================================================================
-    // FUNÇÃO DE FECHAMENTO MODIFICADA E MAIS ROBUSTA
-    // =========================================================================
-    function closeModal(dialogElement) {
-        // Se o dialog não existe ou já está fechando, não faz nada.
-        // Isso evita bugs de múltiplos cliques.
-        if (!dialogElement || dialogElement.classList.contains('closing')) return;
-
-        dialogElement.classList.add('closing');
-
-        dialogElement.addEventListener('animationend', () => {
-            dialogElement.classList.remove('closing');
-            dialogElement.close();
-        }, { once: true });
-    }
-
-
-    // =========================================================================
-    // LÓGICA PARA ABRIR POPUPS (permanece igual)
-    // =========================================================================
-    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'move', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'trust'];
-
-    document.addEventListener('click', function (event) {
-        const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');
-        const clickedTrigger = event.target.closest(triggerSelector);
-
-        if (clickedTrigger) {
-            event.preventDefault();
-
-            let dialogClass = null;
-            for (const cls of triggerClasses) {
-                if (clickedTrigger.classList.contains(cls)) {
-                    dialogClass = 'popup-' + cls;
-                    break;
-                }
-            }
-
-            if (dialogClass) {
-                const dialog = document.querySelector('.' + dialogClass);
-                if (dialog) {
-                    dialog.showModal();
-                } else {
-                    console.error('Erro: Dialog com a classe "' + dialogClass + '" não encontrada.');
-                }
-            }
-        }
-    });
-
-
-    // =========================================================================
-    // LISTENER GENÉRICO PARA BOTÕES DE FECHAR (permanece igual)
-    // =========================================================================
-    document.addEventListener('click', function (event) {
-        if (event.target.classList.contains('close-button')) {
-            const dialogToClose = event.target.closest('dialog');
-            if (dialogToClose) {
-                closeModal(dialogToClose);
-            }
-        }
-    });
-
-
-    // =========================================================================
-    // NOVO: LISTENER GENÉRICO PARA FECHAR QUALQUER DIALOG NO BACKDROP
-    // Este bloco agora cuida de fechar qualquer dialog ao clicar fora.
-    // =========================================================================
-    document.addEventListener('click', function (event) {
-        // Verifica se o elemento clicado é um <dialog> que está aberto.
-        // Clicar no backdrop de um <dialog> nativo faz com que o próprio
-        // dialog seja o 'event.target'.
-        if (event.target.tagName === 'DIALOG') {
-            closeModal(event.target);
-        }
-    });
-
-
-    // =========================================================================
-    // POPUP DE IMAGEM (com a lógica de fechar no backdrop REMOVIDA)
-    // =========================================================================
-    document.addEventListener('DOMContentLoaded', () => {
-        const popupDialog = document.querySelector('.popup-image');
-        if (!popupDialog) {
-            return;
-        }
-
-        const popupImage = popupDialog.querySelector('.popup-image-img');
-        const imagesToOpenDialog = document.querySelectorAll('.media-wrapper img:not(.spoiler-overlay)');
-
-        imagesToOpenDialog.forEach(img => {
-            img.addEventListener('click', () => {
-                if (popupImage && popupDialog) {
-                    popupImage.src = img.src;
-                    popupDialog.showModal();
-                }
-            });
-        });
-
-        // A LÓGICA DE FECHAR NO BACKDROP QUE ESTAVA AQUI FOI REMOVIDA,
-        // POIS AGORA É CONTROLADA PELO LISTENER GENÉRICO ACIMA.
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const body = document.body;
-
-        // Função para verificar se algum dialog está aberto
-        const isAnyDialogOpen = () => {
-            return document.querySelectorAll('dialog[open]').length > 0;
-        };
-
-        // Função para atualizar o bloqueio de scroll
-        const updateScrollLock = () => {
-            if (isAnyDialogOpen()) {
-                body.classList.add('scroll-locked');
-            } else {
-                body.classList.remove('scroll-locked');
-            }
-        };
-
-        // Observador de mutações para detectar a abertura e fechamento de dialogs
-        const observer = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'open') {
-                    updateScrollLock();
-                }
-            }
-        });
-
-        // Inicia a observação no body para capturar alterações em todos os dialogs
-        observer.observe(body, {
-            attributes: true,
-            subtree: true
-        });
-
-        // Lógica para os botões de exemplo
-        const openDialog1 = document.getElementById('openDialog1');
-        const closeDialog1 = document.getElementById('closeDialog1');
-        const dialog1 = document.getElementById('dialog1');
-
-        const openDialog2 = document.getElementById('openDialog2');
-        const closeDialog2 = document.getElementById('closeDialog2');
-        const dialog2 = document.getElementById('dialog2');
-
-        openDialog1.addEventListener('click', () => {
-            dialog1.showModal();
-        });
-
-        closeDialog1.addEventListener('click', () => {
-            dialog1.close();
-        });
-
-        openDialog2.addEventListener('click', () => {
-            dialog2.showModal();
-        });
-
-        closeDialog2.addEventListener('click', () => {
-            dialog2.close();
-        });
-    });
-</script>
-
-<script>
-    // Criar Post
-    const fileInput = document.getElementById('fileInput');
-    const filePreviewsContainer = document.querySelector('.file-previews-container');
-    let selectedFiles = [];
-
-    function createFilePreviewElement(file, index) {
-        const previewItem = document.createElement('div');
-        previewItem.classList.add('file-preview-item');
-        previewItem.dataset.originalIndex = index;
-
-        const thumbnailDiv = document.createElement('div');
-        thumbnailDiv.classList.add('file-preview-thumbnail');
-
-
-        const fileNameSpan = document.createElement('span');
-        fileNameSpan.classList.add('file-preview-name');
-        fileNameSpan.textContent = file.name;
-
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('remove-file-button');
-        const closeIconSpan = document.createElement('span');
-        closeIconSpan.classList.add('material-symbols-outlined');
-        closeIconSpan.textContent = 'close';
-        removeButton.appendChild(closeIconSpan);
-        removeButton.type = 'button';
-
-        removeButton.onclick = () => {
-            const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-            removeFilePreview(itemIndex);
-        };
-
-        previewItem.appendChild(thumbnailDiv);
-        previewItem.appendChild(fileNameSpan);
-        previewItem.appendChild(removeButton);
-
-        if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                img.src = e.target.result;
-                thumbnailDiv.appendChild(img);
-            };
-
-            reader.onerror = (e) => {
-                console.error('Erro ao ler arquivo de imagem:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-            };
-
-            reader.readAsDataURL(file);
-
-        } else if (file.type.startsWith('video/')) {
-            const video = document.createElement('video');
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            let videoObjectURL = null;
-
-            video.autoplay = false;
-            video.muted = true;
-            video.playsInline = true;
-
-            video.addEventListener('loadeddata', () => {
-                const thumbnailSize = 40;
-                canvas.width = thumbnailSize;
-                canvas.height = thumbnailSize;
-
-                video.currentTime = 0.1;
-            });
-
-            video.addEventListener('seeked', () => {
-                try {
-
-                    const videoRatio = video.videoWidth / video.videoHeight;
-                    const thumbnailRatio = canvas.width / canvas.height;
-                    let sx, sy, sWidth, sHeight;
-
-                    if (videoRatio > thumbnailRatio) {
-                        sHeight = video.videoHeight;
-                        sWidth = sHeight * thumbnailRatio;
-                        sx = (video.videoWidth - sWidth) / 2;
-                        sy = 0;
-                    } else {
-                        sWidth = video.videoWidth;
-                        sHeight = sWidth / thumbnailRatio;
-                        sx = 0;
-                        sy = (video.videoHeight - sHeight) / 2;
-                    }
-
-                    context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
-
-                    const img = document.createElement('img');
-                    img.src = canvas.toDataURL('image/jpeg');
-
-                    thumbnailDiv.appendChild(img);
-
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-
-                } catch (e) {
-                    console.error('Erro ao gerar thumbnail do vídeo:', file.name, e);
-                    const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                    removeFilePreview(itemIndex);
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-                }
-
-            }, { once: true });
-
-            video.addEventListener('error', (e) => {
-                console.error('Erro ao carregar vídeo para thumbnail:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-                const errorIcon = document.createElement('span');
-                errorIcon.textContent = '❌';
-                errorIcon.style.fontSize = '1.5rem';
-                thumbnailDiv.appendChild(errorIcon);
-
-                if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-            });
-
-            videoObjectURL = URL.createObjectURL(file);
-            video.src = videoObjectURL;
-
-        } else {
-            const fileIcon = document.createElement('span');
-            fileIcon.textContent = '📄';
-            fileIcon.style.fontSize = '1.5rem';
-            thumbnailDiv.appendChild(fileIcon);
-        }
-
-        return previewItem;
-    }
-
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        console.log('Contagem atual de arquivos:', currentFileCount);
-        if (currentFileCount < 3) {
-            document.querySelector('.select-file-button').disabled = false;
-        }
-    }
-
-    function addFiles(files) {
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        const filesToAdd = Array.from(files).slice(0, 3 - currentFileCount);
-
-        if (filesToAdd.length === 0) {
-            if (currentFileCount >= 3) {
-                selectButton.disabled = true;
-            }
-            return;
-        }
-
-        filesToAdd.forEach(file => {
-            let nextIndex = selectedFiles.indexOf(null);
-            if (nextIndex === -1) {
-                nextIndex = selectedFiles.length;
-                selectedFiles.push(file);
-            } else {
-                selectedFiles[nextIndex] = file;
-            }
-
-            const previewElement = createFilePreviewElement(file, nextIndex);
-
-            setTimeout(() => {
-                filePreviewsContainer.appendChild(previewElement);
-                const updatedFileCount = selectedFiles.filter(f => f !== null).length;
-                if (updatedFileCount >= 3) {
-                    selectButton.disabled = true;
-                }
-
-            }, 0);
-
-        });
-
-        console.log("Scheduled addition for:", filesToAdd.map(f => f ? f.name : null));
-        console.log("selectedFiles total (não-null) após agendar adição:", selectedFiles.filter(f => f !== null).length);
-    }
-
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        if (currentFileCount < 3) {
-            selectButton.disabled = false;
-        }
-
-        console.log("selectedFiles após remove:", selectedFiles.map(f => f ? f.name : null));
-        console.log('Contagem atual (não-null):', currentFileCount);
-    }
-
-    fileInput.addEventListener('change', (event) => {
-        if (event.target.files.length > 0) {
-            addFiles(event.target.files);
-            fileInput.value = '';
-        }
-    });
-
-    function getFilesToUpload() {
-        return selectedFiles.filter(file => file !== null);
-    }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const postEngageSections = document.querySelectorAll('.post-engage');
-
-        postEngageSections.forEach(section => {
-            const bumpButton = section.querySelector('.bump');
-            const sageButton = section.querySelector('.sage');
-            let bumpActive = false;
-
-            // Função para remover a classe ativa de ambos
-            function resetButtons() {
-                bumpButton.classList.remove('button-active');
-                sageButton.classList.remove('button-active');
-            }
-
-            // Clique no Bump
-            bumpButton.addEventListener('click', function () {
-                if (bumpActive) return; // Se já estiver ativo, não faz nada
-
-                bumpActive = true;
-                resetButtons();
-                bumpButton.classList.add('button-active');
-            });
-
-            // Clique no Sage
-            sageButton.addEventListener('click', function () {
-                if (bumpActive) return; // Se Bump estiver ativo, não faz nada
-
-                // Toggle do Sage (se já estiver ativo, desativa)
-                sageButton.classList.toggle('button-active');
-            });
-        });
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const pagination = document.querySelector('.pagination');
-        const totalPages = 20;
-        let currentPage = 1;
-        let visiblePages = [1, 2, 20]; // Páginas inicialmente visíveis
-
-        // Função para atualizar a exibição da paginação
-        function updatePagination() {
-            pagination.innerHTML = '';
-
-            // Sempre mostra a página 1
-            const page1 = createPageButton(1);
-            if (currentPage === 1) {
-                page1.classList.add('button-active');
-            }
-            pagination.appendChild(page1);
-
-            // Lógica para as páginas intermediárias
-            if (currentPage <= 4) {
-                // Mostra páginas 2-5 quando currentPage <= 4
-                for (let i = 2; i <= Math.min(5, totalPages - 1); i++) {
-                    pagination.appendChild(createPageButton(i));
-                }
-                if (totalPages > 6) {
-                    pagination.appendChild(createDivider());
-                }
-            } else if (currentPage >= totalPages - 3) {
-                // Mostra páginas finais quando currentPage está perto do fim
-                pagination.appendChild(createDivider());
-                for (let i = totalPages - 4; i < totalPages; i++) {
-                    pagination.appendChild(createPageButton(i));
-                }
-            } else {
-                // Mostra páginas no formato 1 ... current-1, current, current+1 ... last
-                pagination.appendChild(createDivider());
-                for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-                    pagination.appendChild(createPageButton(i));
-                }
-                if (currentPage + 1 < totalPages - 1) {
-                    pagination.appendChild(createDivider());
-                }
-            }
-
-            // Sempre mostra a última página
-            if (totalPages > 1) {
-                const lastPage = createPageButton(totalPages);
-                if (currentPage === totalPages) {
-                    lastPage.classList.add('button-active');
-                }
-                if (!pagination.innerHTML.includes(lastPage.outerHTML)) {
-                    pagination.appendChild(lastPage);
-                }
-            }
-        }
-
-        // Função auxiliar para criar botões de página
-        function createPageButton(page) {
-            const button = document.createElement('a');
-            button.href = '#';
-            button.className = 'default-button';
-            button.textContent = page;
-            button.dataset.page = page;
-
-            if (page === currentPage) {
-                button.classList.add('button-active');
-            }
-
-            button.addEventListener('click', function (e) {
-                e.preventDefault();
-                currentPage = parseInt(this.dataset.page);
-                updatePagination();
-                // Aqui você pode adicionar a lógica para carregar o conteúdo da página
-                console.log(`Página ${currentPage} carregada`);
-            });
-
-            return button;
-        }
-
-        // Função auxiliar para criar divisórias
-        function createDivider() {
-            const divider = document.createElement('span');
-            divider.className = 'divider';
-            divider.textContent = '-';
-            return divider;
-        }
-
-        // Inicializa a paginação
-        updatePagination();
-    });
-</script>
-
-<script>
-    // Configuração dos temas
-    const themeConfig = {
-        'Midnight': null, // Tema padrão (não carrega CSS adicional)
-        'Highnoon': '../../static/css/custom/highnoon.css',
-        'Minechan': '../../static/css/custom/minechan.css'
-    };
-
-    // Elementos do DOM
-    const themeButtons = document.querySelectorAll('.dropdown-themes .default-button');
-    let currentTheme = 'Midnight'; // Tema inicial
-
-    // Função para carregar um tema
-    function loadTheme(themeName) {
-        // Remove o tema anterior (se existir)
-        const existingTheme = document.getElementById('custom-theme');
-        if (existingTheme) {
-            existingTheme.remove();
-        }
-
-        // Carrega o novo tema (se não for o padrão)
-        const themePath = themeConfig[themeName];
-        if (themePath) {
-            const link = document.createElement('link');
-            link.id = 'custom-theme';
-            link.rel = 'stylesheet';
-            link.href = themePath;
-            document.head.appendChild(link);
-        }
-
-        // Atualiza o tema atual
-        currentTheme = themeName;
-
-        // Salva no localStorage
-        localStorage.setItem('selectedTheme', themeName);
-    }
-
-    // Função para atualizar a UI dos botões
-    function updateThemeButtons(selectedTheme) {
-        themeButtons.forEach(button => {
-            const buttonText = button.textContent.trim().replace('check_small', '').trim();
-
-            if (buttonText === selectedTheme) {
-                button.classList.add('selected-button');
-                // Adiciona o ícone de check se não existir
-                if (!button.querySelector('.material-symbols-outlined')) {
-                    const checkIcon = document.createElement('span');
-                    checkIcon.className = 'material-symbols-outlined';
-                    checkIcon.textContent = 'check_small';
-                    button.appendChild(checkIcon);
-                }
-            } else {
-                button.classList.remove('selected-button');
-                // Remove o ícone de check
-                const checkIcon = button.querySelector('.material-symbols-outlined');
-                if (checkIcon) {
-                    checkIcon.remove();
-                }
-            }
-        });
-    }
-
-    // Event listeners para os botões de tema
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const themeName = this.textContent.trim().replace('check_small', '').trim();
-
-            if (themeName !== currentTheme) {
-                loadTheme(themeName);
-                updateThemeButtons(themeName);
-            }
-        });
-    });
-
-    // Carregar tema salvo ao iniciar a página
-    document.addEventListener('DOMContentLoaded', function () {
-        const savedTheme = localStorage.getItem('selectedTheme');
-        if (savedTheme) {
-            loadTheme(savedTheme);
-            updateThemeButtons(savedTheme);
-        }
-    });
-</script>
 
 </html>

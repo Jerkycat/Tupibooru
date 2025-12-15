@@ -10,6 +10,8 @@
     --ui-c3: #dcdcdc;
     --ui-c4: #f5f5f5;
 
+    --ui-bc: #1a202c;
+
     --ui-ac: #5682d5;
     --ui-cc: #966fd6;
 
@@ -18,125 +20,120 @@
 
     --he-img: url(../imgs/banners/Noon.png);
     --lo-img: url(../imgs/decoration/logos/hn-logo.png);
-
-    --ad-ts: url(../imgs/ads/ad-test.png);
-    --ad-mg: url(../imgs/ads/ad-cri.png);
 }
 
-.login-dropdown form div:focus-within input {
+/* Utility - Fonts */
+
+/* Utility - Classes */
+
+/* Utility - Default Button */
+
+/* Utility - Dropdown */
+
+/* Utility - Input */
+
+.input {
     color: var(--ui-ht);
 }
 
-.register-page form div:focus-within input {
+.input:focus-within {
+    color: var(--ui-tc) !important;
+
+    outline: 0.2rem solid var(--ui-ac);
+}
+
+/* Utility - Markdown */
+
+.greentext {
+    display: inline;
+
+    color: #45c878;
+}
+
+.redtext {
+    display: inline;
+
+    color: #e4443b;
+}
+
+/* Page - Main */
+
+/* Page - Navbar */
+
+/* Page - Footer */
+
+footer {
+    background-image: linear-gradient(to right, #ccdcfde0, #5682d5e0);
+}
+
+/* Page - Popups */
+
+dialog .input {
     color: var(--ui-ht);
 }
 
-.register-page form div:focus-within .material-symbols-outlined {
-    color: var(--ui-ht);
+/* Index - Main */
+
+/* Board - Main */
+
+.post-profile img {
+    border: 0.063rem solid var(--ui-bc);
 }
 
-.popup-context.captcha:focus-within input {
-    color: var(--ui-ht);
-}
-
-.popup-context.captcha:focus-within .material-symbols-outlined {
-    color: var(--ui-ht);
-}
-
-.index-title {
-    outline: 0.063rem solid var(--ui-ht);
-}
-
-.board-ad {
-    outline: 0.063rem solid var(--ui-ht);
-}
-
-.board-ad a {
-    color: var(--ui-bg);
-}
-
-.text-ad {
-    outline: 0.063rem solid var(--ui-ht);
-}
-
-article {
-    border: 0.063rem solid var(--ui-ht);
-}
-
-.post-bar {
-    outline: 0.063rem solid var(--ui-ht);
-}
-
-.post-profile div {
-    background-image: url(../../imgs/decoration/anon.png);
+.post-text {
+    color: var(--ui-tc);
 }
 
 .bump {
-    color: var(--ui-ht);
+    color: var(--ui-tc);
 }
 
 button.button-active.bump {
-    background-color: var(--ui-ac) !important;
+    color: var(--ui-c1);
+    background-color: var(--ui-ac);
 }
 
 .sage {
-    color: var(--ui-ht);
+    color: var(--ui-tc);
 }
 
 button.button-active.sage {
-    background-color: var(--ui-cc) !important;
+    color: var(--ui-c1);
+    background-color: var(--ui-cc);
 }
 
-.reply-bar .reply-profile div {
-    background-image: url(../../imgs/decoration/anon.png);
-
-    outline: 0.063rem solid var(--ui-ht);
+.block {
+    color: var(--ui-tc);
 }
 
-/* Main - Index */
-
-.index-post {
-    border: 0.063rem solid var(--ui-ht);
+.report {
+    color: var(--ui-tc);
 }
 
-/* Main - Profile */
+/* Board - Ad */
 
-.user-profile {
-    border: 0.063rem solid var(--ui-ht);
+.board-ad a p {
+    color: var(--ui-c1);
 }
 
-.comment-type {
-    border: 0.063rem solid var(--ui-ht);
+/* Board - Pagination */
+
+/* Thread - Main */
+
+/* Catalog - Main */
+
+/* Profile - Main */
+
+.badge {
+    color: var(--ui-tc);
 }
 
-/* Sidebar */
+/* Mobile - Main */
 
-.desktop-menu {
-    outline: 0.063rem solid var(--ui-ht);
-}
+/* Mobile - Index */
 
-.desktop-menu section .side-title {
-    outline: 0.063rem solid var(--ui-ht);
-}
+/* Mobile - Board */
 
-/* Footer */
+/* Mobile - Thread */
 
-footer {
-    background-image: linear-gradient(270deg,rgba(52,144,198,.175),rgba(30,150,220,.12));
-
-    outline: 0.063rem solid var(--ui-ht);
-}
-
-/* Popups */
-
-dialog {
-    outline: 0.063rem solid var(--ui-ht);
-}
-
-dialog .popup-context:focus-within textarea {
-    color: var(--ui-ht);
-}
-
-.profile-bar {
-    outline: 0.063rem solid var(--ui-ht);
-}
+/* Mobile - Profile */

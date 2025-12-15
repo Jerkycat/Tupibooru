@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Função para redimensionar uma textarea específica
   const autoResize = (textarea) => {
     textarea.style.height = 'auto';
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   // Seleciona as textareas
-  const textareas = document.querySelectorAll('.reply-type textarea, .comment-input textarea');
+  const textareas = document.querySelectorAll('.comment-type textarea, .reply-type textarea');
 
   textareas.forEach(textarea => {
     // Redimensiona no input do usuário
@@ -20,21 +20,28 @@ document.addEventListener("DOMContentLoaded", function() {
       autoResize(textarea);
     }
   });
+});
 
-  /*
-   * Se as suas textareas são reveladas por um clique de botão (e não no carregamento da página),
-   * você precisa chamar a função autoResize() no momento em que elas se tornam visíveis.
-   *
-   * Exemplo:
-   * const replyButton = document.querySelector('.seu-botao-de-responder');
-   * const replyTextarea = document.querySelector('.reply-type textarea');
-   *
-   * replyButton.addEventListener('click', () => {
-   * // seu código que mostra a div da textarea...
-   * replyTextarea.style.display = 'block';
-   *
-   * // Chama o redimensionamento logo após ela se tornar visível.
-   * autoResize(replyTextarea);
-   * });
-   */
+document.addEventListener('DOMContentLoaded', function () {
+  const commentButtons = document.querySelectorAll('.comment-buttons');
+
+  commentButtons.forEach(comment => {
+    const replyButton = comment.querySelector(':scope > .default-button'); // botão externo
+    const replyType = comment.querySelector('.reply-type');
+    const cancelButton = comment.querySelector('.cancel');
+    const textarea = comment.querySelector('textarea');
+
+    replyType.style.display = 'none';
+
+    replyButton.addEventListener('click', function () {
+      replyButton.style.display = 'none';
+      replyType.style.display = 'block';
+      textarea.focus(); // coloca o foco no textarea automaticamente
+    });
+
+    cancelButton.addEventListener('click', function () {
+      replyType.style.display = 'none';
+      replyButton.style.display = 'inline-block';
+    });
+  });
 });

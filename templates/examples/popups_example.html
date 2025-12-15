@@ -1,601 +1,674 @@
-<link rel="stylesheet" href="../../static/css/midnight.css">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
+<!-- Popups - Gerais -->
 
 <dialog class="popup-delete">
     <form action="">
-        <div class="popup-title">Excluir Post</div>
-        <div class="popup-context">Deseja mesmo excluir este post?<br>Esta ação é irreversível.</div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Excluir</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-block">
-    <form action="">
-        <div class="popup-title">Bloquear Usuário</div>
-        <div class="popup-context">Deseja bloquear este usuário?<br>Você não verá mais posts dele(a).</div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Bloquear</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-report">
-    <form action="">
-        <div class="popup-title">Denunciar Post</div>
-        <div class="popup-context">
-            <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
-        </div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Denunciar</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-moderate">
-    <div>
-        <div class="popup-title">Moderar Post</div>
-        <div class="popup-context">
-            <article>
-                <section class="post-content">
-                    <section class="post-media">
-                        <div class="media-wrapper">
-                            <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                        </div>
-                    </section>
-                    <section class="post-text">
-                        <pre>Este é um post de exemplo.Possui um único anexo.</pre>
-                    </section>
-                </section>
-            </article>
-        </div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="lock" onclick="openModal()">Trancar</button>
-            <button class="pin" onclick="openModal()">Fixar</button>
-            <button class="warn" onclick="openModal()">Advertir</button>
-            <button class="ban" onclick="openModal()">Banir</button>
-        </div>
-    </div>
-</dialog>
-<dialog class="popup-lock">
-    <form action="">
-        <div class="popup-title">Trancar Post</div>
-        <div class="popup-context">Deseja trancar este post?<br>Outros usuários não poderão mais respondê-lo.</div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Trancar</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-pin">
-    <form action="">
-        <div class="popup-title">Fixar Post</div>
-        <div class="popup-context">Deseja fixar este post a página inicial?</div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Fixar</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-warn">
-    <form action="">
-        <div class="popup-title">Advertir Post</div>
-        <div class="popup-context">
-            <textarea name="Warn" placeholder="Motivo da advertência . . ." rows="3" maxlength="255"></textarea>
-        </div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">Advertir</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-ban">
-    <form action="">
-        <div class="popup-title">Banir Usuário</div>
-        <div class="popup-context">Deseja banir este usuário? Selecione uma duração.
-            <div class="delban">
-                <input type="checkbox" id="delban">
-                <label for="delban">Excluir o histórico de posts deste usuário</label>
-            </div>
-        </div>
-        <div class="popup-buttons">
-            <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="submit">1d</button>
-            <button class="submit">3d</button>
-            <button class="submit">7d</button>
-            <button class="submit">1m</button>
-            <button class="submit">3m</button>
-            <button class="submit">Perma</button>
-        </div>
-    </form>
-</dialog>
-<dialog class="popup-post">
-    <form action="">
-        <div class="popup-title">Criar Post</div>
-        <div class="popup-context">
-            <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
-        </div>
-        <div class="popup-context">
-            <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="255"></textarea>
-        </div>
-        <div class="popup-context">
-            <input type="file" id="fileInput" multiple accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-                style="display: none;">
-            <button type="button" class="select-file-button"
-                onclick="document.getElementById('fileInput').click()">Selecione um arquivo</button>
-            <div class="file-previews-container">
-            </div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="create">Publicar</button>
-            </div>
+        <section>Excluir Post</section>
+        <section>
+            <pre>Deseja mesmo excluir este post?
+Esta ação é irreversível!</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">
+                Cancelar
+            </button>
+            <button class="default-button submit">Excluir</button>
+        </section>
     </form>
 </dialog>
 
-<dialog class="popup-avatar">
-    <form action="" enctype="multipart/form-data">
-        <div class="popup-title">Avatar</div>
-        <div class="popup-content">
-            <div class="avatar-preview">
-                <img id="avatar-preview-img" src="../../static/imgs/decoration/anon.png" alt="Preview do avatar">
-            </div>
-            <div class="upload-section">
-                <div class="popup-context">Enviar um novo avatar:</div>
-                <input type="file" id="avatar-upload" name="avatar" accept="image/*" style="display: none;">
-                <label for="avatar-upload" class="upload-button">Selecionar arquivo</label>
-                <div class="file-name" id="file-name">Nenhum arquivo selecionado</div>
-            </div>
+<dialog class="popup-block">
+    <form action="">
+        <section>Bloquear Usuário</section>
+        <section>
+            <pre>Deseja bloquear este usuário?
+Você não verá mais posts dele(a).</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Bloquear</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-pin">
+    <form action="">
+        <section>Fixar Post</section>
+        <section>
+            <pre>Deseja fixar este post ao topo da página?</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">
+                Cancelar
+            </button>
+            <button class="default-button submit">Fixar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-report">
+    <form action="">
+        <section>Denunciar Post</section>
+        <section class="input">
+            <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Denunciar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-ban">
+    <form action="">
+        <section>Banir Usuário</section>
+        <div>
+            Deseja banir este usuário? Selecione uma duração.
+            <select class="input" name="ban-type" id="ban-type">
+                <option value="local">
+                    Banir usuário apenas nesta board
+                </option>
+                <option value="global">
+                    Banir usuário globalmente
+                </option>
+            </select>
+            <section>
+                <input type="checkbox" id="delban">
+                <label for="delban">Excluir o histórico de posts deste usuário</label>
+            </section>
         </div>
-        <div class="popup-buttons">
-            <button class="underline-button cancel" type="button"
-                onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="default-button submit">Confirmar</button>
-        </div>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">1d</button>
+            <button class="default-button submit">3d</button>
+            <button class="default-button submit">7d</button>
+            <button class="default-button submit">1m</button>
+            <button class="default-button submit">3m</button>
+            <button class="default-button submit">Perma.</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-image">
+    <img class="popup-image-img" src="" alt="Imagem em destaque">
+</dialog>
+
+<!-- Popups - Board -->
+
+<dialog class="popup-lock">
+    <form action="">
+        <section>Trancar Post</section>
+        <section>
+            <pre>Deseja trancar este post?
+Outros usuários não poderão mais respondê-lo.</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Trancar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-warn">
+    <form action="">
+        <section>Advertir Post</section>
+        <select class="input" name="warn-type" id="warn-type">
+            <option value="0">
+                Sem advertência de perfil
+            </option>
+            <option value="1">
+                Quebra de regras de board/global
+            </option>
+            <option value="2">
+                Conteúdo NSFW explícito
+            </option>
+            <option value="3">
+                Poluição de board/thread
+            </option>
+            <option value="4">
+                Inclusão digital
+            </option>
+        </select>
+        <section class="input">
+            <textarea name="warn" placeholder="Mensagem de advertência . . ." rows="3" maxlength="255"></textarea>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Advertir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-move">
+    <form action="">
+        <section>Mover Post para</section>
+        <select class="input" name="board-type" id="board-type">
+            <option value="an">
+                /an/ - Animangá
+            </option>
+            <option value="jo">
+                /jo/ - Jogos e Cultura
+            </option>
+            <option value="cri">
+                /cri/ - Criações
+            </option>
+            <option value="pc">
+                /pc/ - Computarias
+            </option>
+            <option value="flb">
+                /flb/ - Faria Lima Bets
+            </option>
+        </select>
+        <section class="input">
+            <textarea name="warn" placeholder="Adicionar mensagem . . ." rows="3" maxlength="255"></textarea>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Mover</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-moderate">
+    <form action="">
+        <section>Moderar Post</section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button lock">Trancar</button>
+            <button class="default-button move">Mover</button>
+            <button class="default-button pin">Fixar</button>
+            <button class="default-button warn">Advertir</button>
+            <button class="default-button ban">Banir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-post">
+    <form action="">
+        <section>Criar Post</section>
+        <section class="input">
+            <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
+        </section>
+        <section class="input">
+            <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="4000"></textarea>
+        </section>
+        <button type="button" class="default-button" onclick="document.getElementById('file-input').click()">Selecione
+            um arquivo</button>
+        <div class="file-previews"></div>
+        <img src="../../static/imgs/examples/Captcha_Example.png" alt="">
+        <section class="input">
+            <span class="material-symbols-outlined">toys_and_games</span>
+            <input type="text" placeholder="Captcha">
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button create">Publicar</button>
+        </section>
+    </form>
+</dialog>
+
+<!-- Popups - Perfil -->
+
+<dialog class="popup-trust">
+    <form action="">
+        <section>Tornar Moderador Geral</section>
+        <section>
+            <pre>Deseja tornar este usuário num moderador?<br>
+Pense bem antes de realizar esta ação.</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Confiar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-reviewe1">
+    <form action="">
+        <section>Revisão de Caso - Nome de Usuário em /bo/</section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Aqui está um motivo de denúncia, ele feriu meus sentimentos.</article>
+        </section>
+        <section class="report-reason">
+            <article>Como um post pode ter mais de uma denúncia, decidi incluir todas assim.</article>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button dismiss">Dispensar Caso</button>
+            <button class="default-button lock">Trancar</button>
+            <button class="default-button warn">Advertir</button>
+            <button class="default-button ban">Banir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-reviewe2">
+    <form action="">
+        <section>Revisão de Caso - Nome de Usuário</section>
+        <section class="report-profile">
+            <article class="user-profile">
+                <section>
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section>
+                            <p>Nome de Usuário</p>
+                        </section>
+                        <section>
+                            <div class="badge supporter">Apoiador</div>
+                            <div class="badge pioneer">Pioneiro</div>
+                            <div class="badge gmod">Mod Geral</div>
+                            <div class="badge bmod">Mod de /bo/</div>
+                            <div class="badge admin">Administrador</div>
+                        </section>
+                        <section>
+                            <p>Membro desde: Data</p>
+                        </section>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma denuncia de perfil, é diferente de um post.</article>
+        </section>
+        <section class="report-reason">
+            <article>Como um post pode ter mais de uma denúncia, decidi incluir todas assim.</article>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button dismiss">Dispensar Caso</button>
+            <button class="default-button lock">Trancar</button>
+            <button class="default-button warn">Advertir</button>
+            <button class="default-button ban">Banir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-noob">
+    <form action="">
+        <section>Aviso - Incluso - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que não sabe existir na internet (Moralista).</pre>
+        </section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-porn">
+    <form action="">
+        <section>Aviso - Mago Frustrado - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que compartilhou pornografia explícita.</pre>
+        </section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-clown">
+    <form action="">
+        <section>Aviso - Incluso - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que propositalmente quebra regras.</pre>
+        </section>
+        <section class="report-profile">
+            <article class="user-profile">
+                <section>
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section>
+                            <p>Nome de Usuário</p>
+                        </section>
+                        <section>
+                            <div class="badge supporter">Apoiador</div>
+                            <div class="badge pioneer">Pioneiro</div>
+                            <div class="badge gmod">Mod Geral</div>
+                            <div class="badge bmod">Mod de /bo/</div>
+                            <div class="badge admin">Administrador</div>
+                        </section>
+                        <section>
+                            <p>Membro desde: Data</p>
+                        </section>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-dumb">
+    <form action="">
+        <section>Aviso - Lobotomita - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que quebrou alguma regra global ou de board.</pre>
+        </section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
     </form>
 </dialog>
 
 <dialog class="popup-manage">
+    <nav>
+        <button class="default-button tab-button button-active" data-tab="user">
+            <span class="material-symbols-outlined">person</span>
+            Usuário
+        </button>
+        <button class="default-button tab-button" data-tab="boards">
+            <span class="material-symbols-outlined">dashboard</span>
+            Boards
+        </button>
+    </nav>
+    
     <form action="">
-        <div class="popup-manage-container">
-            <!-- Lista de opções à esquerda -->
-            <div class="popup-manage-sidebar">
-                <ul class="popup-manage-options">
-                    <li class="popup-manage-option active" data-option="boards">Boards</li>
-                    <li class="popup-manage-option" data-option="outra-opcao">Outra Opção</li>
-                </ul>
+        <!-- Tab Usuário -->
+        <div class="tab-content active" data-tab="user">
+            <div class="profile-header">
+                <div class="media-wrapper">
+                    <img src="../../static/imgs/examples/anon.png" alt="Foto de perfil" id="profile-image-manage">
+                </div>
+                <button type="button" class="default-button" onclick="document.getElementById('file-input-profile-manage').click()">
+                    <span class="material-symbols-outlined">upload</span>
+                    Trocar Foto
+                </button>
+                <input type="file" id="file-input-profile-manage" accept="image/*" style="display: none;">
             </div>
 
-            <!-- Conteúdo à direita -->
-            <div class="popup-manage-content">
-                <!-- Conteúdo da opção Boards -->
-                <div class="popup-manage-tab active" data-tab="boards">
-                    <div class="boards-list">
-                        <!-- Section 1 -->
-                        <section class="board-section">
-                            <div class="side-title">
-                                <span>/bo/ - Boteco</span>
-                                <button type="button" class="default-button minimize">
-                                    <span class="material-symbols-outlined">expand_less</span>
-                                </button>
-                            </div>
-                            <div class="side-content collapsed">
-                                <div class="moderator-list">
-                                </div>
-                                <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                <div class="side-buttons">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
-                                    <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                </div>
-                            </div>
-                        </section>
+            <div class="field-group">
+                <label for="email-manage">Email</label>
+                <div class="input">
+                    <input type="email" id="email-manage" placeholder="Associe um email a sua conta...">
+                </div>
+            </div>
 
-                        <!-- Sections 2-6 (similares) -->
-                        <section class="board-section">
-                            <div class="side-title">
-                                <span>/an/ - Animangá</span>
-                                <button type="button" class="default-button minimize">
-                                    <span class="material-symbols-outlined">expand_less</span>
-                                </button>
-                            </div>
-                            <div class="side-content collapsed">
-                                <div class="moderator-list"></div>
-                                <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                <div class="side-buttons">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
-                                    <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                </div>
-                            </div>
-                        </section>
+            <div class="field-group">
+                <label for="password-manage">Mudar Senha</label>
+                <div class="input">
+                    <input type="password" id="password-manage" placeholder="Senha Antiga">
+                </div>
+                <div class="input">
+                    <input type="password" id="password-manage" placeholder="Nova Senha">
+                </div>
+            </div>
+        </div>
 
-                        <section class="board-section">
-                            <div class="side-title">
-                                <span>/tv/ - Filmes e Séries</span>
-                                <button type="button" class="default-button minimize">
-                                    <span class="material-symbols-outlined">expand_less</span>
-                                </button>
-                            </div>
-                            <div class="side-content collapsed">
-                                <div class="moderator-list"></div>
-                                <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                <div class="side-buttons">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
-                                    <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                </div>
-                            </div>
-                        </section>
+        <!-- Tab Boards -->
+        <div class="tab-content" data-tab="boards">
+            <div class="board-list">
 
-                        <section class="board-section">
-                            <div class="side-title">
-                                <span>/cri/ - Criações</span>
-                                <button type="button" class="default-button minimize">
-                                    <span class="material-symbols-outlined">expand_less</span>
+                <!-- Board /bo/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/bo/ - Boteco</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                            <div class="mod-item">
+                                <span>Moderador01</span>
+                                <button type="button" class="default-button remove-mod">
+                                    <span class="material-symbols-outlined">close</span>
                                 </button>
                             </div>
-                            <div class="side-content collapsed">
-                                <div class="moderator-list"></div>
-                                <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                <div class="side-buttons">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
-                                    <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="board-section">
-                            <div class="side-title">
-                                <span>/pc/ - Computarias</span>
-                                <button type="button" class="default-button minimize">
-                                    <span class="material-symbols-outlined">expand_less</span>
+                            <div class="mod-item">
+                                <span>Moderador02</span>
+                                <button type="button" class="default-button remove-mod">
+                                    <span class="material-symbols-outlined">close</span>
                                 </button>
                             </div>
-                            <div class="side-content collapsed">
-                                <div class="moderator-list"></div>
-                                <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                <div class="side-buttons">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
-                                    <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                </div>
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
                             </div>
-                        </section>
-
-                        <section class="board-section">
-                            <div class="side-title">
-                                <span>/flb/ - Faria Lima Bets</span>
-                                <button type="button" class="default-button minimize">
-                                    <span class="material-symbols-outlined">expand_less</span>
-                                </button>
-                            </div>
-                            <div class="side-content collapsed">
-                                <div class="moderator-list"></div>
-                                <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                <div class="side-buttons">
-                                    <button type="button" class="default-button add-moderator">Adicionar como
-                                        moderador</button>
-                                    <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                </div>
-                            </div>
-                        </section>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Conteúdo da outra opção -->
-                <div class="popup-manage-tab" data-tab="outra-opcao">
-                    Conteúdo da outra opção aqui
+                <!-- Board /an/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/an/ - Animangá</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /jo/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/jo/ - Jogos e Cultura</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /cri/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/cri/ - Criações</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /pc/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/pc/ - Computarias</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /flb/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/flb/ - Faria Lima Bets</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="popup-buttons">
-            <button class="underline-button cancel" type="button"
-                onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-            <button class="default-button submit">Salvar mudanças</button>
-        </div>
+        <section>
+            <button class="underline-button cancel" type="button">
+                Cancelar
+            </button>
+            <button class="default-button submit" type="submit">
+                Salvar Mudanças
+            </button>
+        </section>
     </form>
 </dialog>
-
-<script>
-    const fileInput = document.getElementById('fileInput');
-    const filePreviewsContainer = document.querySelector('.file-previews-container');
-    let selectedFiles = []; // Array para armazenar os arquivos selecionados
-
-    // Função para criar um elemento de preview
-    function createFilePreviewElement(file, index) {
-        const previewItem = document.createElement('div');
-        previewItem.classList.add('file-preview-item');
-        // Usamos o data-index para referenciar o item no array selectedFiles,
-        // mesmo que o array tenha nulls, o índice criado aqui permanece associado
-        previewItem.dataset.originalIndex = index;
-
-        const thumbnailDiv = document.createElement('div');
-        thumbnailDiv.classList.add('file-preview-thumbnail');
-
-        // Adiciona um indicador visual enquanto carrega, se desejar
-        // const loadingSpan = document.createElement('span');
-        // loadingSpan.textContent = 'Loading...'; // Ou um spinner
-        // thumbnailDiv.appendChild(loadingSpan);
-
-
-        const fileNameSpan = document.createElement('span');
-        fileNameSpan.classList.add('file-preview-name');
-        fileNameSpan.textContent = file.name;
-
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('remove-file-button');
-        const closeIconSpan = document.createElement('span');
-        closeIconSpan.classList.add('material-symbols-outlined');
-        closeIconSpan.textContent = 'close';
-        removeButton.appendChild(closeIconSpan);
-        removeButton.type = 'button';
-
-        // O botão de remover agora usa o índice original armazenado no data-set
-        removeButton.onclick = () => {
-            const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-            removeFilePreview(itemIndex);
-        };
-
-        previewItem.appendChild(thumbnailDiv);
-        previewItem.appendChild(fileNameSpan);
-        previewItem.appendChild(removeButton);
-
-        // ** Lógica para criar preview e tratar erros **
-        if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                // Remove o indicador de loading se usou um
-                // if(loadingSpan.parentNode) loadingSpan.parentNode.removeChild(loadingSpan);
-                img.src = e.target.result;
-                // Adiciona a imagem APENAS após o carregamento bem-sucedido
-                thumbnailDiv.appendChild(img);
-            };
-
-            // ** TRATAMENTO DE ERRO PARA IMAGEM **
-            reader.onerror = (e) => {
-                console.error('Erro ao ler arquivo de imagem:', file.name, e);
-                // Remove o item da lista e do DOM se houver erro
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-                // Opcional: exibir uma mensagem de erro no local do preview
-                // thumbnailDiv.textContent = 'Erro';
-            };
-
-            reader.readAsDataURL(file);
-
-        } else if (file.type.startsWith('video/')) {
-            const video = document.createElement('video');
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            let videoObjectURL = null; // Variável para armazenar o URL do objeto
-
-            video.autoplay = false;
-            video.muted = true;
-            video.playsInline = true;
-
-            // Quando o metadata do vídeo carregar
-            video.addEventListener('loadeddata', () => {
-                const thumbnailSize = 40;
-                canvas.width = thumbnailSize;
-                canvas.height = thumbnailSize;
-
-                video.currentTime = 0.1;
-            });
-
-            // Quando o vídeo buscar o tempo especificado
-            video.addEventListener('seeked', () => {
-                try {
-                    // Remove o indicador de loading se usou um
-                    // if(loadingSpan.parentNode) loadingSpan.parentNode.removeChild(loadingSpan);
-
-                    const videoRatio = video.videoWidth / video.videoHeight;
-                    const thumbnailRatio = canvas.width / canvas.height;
-                    let sx, sy, sWidth, sHeight;
-
-                    if (videoRatio > thumbnailRatio) {
-                        sHeight = video.videoHeight;
-                        sWidth = sHeight * thumbnailRatio;
-                        sx = (video.videoWidth - sWidth) / 2;
-                        sy = 0;
-                    } else {
-                        sWidth = video.videoWidth;
-                        sHeight = sWidth / thumbnailRatio;
-                        sx = 0;
-                        sy = (video.videoHeight - sHeight) / 2;
-                    }
-
-                    context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
-
-                    const img = document.createElement('img');
-                    img.src = canvas.toDataURL('image/jpeg');
-
-                    // Adiciona a imagem APENAS após a geração bem-sucedida
-                    thumbnailDiv.appendChild(img);
-
-                    // Libera o Object URL após o uso bem-sucedido
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-
-                } catch (e) {
-                    console.error('Erro ao gerar thumbnail do vídeo:', file.name, e);
-                    // Remove o item se houver erro na geração da thumbnail
-                    const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                    removeFilePreview(itemIndex);
-                    // Opcional: exibir uma mensagem de erro
-                    // thumbnailDiv.textContent = 'Erro Thumbnail';
-                    // Libera o Object URL mesmo com erro
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-                }
-
-            }, { once: true });
-
-            // ** TRATAMENTO DE ERRO PARA VÍDEO (carregamento) **
-            video.addEventListener('error', (e) => {
-                console.error('Erro ao carregar vídeo para thumbnail:', file.name, e);
-                // Remove o item da lista e do DOM se houver erro de carregamento
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-                // Opcional: exibir um ícone de erro ou mensagem
-                const errorIcon = document.createElement('span');
-                errorIcon.textContent = '❌'; // Ou outro ícone de erro
-                errorIcon.style.fontSize = '1.5rem';
-                thumbnailDiv.appendChild(errorIcon);
-
-                // Libera o Object URL mesmo com erro
-                if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-            });
-
-            // Carrega o vídeo (este URL precisa ser liberado depois)
-            videoObjectURL = URL.createObjectURL(file);
-            video.src = videoObjectURL;
-
-        } else {
-            // Ícone ou texto para outros tipos de arquivo (não assíncrono, menos propenso a erro)
-            // Remove o indicador de loading se usou um
-            // if(loadingSpan.parentNode) loadingSpan.parentNode.removeChild(loadingSpan);
-            const fileIcon = document.createElement('span');
-            fileIcon.textContent = '📄';
-            fileIcon.style.fontSize = '1.5rem';
-            thumbnailDiv.appendChild(fileIcon);
-        }
-
-        // Retorna o elemento do preview. O conteúdo da thumbnail (imagem/vídeo)
-        // será adicionado à thumbnailDiv de forma assíncrona depois.
-        return previewItem;
-    }
-
-    // A função removeFilePreview já lida com a remoção do item e
-    // a atualização do estado do botão com base no array selectedFiles.
-    // Apenas ajustamos para usar o data-index no onclick do botão.
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        // Remove o elemento do DOM usando o data-original-index
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        // Remove o arquivo do array selectedFiles definindo como null
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-
-        // Reabilita o botão de selecionar arquivo se o limite não for mais atingido
-        // Conta apenas os itens que não são null no array
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        console.log('Contagem atual de arquivos:', currentFileCount);
-        if (currentFileCount < 3) {
-            document.querySelector('.select-file-button').disabled = false;
-        }
-
-        // Opcional: Limpar o array de nulos periodicamente ou antes de enviar
-        // selectedFiles = selectedFiles.filter(file => file !== null);
-        // ATENÇÃO: Se fizer isso, precisaria reindexar os data-original-index
-        // de TODOS os elementos restantes no DOM para que removeFilePreview
-        // continue funcionando corretamente. Manter os nulls e filtrar no final
-        // (em getFilesToUpload) é mais simples para esta UI.
-    }
-
-
-    // A função addFiles permanece praticamente a mesma, apenas certificando-se
-    // de que o índice passado para createFilePreviewElement é o correto
-    // (o índice no array selectedFiles no momento da adição).
-    function addFiles(files) {
-        const selectButton = document.querySelector('.select-file-button');
-        // Contagem atual de arquivos NÃO NULOS
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        const filesToAdd = Array.from(files).slice(0, 3 - currentFileCount);
-
-        if (filesToAdd.length === 0) {
-            // Se já atingiu o limite e tentou adicionar mais, garante que o botão continue desabilitado
-            if (currentFileCount >= 3) {
-                selectButton.disabled = true;
-            }
-            return; // Não há arquivos para adicionar ou espaço
-        }
-
-        filesToAdd.forEach(file => {
-            // Encontra o próximo índice disponível (primeiro null ou o final do array)
-            let nextIndex = selectedFiles.indexOf(null);
-            if (nextIndex === -1) {
-                nextIndex = selectedFiles.length;
-                selectedFiles.push(file); // Adiciona no final
-            } else {
-                selectedFiles[nextIndex] = file; // Preenche o slot null
-            }
-
-            const previewElement = createFilePreviewElement(file, nextIndex);
-
-            // --- AQUI ESTÁ A MUDANÇA: Usar setTimeout ---
-            setTimeout(() => {
-                filePreviewsContainer.appendChild(previewElement);
-                // Após adicionar, verifica novamente se o limite foi atingido e desabilita o botão
-                // Baseado na contagem de arquivos não-null
-                const updatedFileCount = selectedFiles.filter(f => f !== null).length;
-                if (updatedFileCount >= 3) {
-                    selectButton.disabled = true;
-                }
-
-                // Opcional: Forçar um reflow (às vezes ajuda em casos mais teimosos, mas pode impactar performance)
-                // void previewElement.offsetHeight;
-
-            }, 0); // Atraso de 0ms significa executar na próxima oportunidade do loop de eventos
-
-        });
-
-        // Remove a lógica de desabilitar o botão que estava aqui antes,
-        // pois ela foi movida para dentro do setTimeout callback.
-
-        console.log("Scheduled addition for:", filesToAdd.map(f => f ? f.name : null));
-        console.log("selectedFiles total (não-null) após agendar adição:", selectedFiles.filter(f => f !== null).length);
-    }
-
-    // A função removeFilePreview permanece a mesma
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null; // Set to null
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        // Re-enable button if non-null count drops below 3
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        if (currentFileCount < 3) {
-            selectButton.disabled = false;
-        }
-
-        console.log("selectedFiles após remove:", selectedFiles.map(f => f ? f.name : null));
-        console.log('Contagem atual (não-null):', currentFileCount);
-    }
-
-
-    // Event listener para a mudança no input de arquivo (permanece o mesmo)
-    fileInput.addEventListener('change', (event) => {
-        if (event.target.files.length > 0) {
-            addFiles(event.target.files);
-            // Limpa o input para que o evento 'change' dispare mesmo se o mesmo arquivo for selecionado novamente após remoção
-            fileInput.value = '';
-        }
-    });
-
-    // Função para obter os arquivos para envio (permanece a mesma, filtra nulls)
-    function getFilesToUpload() {
-        return selectedFiles.filter(file => file !== null);
-    }
-</script>

@@ -1,71 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | Tupibooru</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../../static/css/midnight.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
-    <main class="other-main">
-        <div class="other-cover">
-            <div class="other-content register-page">
-                <div class="other-title">
-                    Registre-se
-                </div>
-                <form action="">
-                    <div>
-                        <span class="material-symbols-outlined">
-                            mail
-                        </span>
-                        <input type="email" placeholder="Email (Opcional)">
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            person
-                        </span>
-                        <input type="text" placeholder="Usuário">
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            key
-                        </span>
-                        <input type="password" placeholder="Senha">
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            key
-                        </span>
-                        <input type="password" placeholder="Confirmar senha">
-                    </div>
-                    <div class="captcha">
-                        <img src="../../static/imgs/decoration/Captcha_Example.png" alt="Captcha">
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            toys_and_games
-                        </span>
-                        <input type="text" placeholder="Captcha">
-                    </div>
-                    <button type="submit">Criar conta<span class="material-symbols-outlined">
-                            login
-                        </span></button>
-                </form>
-                <div class="extras"><a href="login_example.html">Já possui uma conta?</a></div>
-            </div>
-            <button class="return" onclick="window.history.go(-1); return false;">
-                Fuck, go back!
-            </button>
+    <main>
+        <div class="default-window">
+            <form action="">
+                <p>Registre-se</p>
+                <section class="input">
+                    <span class="material-symbols-outlined">mail</span>
+                    <input type="email" placeholder="Email (Opcional)">
+                </section>
+                <section class="input">
+                    <span class="material-symbols-outlined">person</span>
+                    <input type="text" placeholder="Usuário">
+                </section>
+                <section class="input">
+                    <span class="material-symbols-outlined">key</span>
+                    <input type="password" placeholder="Senha">
+                </section>
+                <section class="input">
+                    <span class="material-symbols-outlined">key</span>
+                    <input type="password" placeholder="Confirmar senha">
+                </section>
+                <img src="../../static/imgs/examples/Captcha_Example.png" alt="">
+                <section class="input">
+                    <span class="material-symbols-outlined">toys_and_games</span>
+                    <input type="text" placeholder="Captcha">
+                </section>
+                <section>
+                    <button class="default-button">Criar Conta
+                        <span class="material-symbols-outlined">login</span>
+                    </button>
+                </section>
+            </form>
+            <section>
+                <a class="underline-button" href="login_example.html">Já possui uma conta?</a>
+            </section>
         </div>
+        <button class="underline-button return" onclick="window.history.go(-1); return false;">
+            Fuck, go back!
+        </button>
     </main>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
 </body>
 
 </html>

@@ -1,1421 +1,367 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil | Tupibooru</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../../static/css/midnight.css">
-    <!--<link rel="stylesheet" href="../../static/css/custom/midday.css">-->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-            <div tabindex="0" class="themes">
-                    <button class="themes-button">
-                        <span class="material-symbols-outlined">palette</span>
-                    </button>
-                    <div class="dropdown dropdown-themes">
-                        <button class="default-button selected-button">Midnight <span
-                                class="material-symbols-outlined">check_small</span></button>
-                        <button class="default-button">Highnoon</button>
-                        <button class="default-button">Minechan</button>
-                    </div>
+    <header>
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
+                            class="material-symbols-outlined">check_small</span></button>
+                    <button class="default-button">Highnoon</button>
+                    <button class="default-button">Minechan</button>
                 </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="">/bo/ - Boteco</a></li>
-                    <li><a href="">/an/ - Animangá</a></li>
-                    <li><a href="">/tv/ - Filmes e Séries</a></li>
-                    <li><a href="">/cri/ - Criações</a></li>
-                    <li><a href="">/pc/ - Computarias</a></li>
-                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
-
-                    <li tabindex="0" style="display: none;">
-                        <a>Outros</a>
-                        <ul class="others-dropdown">
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/tv/ - Filmes e Séries</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                        </ul>
-                    </li>
-                    <li tabindex="0">
-                        <a>Conta</a>
-                        <div class="dropdown login-dropdown">
-                            <p>Login</p>
-                            <form action="">
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        mail
-                                    </span>
-                                    <input type="email" placeholder="Usuário ou Email">
-                                </div>
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        key
-                                    </span>
-                                    <input type="password" placeholder="Senha">
-                                </div>
-                                <button type="submit">Logar-se<span class="material-symbols-outlined">
-                                        login
-                                    </span></button>
-                            </form>
-                            <div><a href="">Esqueceu a senha?</a>•<a href="register_example.html">Crie uma conta</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <nav class="navbar-mobile">
-                <section>
-                    <button class="default-mb mobile-menu">
-                        <span class="material-symbols-outlined">
-                            menu
-                        </span>
-                    </button>
-                    <aside class="nav-menu">
-                        <ul>Menu de Boards
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/tv/ - Filmes e Séries</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                            <li><a href="">/pc/ - Computarias</a></li>
-                            <li><a href="">/flb/ - Faria Lima Bets</a></li>
-                        </ul>
-                    </aside>
-                </section>
-                <section class="dropdown-menu">
-                    <button class="default-mb">
-                        <img class="dropdown-logo" alt="">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                        </span>
-                    </button>
-                    <div class="dropdown">
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    home
-                                </span>Homepage
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </nav>
-        </header>
-        <main class="board-main">
-            <div class="page-content">
-                <div class="user-profile">
-                    <div class="profile-window">
-                        <div class="profile-content">
-                            <div class="profile-picture editable">
-                                <button class="avatar">
-                                    <img src="../../static/imgs/decoration/anon.png" alt="">
-                                </button>
-                            </div>
-                            <div class="account-info">
-                                <div class="account-username">
-                                    <p>Nome de Usuário</p>
-                                    <div class="setting" tabindex="0">
-                                        <button class="settings">
-                                            <span class="material-symbols-outlined">
-                                                manage_accounts
-                                            </span>
-                                        </button>
-                                        <div class="dropdown settings-dropdown">
-                                            <button class="default-button manage">
-                                                Painel ADM
-                                            </button>
-                                            <button class="default-button trust">
-                                                Tornar Mod. Geral
-                                            </button>
-                                            <button class="default-button warn">
-                                                Advertir Usuário
-                                            </button>
-                                            <button class="default-button ban">
-                                                Banir Usuário
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="account-badges">
-                                    <div class="badge supporter">Apoiador</div>
-                                    <div class="badge pioneer">Pioneiro</div>
-                                    <div class="badge mod">Mod. Geral</div>
-                                    <div class="badge mod">Mod. de /bo/</div>
-                                    <div class="badge admin">Administrador</div>
-                                </div>
-                                <div class="account-date">
-                                    <p>Membro desde:</p>
-                                    <p>Data</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="profile-description">
-                            <p>Inserir descrição...</p>
-                        </div>
-                    </div>
-                    <div class="profile-bar">
-                        <button class="default-button block">
-                            <span class="material-symbols-outlined">
-                                visibility_off
-                            </span>
-                            Bloquear
-                        </button>
-                        <button class="default-button report">
-                            <span class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Denunciar
-                        </button>
-                    </div>
-                </div>
-                <div class="comment-type">
-                    <div class="comment-picture">
-                        <img src="../../static/imgs/decoration/anon.png" alt="">
-                    </div>
-                    <div class="comment-input">
+            </div>
+        </div>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">
                         <form action="">
-                            <textarea name="" id="" rows="1" placeholder="Comentar..." maxlength="500"></textarea>
-                            <button class="default-button">
-                                <span class="material-symbols-outlined">
-                                    edit
-                                </span>
-                            </button>
+                            <section>
+                                <a>Login</a>
+                            </section>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <input type="email" placeholder="Usuário ou Email">
+                                </section>
+                            </div>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">key</span>
+                                    <input type="password" placeholder="Senha">
+                                </section>
+                            </div>
+                            <section>
+                                <button class="default-button">
+                                    Logar-se
+                                    <span class="material-symbols-outlined">login</span>
+                                </button>
+                            </section>
                         </form>
+                        <section>
+                            <a class="underline-button" target="_blank" href="">
+                                Esqueceu a senha?
+                            </a>
+                            •
+                            <a class="underline-button" target="_blank" href="register_example.html">
+                                Crie uma conta
+                            </a>
+                        </section>
                     </div>
-                </div>
-                <div class="comment-post">
-                    <section class="comment-original">
-                        <div class="comment-picture">
-                            <img src="../../static/imgs/decoration/anon.png" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <div class="comment-bar">
-                                <p class="comment-username">Nome de Usuário</p>
-                                <p class="comment-timestap">há 2 horas</p>
-                            </div>
-                            <div class="comment-text">
-                                <p>
-                                    Esse é um exemplo de comentário com três linhas. <br>
-                                    Comentários possuem um limite de 500 caracteres. <br>
-                                    Imitei o youtube no estilo.
-                                </p>
-                            </div>
-                            <div class="comment-button">
-                                <button class="default-button">
-                                    Responder
-                                </button>
-                                <div class="reply-type">
-                                    <form action="">
-                                        <textarea name="" id="" rows="1" placeholder="Comentar..."
-                                            maxlength="500"></textarea>
-                                        <div class="reply-buttons">
-                                            <button class="default-button">Responder</button>
-                                            <button class="default-button cancel" type="button">Cancelar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-options" tabindex="0">
-                            <button class="default-button">
-                                <span class="material-symbols-outlined">
-                                    more_vert
-                                </span>
-                            </button>
-                            <div class="dropdown comments-dropdown">
-                                <button class="default-button pin">
-                                    <span class="material-symbols-outlined">
-                                        keep
-                                    </span>Fixar no topo
-                                </button>
-                                <button class="default-button delete">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>Remover
-                                </button>
-                                <button class="default-button block">
-                                    <span class="material-symbols-outlined">
-                                        visibility_off
-                                    </span>
-                                    Bloquear
-                                </button>
-                                <button class="default-button report">
-                                    <span class="material-symbols-outlined">
-                                        warning
-                                    </span>Denunciar
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="comment-reply">
-                        <div class="comment-picture">
-                            <img src="../../static/imgs/decoration/anon.png" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <div class="comment-bar">
-                                <p class="comment-username">Nome de Usuário</p>
-                                <p class="comment-timestap">há 1 hora</p>
-                            </div>
-                            <div class="comment-text">
-                                <p>
-                                    Esse é um exemplo de comentário de resposta. <br>
-                                    Ele possui um padding maior para a esquerda, parecendo algo indentado. <br>
-                                </p>
-                            </div>
-                            <div class="comment-button">
-                                <button class="default-button">
-                                    Responder
-                                </button>
-                                <div class="reply-type">
-                                    <form action="">
-                                        <textarea name="" id="" rows="1" placeholder="Comentar..."
-                                            maxlength="500"></textarea>
-                                        <div class="reply-buttons">
-                                            <button class="default-button">Responder</button>
-                                            <button class="default-button cancel" type="button">Cancelar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-options" tabindex="0">
-                            <button class="default-button">
-                                <span class="material-symbols-outlined">
-                                    more_vert
-                                </span>
-                            </button>
-                            <div class="dropdown comments-dropdown">
-                                <button class="default-button pin">
-                                    <span class="material-symbols-outlined">
-                                        keep
-                                    </span>Fixar no topo
-                                </button>
-                                <button class="default-button delete">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>Remover
-                                </button>
-                                <button class="default-button block">
-                                    <span class="material-symbols-outlined">
-                                        visibility_off
-                                    </span>
-                                    Bloquear
-                                </button>
-                                <button class="default-button report">
-                                    <span class="material-symbols-outlined">
-                                        warning
-                                    </span>Denunciar
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="comment-post">
-                    <section class="comment-original">
-                        <div class="comment-picture">
-                            <img src="../../static/imgs/decoration/anon.png" alt="">
-                        </div>
-                        <div class="comment-content">
-                            <div class="comment-bar">
-                                <p class="comment-username">Nome de Usuário</p>
-                                <p class="comment-timestap">há 3 horas</p>
-                            </div>
-                            <div class="comment-text">
-                                <p>
-                                    Esse é outro comentário, de uma linha só, porém mais longo, diferente dos demais,
-                                    esse tipo de coisa.
-                                </p>
-                            </div>
-                            <div class="comment-button">
-                                <button class="default-button">
-                                    Responder
-                                </button>
-                                <div class="reply-type">
-                                    <form action="">
-                                        <textarea name="" id="" rows="1" placeholder="Comentar..."
-                                            maxlength="500"></textarea>
-                                        <div class="reply-buttons">
-                                            <button class="default-button">Responder</button>
-                                            <button class="default-button cancel" type="button">Cancelar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-options" tabindex="0">
-                            <button class="default-button">
-                                <span class="material-symbols-outlined">
-                                    more_vert
-                                </span>
-                            </button>
-                            <div class="dropdown comments-dropdown">
-                                <button class="default-button pin">
-                                    <span class="material-symbols-outlined">
-                                        keep
-                                    </span>Fixar no topo
-                                </button>
-                                <button class="default-button delete">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>Remover
-                                </button>
-                                <button class="default-button block">
-                                    <span class="material-symbols-outlined">
-                                        visibility_off
-                                    </span>
-                                    Bloquear
-                                </button>
-                                <button class="default-button report">
-                                    <span class="material-symbols-outlined">
-                                        warning
-                                    </span>Denunciar
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <aside class="desktop-menu">
+                </li>
+                <li tabindex="0" class="dropdown" style="display: none;">
+                    <a class="default-button" href="profile_example.html">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <article class="user-profile">
                 <section>
-                    <div class="side-title">
-                        <p>Situação de Perfil</p>
-                        <button class="default-button minimize">
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section>
+                            <p>Nome de Usuário</p>
+                            <div tabindex="0" class="dropdown">
+                                <a class="default-button"><span
+                                        class="material-symbols-outlined">manage_accounts</span></a>
+                                <div class="default-window">
+                                    <button class="default-button manage">Painel de Usuário</button>
+                                    <button class="default-button trust">Tornar Mod. Geral</button>
+                                    <button class="default-button warn">Advertir Usuário</button>
+                                    <button class="default-button ban">Banir Usuário</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="badge supporter">Apoiador</div>
+                            <div class="badge pioneer">Pioneiro</div>
+                            <div class="badge gmod">Mod Geral</div>
+                            <div class="badge bmod">Mod de /bo/</div>
+                            <div class="badge admin">Administrador</div>
+                        </section>
+                        <section>
+                            <p>Membro desde: Data</p>
+                        </section>
+                    </div>
+                </section>
+                <section class="section-bar">
+                    <button class="default-button block">
+                        <span class="material-symbols-outlined">
+                            visibility_off
+                        </span>
+                        Bloquear
+                    </button>
+                    <button class="default-button report">
+                        <span class="material-symbols-outlined">
+                            warning
+                        </span>
+                        Denunciar
+                    </button>
+                </section>
+            </article>
+
+            <div class="default-window comment-type">
+                <div class="media-wrapper">
+                    <img src="../../static/imgs/examples/anon.png" alt="">
+                </div>
+                <div class="input">
+                    <form action="">
+                        <textarea name="" id="" rows="1" placeholder="Comentar..." maxlength="500"
+                            style="height: 20px;"></textarea>
+                        <button class="default-button">
                             <span class="material-symbols-outlined">
-                                keyboard_arrow_up
+                                edit
                             </span>
                         </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="comment-post">
+                <section class="comment-original">
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
                     </div>
-                    <div class="side-content">
-                        <div class="warns">
-                            <div class="slot"><img src="../../static/imgs/decoration/badges/warn-noob.png" alt=""></div>
-                            <div class="slot"><img src="../../static/imgs/decoration/badges/warn-porn.png" alt=""></div>
-                            <div class="slot"><img src="../../static/imgs/decoration/badges/warn-spam.png" alt=""></div>
-                            <div class="slot"><img src="../../static/imgs/decoration/badges/warn-dumb.png" alt=""></div>
+                    <div>
+                        <section class="comment-bar">
+                            <p>Nome de Usuário</p>
+                            <p>há 2 horas</p>
+                        </section>
+                        <section class="comment-content">
+                            <p>
+                                Esse é um exemplo de comentário com três linhas. <br>
+                                Comentários possuem um limite de 500 caracteres. <br>
+                                Imitei o youtube no estilo.
+                            </p>
+                        </section>
+                        <section class="comment-buttons">
+                            <button class="default-button">
+                                Responder
+                            </button>
+                            <div class="reply-type" style="display: block;">
+                                <form action="">
+                                    <textarea name="" id="" rows="1" placeholder="Comentar..."
+                                        maxlength="500"></textarea>
+                                    <div class="reply-buttons">
+                                        <button class="default-button">Responder</button>
+                                        <button class="default-button cancel" type="button">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                    <div>
+                        <div tabindex="0" class="dropdown">
+                            <a class="default-button">
+                                <span class="material-symbols-outlined">
+                                    more_vert
+                                </span>
+                            </a>
+                            <div class="default-window">
+                                <button class="default-button pin">
+                                    <span class="material-symbols-outlined">
+                                        keep
+                                    </span>Fixar no topo
+                                </button>
+                                <button class="default-button delete">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>Remover
+                                </button>
+                                <button class="default-button block">
+                                    <span class="material-symbols-outlined">
+                                        visibility_off
+                                    </span>
+                                    Bloquear
+                                </button>
+                                <button class="default-button report">
+                                    <span class="material-symbols-outlined">
+                                        warning
+                                    </span>Denunciar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section>
-                    <div class="side-title">
-                        <p>Painel do Administrador</p>
-                        <button class="default-button minimize">
-                            <span class="material-symbols-outlined">
-                                keyboard_arrow_up
-                            </span>
-                        </button>
+                <section class="comment-reply">
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
                     </div>
-                    <div class="side-content cases">
-                        <div class="case">
-                            <button class="default-button review">
-                                <span class="material-symbols-outlined">
-                                    visibility
-                                </span>
+                    <div>
+                        <section class="comment-bar">
+                            <p>Nome de Usuário</p>
+                            <p>há 2 horas</p>
+                        </section>
+                        <section class="comment-content">
+                            <p>
+                                Esse é um exemplo de comentário de resposta. <br>
+                                Ele possui um padding maior para a esquerda, parecendo algo indentado.
+                            </p>
+                        </section>
+                        <section class="comment-buttons">
+                            <button class="default-button">
+                                Responder
                             </button>
-                            <p>Caso #1 - Nome de Usuário</p>
-                        </div>
-                        <div class="case">
-                            <button class="default-button review">
+                            <div class="reply-type" style="display: block;">
+                                <form action="">
+                                    <textarea name="" id="" rows="1" placeholder="Comentar..."
+                                        maxlength="500"></textarea>
+                                    <div class="reply-buttons">
+                                        <button class="default-button">Responder</button>
+                                        <button class="default-button cancel" type="button">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                    <div>
+                        <div tabindex="0" class="dropdown">
+                            <a class="default-button">
                                 <span class="material-symbols-outlined">
-                                    visibility
+                                    more_vert
                                 </span>
-                            </button>
-                            <p>Caso #2 - Nome de Usuário</p>
+                            </a>
+                            <div class="default-window">
+                                <button class="default-button pin">
+                                    <span class="material-symbols-outlined">
+                                        keep
+                                    </span>Fixar no topo
+                                </button>
+                                <button class="default-button delete">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>Remover
+                                </button>
+                                <button class="default-button block">
+                                    <span class="material-symbols-outlined">
+                                        visibility_off
+                                    </span>
+                                    Bloquear
+                                </button>
+                                <button class="default-button report">
+                                    <span class="material-symbols-outlined">
+                                        warning
+                                    </span>Denunciar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
-            </aside>
-        </main>
-        <footer>
-            <section>
-                <div class="footer-socials">
-                    <a href=""><img class="footer-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-                    <div></div>
-                </div>
-                <div class="footer-copyright">
-                    <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
-                    </p>
-                    <p>© 2025 Rede Autumn.</p>
-                </div>
-            </section>
-            <section>
-
-            </section>
-        </footer>
-    </div>
-
-    <dialog class="popup-delete">
-        <form action="">
-            <div class="popup-title">Excluir Post</div>
-            <div class="popup-context">Deseja mesmo excluir este post?<br>Esta ação é irreversível.</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Excluir</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-block">
-        <form action="">
-            <div class="popup-title">Bloquear Usuário</div>
-            <div class="popup-context">Deseja bloquear este usuário?<br>Você não verá mais posts dele(a).</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Bloquear</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-report">
-        <form action="">
-            <div class="popup-title">Denunciar Post</div>
-            <div class="popup-context">
-                <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Denunciar</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-moderate">
-        <div>
-            <div class="popup-title">Moderar Post</div>
-            <div class="popup-context">
-                <article>
-                    <section class="post-content">
-                        <section class="post-media">
-                            <div class="media-wrapper">
-                                <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                            </div>
-                        </section>
-                        <section class="post-text">
-                            <pre>Este é um post de exemplo.Possui um único anexo.</pre>
-                        </section>
-                    </section>
-                </article>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button lock" onclick="openModal()">Trancar</button>
-                <button class="default-button pin" onclick="openModal()">Fixar</button>
-                <button class="default-button warn" onclick="openModal()">Advertir</button>
-                <button class="default-button ban" onclick="openModal()">Banir</button>
             </div>
         </div>
-    </dialog>
-    <dialog class="popup-lock">
-        <form action="">
-            <div class="popup-title">Trancar Post</div>
-            <div class="popup-context">Deseja trancar este post?<br>Outros usuários não poderão mais respondê-lo.</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Trancar</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-pin">
-        <form action="">
-            <div class="popup-title">Fixar Post</div>
-            <div class="popup-context">Deseja fixar este post a página inicial?</div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Fixar</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-warn">
-        <form action="">
-            <div class="popup-title">Advertir Usuário</div>
-            <select name="warn-type" id="warn-type">
-                <option value="1">
-                    <p>Quebra de regras de board/global</p>
-                </option>
-                <option value="2">
-                    <p>Conteúdo NSFW explícito</p>
-                </option>
-                <option value="3">
-                    <p>Poluição de board/thread</p>
-                </option>
-                <option value="4">
-                    <p>Inclusão digital</p>
-                </option>
-            </select>
-            <div class="popup-context">
-                <textarea name="warn" placeholder="Mensagem de advertência . . ." rows="3" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Advertir</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-ban">
-        <form action="">
-            <div class="popup-title">Banir Usuário</div>
-            <div class="popup-context">Deseja banir este usuário? Selecione uma duração.
-                <div class="delban">
-                    <input type="checkbox" id="delban">
-                    <label for="delban">Excluir o histórico de posts deste usuário</label>
-                </div>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">1d</button>
-                <button class="default-button submit">3d</button>
-                <button class="default-button submit">7d</button>
-                <button class="default-button submit">1m</button>
-                <button class="default-button submit">3m</button>
-                <button class="default-button submit">Perma.</button>
-            </div>
-        </form>
-    </dialog>
-    <dialog class="popup-post">
-        <form action="">
-            <div class="popup-title">Criar Post</div>
-            <div class="popup-context">
-                <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
-            </div>
-            <div class="popup-context">
-                <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="255"></textarea>
-            </div>
-            <div class="popup-context">
-                <input type="file" id="fileInput" multiple accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-                    style="display: none;">
-                <button type="button" class="select-file-button"
-                    onclick="document.getElementById('fileInput').click()">Selecione um arquivo</button>
-                <div class="file-previews-container">
-                </div>
-                <div class="popup-buttons">
-                    <button class="underline-button cancel" type="button"
-                        onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                    <button class="default-button create">Publicar</button>
-                </div>
-        </form>
-    </dialog>
-    <dialog class="popup-review">
-        <div>
-            <div class="popup-title">Revisão de Caso - Nome de Usuário em /bo/</div>
-            <div class="popup-context">
-                <article>
-                    <section class="post-content">
-                        <section class="post-media">
-                            <div class="media-wrapper">
-                                <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                            </div>
-                        </section>
-                        <section class="post-text">
-                            <pre>Este é um post de exemplo.
-Possui um único anexo.</pre>
-                        </section>
-                    </section>
-                </article>
-            </div>
-            <div class="popup-reason">
-                <p>Aqui está um motivo de denúncia, ele feriu meus sentimentos.</p>
-            </div>
-            <div class="popup-reason">
-                <p>Como um post pode ter mais de uma denúncia, decidi incluir todas assim.</p>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <form action=""><button class="default-button dismiss" onclick="openModal()">Dispensar Caso</button>
-                </form>
-                <button class="default-button lock" onclick="openModal()">Trancar</button>
-                <button class="default-button warn" onclick="openModal()">Advertir</button>
-                <button class="default-button ban" onclick="openModal()">Banir</button>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog class="popup-avatar">
-        <form action="" enctype="multipart/form-data">
-            <div class="popup-title">Avatar</div>
-            <div class="popup-content">
-                <div class="avatar-preview">
-                    <img id="avatar-preview-img" src="../../static/imgs/decoration/anon.png" alt="Preview do avatar">
-                </div>
-                <div class="upload-section">
-                    <div class="popup-context">Enviar um novo avatar:</div>
-                    <input type="file" id="avatar-upload" name="avatar" accept="image/*" style="display: none;">
-                    <label for="avatar-upload" class="upload-button">Selecionar arquivo</label>
-                    <div class="file-name" id="file-name">Nenhum arquivo selecionado</div>
-                </div>
-            </div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Confirmar</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-manage">
-        <form action="">
-            <div class="popup-manage-container">
-                <!-- Lista de opções à esquerda -->
-                <div class="popup-manage-sidebar">
-                    <ul class="popup-manage-options">
-                        <li class="popup-manage-option active" data-option="boards">Boards</li>
-                        <li class="popup-manage-option" data-option="moderação">Moderação</li>
-                    </ul>
-                </div>
-
-                <!-- Conteúdo à direita -->
-                <div class="popup-manage-content">
-                    <!-- Conteúdo da opção Boards -->
-                    <div class="popup-manage-tab active" data-tab="boards">
-                        <div class="boards-list">
-                            <!-- Section 1 -->
-                            <section class="board-section">
-                                <div class="side-title">
-                                    <span>/bo/ - Boteco</span>
-                                    <button type="button" class="default-button minimize">
-                                        <span class="material-symbols-outlined">expand_less</span>
-                                    </button>
-                                </div>
-                                <div class="side-content collapsed">
-                                    <div class="moderator-list">
-                                        <div class="moderator-item">
-                                            <span>Usuário 1</span>
-                                            <button type="button" class="remove-moderator">X</button>
-                                        </div>
-                                        <div class="moderator-item">
-                                            <span>Usuário 2</span>
-                                            <button type="button" class="remove-moderator">X</button>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <div class="side-buttons">
-                                        <button type="button" class="default-button add-moderator">Adicionar como
-                                            moderador</button>
-                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- Sections 2-6 (similares) -->
-                            <section class="board-section">
-                                <div class="side-title">
-                                    <span>/an/ - Animangá</span>
-                                    <button type="button" class="default-button minimize">
-                                        <span class="material-symbols-outlined">expand_less</span>
-                                    </button>
-                                </div>
-                                <div class="side-content collapsed">
-                                    <div class="moderator-list"></div>
-                                    <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <div class="side-buttons">
-                                        <button type="button" class="default-button add-moderator">Adicionar como
-                                            moderador</button>
-                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="board-section">
-                                <div class="side-title">
-                                    <span>/tv/ - Filmes e Séries</span>
-                                    <button type="button" class="default-button minimize">
-                                        <span class="material-symbols-outlined">expand_less</span>
-                                    </button>
-                                </div>
-                                <div class="side-content collapsed">
-                                    <div class="moderator-list"></div>
-                                    <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <div class="side-buttons">
-                                        <button type="button" class="default-button add-moderator">Adicionar como
-                                            moderador</button>
-                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="board-section">
-                                <div class="side-title">
-                                    <span>/cri/ - Criações</span>
-                                    <button type="button" class="default-button minimize">
-                                        <span class="material-symbols-outlined">expand_less</span>
-                                    </button>
-                                </div>
-                                <div class="side-content collapsed">
-                                    <div class="moderator-list"></div>
-                                    <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <div class="side-buttons">
-                                        <button type="button" class="default-button add-moderator">Adicionar como
-                                            moderador</button>
-                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="board-section">
-                                <div class="side-title">
-                                    <span>/pc/ - Computarias</span>
-                                    <button type="button" class="default-button minimize">
-                                        <span class="material-symbols-outlined">expand_less</span>
-                                    </button>
-                                </div>
-                                <div class="side-content collapsed">
-                                    <div class="moderator-list"></div>
-                                    <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <div class="side-buttons">
-                                        <button type="button" class="default-button add-moderator">Adicionar como
-                                            moderador</button>
-                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="board-section">
-                                <div class="side-title">
-                                    <span>/flb/ - Faria Lima Bets</span>
-                                    <button type="button" class="default-button minimize">
-                                        <span class="material-symbols-outlined">expand_less</span>
-                                    </button>
-                                </div>
-                                <div class="side-content collapsed">
-                                    <div class="moderator-list"></div>
-                                    <input type="text" class="add-moderator-input" placeholder="Nome de Usuário">
-                                    <div class="side-buttons">
-                                        <button type="button" class="default-button add-moderator">Adicionar como
-                                            moderador</button>
-                                        <button type="button" class="default-button add-captcha">Ativar CAPTCHA</button>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+        <aside>
+            <section class="aside-title">
+                <p>Situação de Perfil</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <section class="warns">
+                    <div class="warn-slot noob">
+                        <img src="../../static/imgs/warns/warn-noob.png" alt="">
                     </div>
-
-                    <!-- Conteúdo da outra opção -->
-                    <div class="popup-manage-tab" data-tab="moderação">
-                        Conteúdo da outra opção aqui
+                    <div class="warn-slot porn">
+                        <img src="../../static/imgs/warns/warn-porn.png" alt="">
                     </div>
-                </div>
+                    <div class="warn-slot clown">
+                        <img src="../../static/imgs/warns/warn-clown.png" alt="">
+                    </div>
+                    <div class="warn-slot dumb">
+                        <img src="../../static/imgs/warns/warn-dumb.png" alt="">
+                    </div>
+                </section>
+            </section>
+            <section class="aside-title">
+                <p>Painel do Administrador</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <section class="case">
+                    <button class="default-button reviewe1">
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    </button>
+                    <p>Caso #1 - Post #4124</p>
+                </section>
+                <section class="case">
+                    <button class="default-button reviewe2">
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    </button>
+                    <p>Caso #2 - Nome de Usuário</p>
+                </section>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
             </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
 
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Salvar mudanças</button>
-            </div>
-        </form>
-    </dialog>
+    <div id="container-popup" style="display: contents;"></div>
 
-    <dialog class="popup-trust">
-        <form action="">
-            <div class="popup-title">Tornar Moderador Geral</div>
-            <div class="popup-context">Deseja tornar este usuário num moderador?<br><strong>Pense bem antes de realizar esta ação.<strong></div>
-            <div class="popup-buttons">
-                <button class="underline-button cancel" type="button"
-                    onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="default-button submit">Excluir</button>
-            </div>
-        </form>
-    </dialog>
+    <script>
+        // Carrega automaticamente quando a página abre
+        async function carregarPopups() {
+            try {
+                const response = await fetch('popups_example.html');
+                const html = await response.text();
+                document.getElementById('container-popup').innerHTML = html;
+            } catch (error) {
+                console.error('Erro ao carregar popups:', error);
+            }
+        }
+
+        // Executa automaticamente
+        carregarPopups();
+    </script>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const minimizeButtons = document.querySelectorAll('.side-title .minimize');
-
-        minimizeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const sideTitleDiv = button.parentElement;
-
-                let sideContentDiv = sideTitleDiv.nextElementSibling;
-                while (sideContentDiv && !sideContentDiv.classList.contains('side-content')) {
-                    sideContentDiv = sideContentDiv.nextElementSibling;
-                }
-
-                if (sideContentDiv) {
-                    sideContentDiv.classList.toggle('collapsed');
-
-                    button.classList.toggle('collapsed');
-                }
-            });
-        });
-    });
-</script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const minimizeButtons = document.querySelectorAll('.minimize');
-
-        minimizeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const article = button.closest('article');
-                if (!article) return;
-
-                // Encontra o post-bar pai do botão clicado
-                const parentPostBar = button.closest('.post-bar');
-                if (!parentPostBar) return;
-
-                // Seleciona todas as seções que vêm depois do parentPostBar dentro do mesmo article
-                let nextElement = parentPostBar.nextElementSibling;
-                while (nextElement) {
-                    if (nextElement.tagName === 'SECTION') {
-                        if (nextElement.style.display === 'none') {
-                            nextElement.style.display = ''; // Remove 'display: none' para voltar ao padrão
-                        } else {
-                            nextElement.style.display = 'none'; // Oculta a seção
-                        }
-                    }
-                    nextElement = nextElement.nextElementSibling;
-                }
-
-                // Rotaciona o ícone do botão minimize
-                const icon = button.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.classList.toggle('rotated');
-                }
-            });
-        });
-    });
-</script>
-
-<script>
-    function closeModal(dialogElement) {
-        if (dialogElement && dialogElement.close) {
-            dialogElement.close();
-        }
-    }
-
-    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post', 'review', 'avatar', 'manage', 'trust'];
-
-    document.addEventListener('click', function (event) {
-        const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');
-
-        const clickedTrigger = event.target.closest(triggerSelector);
-
-        if (clickedTrigger) {
-            event.preventDefault();
-
-            let dialogClass = null;
-            for (const cls of triggerClasses) {
-                if (clickedTrigger.classList.contains(cls)) {
-                    dialogClass = 'popup-' + cls;
-                    break;
-                }
-            }
-
-            if (dialogClass) {
-                const dialog = document.querySelector('.' + dialogClass);
-
-                if (dialog) {
-                    dialog.showModal();
-                } else {
-                    console.error('Erro: Dialog com a classe "' + dialogClass + '" não encontrada.');
-                }
-            }
-        }
-    });
-</script>
-
-<script>
-    // Criar Post
-    const fileInput = document.getElementById('fileInput');
-    const filePreviewsContainer = document.querySelector('.file-previews-container');
-    let selectedFiles = [];
-
-    function createFilePreviewElement(file, index) {
-        const previewItem = document.createElement('div');
-        previewItem.classList.add('file-preview-item');
-        previewItem.dataset.originalIndex = index;
-
-        const thumbnailDiv = document.createElement('div');
-        thumbnailDiv.classList.add('file-preview-thumbnail');
-
-
-        const fileNameSpan = document.createElement('span');
-        fileNameSpan.classList.add('file-preview-name');
-        fileNameSpan.textContent = file.name;
-
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('remove-file-button');
-        const closeIconSpan = document.createElement('span');
-        closeIconSpan.classList.add('material-symbols-outlined');
-        closeIconSpan.textContent = 'close';
-        removeButton.appendChild(closeIconSpan);
-        removeButton.type = 'button';
-
-        removeButton.onclick = () => {
-            const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-            removeFilePreview(itemIndex);
-        };
-
-        previewItem.appendChild(thumbnailDiv);
-        previewItem.appendChild(fileNameSpan);
-        previewItem.appendChild(removeButton);
-
-        if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                img.src = e.target.result;
-                thumbnailDiv.appendChild(img);
-            };
-
-            reader.onerror = (e) => {
-                console.error('Erro ao ler arquivo de imagem:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-            };
-
-            reader.readAsDataURL(file);
-
-        } else if (file.type.startsWith('video/')) {
-            const video = document.createElement('video');
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            let videoObjectURL = null;
-
-            video.autoplay = false;
-            video.muted = true;
-            video.playsInline = true;
-
-            video.addEventListener('loadeddata', () => {
-                const thumbnailSize = 40;
-                canvas.width = thumbnailSize;
-                canvas.height = thumbnailSize;
-
-                video.currentTime = 0.1;
-            });
-
-            video.addEventListener('seeked', () => {
-                try {
-
-                    const videoRatio = video.videoWidth / video.videoHeight;
-                    const thumbnailRatio = canvas.width / canvas.height;
-                    let sx, sy, sWidth, sHeight;
-
-                    if (videoRatio > thumbnailRatio) {
-                        sHeight = video.videoHeight;
-                        sWidth = sHeight * thumbnailRatio;
-                        sx = (video.videoWidth - sWidth) / 2;
-                        sy = 0;
-                    } else {
-                        sWidth = video.videoWidth;
-                        sHeight = sWidth / thumbnailRatio;
-                        sx = 0;
-                        sy = (video.videoHeight - sHeight) / 2;
-                    }
-
-                    context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
-
-                    const img = document.createElement('img');
-                    img.src = canvas.toDataURL('image/jpeg');
-
-                    thumbnailDiv.appendChild(img);
-
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-
-                } catch (e) {
-                    console.error('Erro ao gerar thumbnail do vídeo:', file.name, e);
-                    const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                    removeFilePreview(itemIndex);
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-                }
-
-            }, { once: true });
-
-            video.addEventListener('error', (e) => {
-                console.error('Erro ao carregar vídeo para thumbnail:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-                const errorIcon = document.createElement('span');
-                errorIcon.textContent = '❌';
-                errorIcon.style.fontSize = '1.5rem';
-                thumbnailDiv.appendChild(errorIcon);
-
-                if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-            });
-
-            videoObjectURL = URL.createObjectURL(file);
-            video.src = videoObjectURL;
-
-        } else {
-            const fileIcon = document.createElement('span');
-            fileIcon.textContent = '📄';
-            fileIcon.style.fontSize = '1.5rem';
-            thumbnailDiv.appendChild(fileIcon);
-        }
-
-        return previewItem;
-    }
-
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        console.log('Contagem atual de arquivos:', currentFileCount);
-        if (currentFileCount < 3) {
-            document.querySelector('.select-file-button').disabled = false;
-        }
-    }
-
-    function addFiles(files) {
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        const filesToAdd = Array.from(files).slice(0, 3 - currentFileCount);
-
-        if (filesToAdd.length === 0) {
-            if (currentFileCount >= 3) {
-                selectButton.disabled = true;
-            }
-            return;
-        }
-
-        filesToAdd.forEach(file => {
-            let nextIndex = selectedFiles.indexOf(null);
-            if (nextIndex === -1) {
-                nextIndex = selectedFiles.length;
-                selectedFiles.push(file);
-            } else {
-                selectedFiles[nextIndex] = file;
-            }
-
-            const previewElement = createFilePreviewElement(file, nextIndex);
-
-            setTimeout(() => {
-                filePreviewsContainer.appendChild(previewElement);
-                const updatedFileCount = selectedFiles.filter(f => f !== null).length;
-                if (updatedFileCount >= 3) {
-                    selectButton.disabled = true;
-                }
-
-            }, 0);
-
-        });
-
-        console.log("Scheduled addition for:", filesToAdd.map(f => f ? f.name : null));
-        console.log("selectedFiles total (não-null) após agendar adição:", selectedFiles.filter(f => f !== null).length);
-    }
-
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        if (currentFileCount < 3) {
-            selectButton.disabled = false;
-        }
-
-        console.log("selectedFiles após remove:", selectedFiles.map(f => f ? f.name : null));
-        console.log('Contagem atual (não-null):', currentFileCount);
-    }
-
-    fileInput.addEventListener('change', (event) => {
-        if (event.target.files.length > 0) {
-            addFiles(event.target.files);
-            fileInput.value = '';
-        }
-    });
-
-    function getFilesToUpload() {
-        return selectedFiles.filter(file => file !== null);
-    }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const commentButtons = document.querySelectorAll('.comment-button');
-
-        commentButtons.forEach(comment => {
-            const replyButton = comment.querySelector(':scope > .default-button'); // botão externo
-            const replyType = comment.querySelector('.reply-type');
-            const cancelButton = comment.querySelector('.cancel');
-            const textarea = comment.querySelector('textarea');
-
-            replyType.style.display = 'none';
-
-            replyButton.addEventListener('click', function () {
-                replyButton.style.display = 'none';
-                replyType.style.display = 'block';
-                textarea.focus(); // coloca o foco no textarea automaticamente
-            });
-
-            cancelButton.addEventListener('click', function () {
-                replyType.style.display = 'none';
-                replyButton.style.display = 'inline-block';
-            });
-        });
-    });
-
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Função para redimensionar uma textarea específica
-        const autoResize = (textarea) => {
-            textarea.style.height = 'auto';
-            textarea.style.height = textarea.scrollHeight + 'px';
-        };
-
-        // Seleciona as textareas
-        const textareas = document.querySelectorAll('.reply-type textarea, .comment-input textarea');
-
-        textareas.forEach(textarea => {
-            // Redimensiona no input do usuário
-            textarea.addEventListener('input', () => {
-                autoResize(textarea);
-            });
-
-            // IMPORTANTE: Verifica se a textarea está visível antes de redimensionar no carregamento.
-            // Se ela começar visível, já ajusta o tamanho.
-            if (textarea.offsetParent !== null) {
-                autoResize(textarea);
-            }
-        });
-
-        /*
-         * Se as suas textareas são reveladas por um clique de botão (e não no carregamento da página),
-         * você precisa chamar a função autoResize() no momento em que elas se tornam visíveis.
-         *
-         * Exemplo:
-         * const replyButton = document.querySelector('.seu-botao-de-responder');
-         * const replyTextarea = document.querySelector('.reply-type textarea');
-         *
-         * replyButton.addEventListener('click', () => {
-         * // seu código que mostra a div da textarea...
-         * replyTextarea.style.display = 'block';
-         *
-         * // Chama o redimensionamento logo após ela se tornar visível.
-         * autoResize(replyTextarea);
-         * });
-         */
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const avatarUpload = document.getElementById('avatar-upload');
-        const avatarPreview = document.getElementById('avatar-preview-img');
-        const fileNameDisplay = document.getElementById('file-name');
-
-        avatarUpload.addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (file) {
-                // Atualiza o nome do arquivo
-                fileNameDisplay.textContent = file.name;
-
-                // Cria a preview da imagem
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    avatarPreview.src = event.target.result;
-                };
-                reader.readAsDataURL(file);
-            } else {
-                fileNameDisplay.textContent = 'Nenhum arquivo selecionado';
-            }
-        });
-    });
-
-    // Função para fechar o modal (já existente no seu código)
-    function closeModal(dialog) {
-        dialog.close();
-    }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Switch between tabs
-        const options = document.querySelectorAll('.popup-manage-option');
-        options.forEach(option => {
-            option.addEventListener('click', () => {
-                // Remove active class from all options
-                options.forEach(opt => opt.classList.remove('active'));
-                // Add active class to clicked option
-                option.classList.add('active');
-
-                // Hide all tabs
-                document.querySelectorAll('.popup-manage-tab').forEach(tab => {
-                    tab.classList.remove('active');
-                });
-
-                // Show selected tab
-                const tabName = option.getAttribute('data-option');
-                document.querySelector(`.popup-manage-tab[data-tab="${tabName}"]`).classList.add('active');
-            });
-        });
-
-        // Add moderator functionality
-        document.querySelectorAll('.add-moderator').forEach(button => {
-            button.addEventListener('click', function () {
-                // Agora precisamos subir até o side-content e então encontrar o input
-                const sideContent = this.closest('.side-content');
-                const input = sideContent.querySelector('.add-moderator-input');
-                const moderatorName = input.value.trim();
-
-                if (moderatorName) {
-                    const moderatorList = sideContent.querySelector('.moderator-list');
-
-                    const moderatorItem = document.createElement('div');
-                    moderatorItem.className = 'moderator-item';
-                    moderatorItem.innerHTML = `
-                <span>${moderatorName}</span>
-                <button type="button" class="remove-moderator">X</button>
-            `;
-
-                    moderatorList.appendChild(moderatorItem);
-                    input.value = '';
-
-                    // Add event listener to the new remove button
-                    moderatorItem.querySelector('.remove-moderator').addEventListener('click', function () {
-                        this.closest('.moderator-item').remove();
-                    });
-                }
-            });
-        });
-
-        // Remove moderator functionality
-        document.querySelectorAll('.remove-moderator').forEach(button => {
-            button.addEventListener('click', function () {
-                this.closest('.moderator-item').remove();
-            });
-        });
-    });
-</script>
-
-<script>
-    // Seleciona TODOS os botões CAPTCHA da página
-    document.querySelectorAll('.add-captcha').forEach(button => {
-        button.addEventListener('click', function () {
-            // Alterna a classe 'active' apenas neste botão específico
-            this.classList.toggle('button-active');
-
-            // Altera texto e cor APENAS para este botão
-            if (this.classList.contains('button-active')) {
-                this.textContent = 'Desativar CAPTCHA';
-                this.style.backgroundColor = 'var(--ui-c3)'; // Vermelho
-            } else {
-                this.textContent = 'Ativar CAPTCHA';
-                this.style.backgroundColor = ''; // Volta ao padrão
-            }
-        });
-    });
-</script>
-
-<script>
-    // Configuração dos temas
-    const themeConfig = {
-        'Midnight': null, // Tema padrão (não carrega CSS adicional)
-        'Highnoon': '../../static/css/custom/highnoon.css',
-        'Minechan': '../../static/css/custom/minechan.css'
-    };
-
-    // Elementos do DOM
-    const themeButtons = document.querySelectorAll('.dropdown-themes .default-button');
-    let currentTheme = 'Midnight'; // Tema inicial
-
-    // Função para carregar um tema
-    function loadTheme(themeName) {
-        // Remove o tema anterior (se existir)
-        const existingTheme = document.getElementById('custom-theme');
-        if (existingTheme) {
-            existingTheme.remove();
-        }
-
-        // Carrega o novo tema (se não for o padrão)
-        const themePath = themeConfig[themeName];
-        if (themePath) {
-            const link = document.createElement('link');
-            link.id = 'custom-theme';
-            link.rel = 'stylesheet';
-            link.href = themePath;
-            document.head.appendChild(link);
-        }
-
-        // Atualiza o tema atual
-        currentTheme = themeName;
-
-        // Salva no localStorage
-        localStorage.setItem('selectedTheme', themeName);
-    }
-
-    // Função para atualizar a UI dos botões
-    function updateThemeButtons(selectedTheme) {
-        themeButtons.forEach(button => {
-            const buttonText = button.textContent.trim().replace('check_small', '').trim();
-
-            if (buttonText === selectedTheme) {
-                button.classList.add('selected-button');
-                // Adiciona o ícone de check se não existir
-                if (!button.querySelector('.material-symbols-outlined')) {
-                    const checkIcon = document.createElement('span');
-                    checkIcon.className = 'material-symbols-outlined';
-                    checkIcon.textContent = 'check_small';
-                    button.appendChild(checkIcon);
-                }
-            } else {
-                button.classList.remove('selected-button');
-                // Remove o ícone de check
-                const checkIcon = button.querySelector('.material-symbols-outlined');
-                if (checkIcon) {
-                    checkIcon.remove();
-                }
-            }
-        });
-    }
-
-    // Event listeners para os botões de tema
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const themeName = this.textContent.trim().replace('check_small', '').trim();
-
-            if (themeName !== currentTheme) {
-                loadTheme(themeName);
-                updateThemeButtons(themeName);
-            }
-        });
-    });
-
-    // Carregar tema salvo ao iniciar a página
-    document.addEventListener('DOMContentLoaded', function () {
-        const savedTheme = localStorage.getItem('selectedTheme');
-        if (savedTheme) {
-            loadTheme(savedTheme);
-            updateThemeButtons(savedTheme);
-        }
-    });
-</script>
 
 </html>

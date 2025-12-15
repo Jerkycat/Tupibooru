@@ -1,784 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tupibooru</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../../static/css/midnight.css">
-    <!--<link rel="stylesheet" href="../../static/css/custom/midday.css">-->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-            <div tabindex="0" class="themes">
-                <button class="themes-button">
-                    <span class="material-symbols-outlined">palette</span>
-                </button>
-                <div class="dropdown dropdown-themes">
-                    <button class="default-button selected-button">Midnight <span
+    <header>
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
                             class="material-symbols-outlined">check_small</span></button>
                     <button class="default-button">Highnoon</button>
                     <button class="default-button">Minechan</button>
+                    <button class="default-button">Snowfall</button>
                 </div>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="">/bo/ - Boteco</a></li>
-                    <li><a href="">/an/ - Animangá</a></li>
-                    <li><a href="">/jo/ - Jogos e Cultura</a></li>
-                    <li><a href="">/cri/ - Criações</a></li>
-                    <li><a href="">/pc/ - Computarias</a></li>
-                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
-
-                    <li tabindex="0" style="display: none;">
-                        <a>Outros</a>
-                        <ul class="others-dropdown">
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/tv/ - Filmes e Séries</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                        </ul>
-                    </li>
-                    <li tabindex="0">
-                        <a>Conta</a>
-                        <div class="dropdown login-dropdown">
-                            <p>Login</p>
-                            <form action="">
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        mail
-                                    </span>
-                                    <input type="email" placeholder="Usuário ou Email">
-                                </div>
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        key
-                                    </span>
-                                    <input type="password" placeholder="Senha">
-                                </div>
-                                <button type="submit">Logar-se<span class="material-symbols-outlined">
-                                        login
-                                    </span></button>
-                            </form>
-                            <div><a href="">Esqueceu a senha?</a>•<a href="register_example.html">Crie uma conta</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <nav class="navbar-mobile">
-                <section>
-                    <button class="default-mb mobile-menu">
-                        <span class="material-symbols-outlined">
-                            menu
-                        </span>
-                    </button>
-                    <aside class="nav-menu">
-                        <ul>Menu de Boards
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/jo/ - Jogos e Cultura</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                            <li><a href="">/pc/ - Computarias</a></li>
-                            <li><a href="">/flb/ - Faria Lima Bets</a></li>
-                        </ul>
-                    </aside>
-                </section>
-                <section class="dropdown-menu">
-                    <button class="default-mb">
-                        <img class="dropdown-logo" alt="">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                        </span>
-                    </button>
-                    <div class="dropdown">
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    home
-                                </span>Homepage
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    view_list
-                                </span>Catálogo - Board
-                            </a>
-                        </div>
-                        <div>
-                            <button class="post">
-                                <span class="material-symbols-outlined">
-                                    add
-                                </span>Criar Post
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </nav>
-        </header>
-        <main class="index-main">
-            <div class="index-post">
-                <div class="index-title">
-                    Doações para despesas mensais
-                    <a href="https://ko-fi.com/redepotiguara" target="_blank" class="ko-fi"><button>Doe Aqui!<img
-                                src="../../static/imgs/decoration/ko-fi.png"></button></a>
-                </div>
-                <div class="index-content">Porque hostear um site não é de graça.</div>
-            </div>
-
-            <div class="index-post">
-                <div class="index-title">Em Alta</div>
-                <div class="index-content">
-                    <div class="trending">
-                        <div><a class="trending-board" href="">/bo/ - Boteco</a></div>
-                        <a class="trending-content">
-                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
-                            <div>
-                                <pre>Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.Este é um post de exemplo.
-Possui um único anexo.</pre>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="trending">
-                        <div><a class="trending-board" href="">/an/ - Animarias</a></div>
-                        <a class="trending-content">
-                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
-                            <div>
-                                <pre>Este é um post de exemplo.
-Possui um único anexo.
-                            </pre>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="trending">
-                        <div><a class="trending-board" href="">/tv/ - Filmes e Séries</a></div>
-                        <a class="trending-content">
-                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
-                            <div>
-                                <pre>Este é um post de exemplo.
-Possui um único anexo.
-                            </pre>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="trending">
-                        <div><a class="trending-board" href="">/cri/ - Criações</a></div>
-                        <a class="trending-content">
-                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
-                            <div>
-                                <pre>Este é um post de exemplo.
-Possui um único anexo.
-                            </pre>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="trending">
-                        <div><a class="trending-board" href="">/pc/ - Computarias</a></div>
-                        <a class="trending-content">
-                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
-                            <div>
-                                <pre>Este é um post de exemplo.
-Possui um único anexo.
-                            </pre>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="trending">
-                        <div><a class="trending-board" href="">/flb/ - Faria Lima Bets</a></div>
-                        <a class="trending-content">
-                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
-                            <div>
-                                <pre>Este é um post de exemplo.
-Possui um único anexo.
-                            </pre>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <section>
-                <div class="footer-socials">
-                    <a href=""><img class="footer-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-                    <div></div>
-                </div>
-                <div class="footer-copyright">
-                    <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
-                    </p>
-                    <p>© 2025 Rede Autumn.</p>
-                </div>
-            </section>
-            <section>
-
-            </section>
-        </footer>
-    </div>
-
-    <dialog class="popup-delete">
-        <form action="">
-            <div class="popup-title">Excluir Post</div>
-            <div class="popup-context">Deseja mesmo excluir este post?<br>Esta ação é irreversível.</div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">Excluir</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-block">
-        <form action="">
-            <div class="popup-title">Bloquear Usuário</div>
-            <div class="popup-context">Deseja bloquear este usuário?<br>Você não verá mais posts dele(a).</div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">Bloquear</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-report">
-        <form action="">
-            <div class="popup-title">Denunciar Post</div>
-            <div class="popup-context">
-                <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">Denunciar</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-moderate">
-        <div>
-            <div class="popup-title">Moderar Post</div>
-            <div class="popup-context">
-                <article>
-                    <section class="post-content">
-                        <section class="post-media">
-                            <div class="media-wrapper">
-                                <img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt="">
-                            </div>
-                        </section>
-                        <section class="post-text">
-                            <pre>Este é um post de exemplo.
-Possui um único anexo.</pre>
-                        </section>
-                    </section>
-                </article>
-            </div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="lock" onclick="openModal()">Trancar</button>
-                <button class="pin" onclick="openModal()">Fixar</button>
-                <button class="warn" onclick="openModal()">Advertir</button>
-                <button class="ban" onclick="openModal()">Banir</button>
             </div>
         </div>
-    </dialog>
-
-    <dialog class="popup-lock">
-        <form action="">
-            <div class="popup-title">Trancar Post</div>
-            <div class="popup-context">Deseja trancar este post?<br>Outros usuários não poderão mais respondê-lo.</div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">Trancar</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-pin">
-        <form action="">
-            <div class="popup-title">Fixar Post</div>
-            <div class="popup-context">Deseja fixar este post a página inicial?</div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">Fixar</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-warn">
-        <form action="">
-            <div class="popup-title">Advertir Post</div>
-            <div class="popup-context">
-                <textarea name="Warn" placeholder="Motivo da advertência . . ." rows="3" maxlength="255"></textarea>
-            </div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">Advertir</button>
-            </div>
-        </form>
-    </dialog>
-
-    <dialog class="popup-ban">
-        <form action="">
-            <div class="popup-title">Banir Usuário</div>
-            <div class="popup-context">Deseja banir este usuário? Selecione uma duração.
-                <div class="delban">
-                    <input type="checkbox" id="delban">
-                    <label for="delban">Excluir o histórico de posts deste usuário</label>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">
+                        <form action="">
+                            <section>
+                                <a>Login</a>
+                            </section>
+                            <div>
+                                <div class="input">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <input type="email" placeholder="Usuário ou Email">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input">
+                                    <span class="material-symbols-outlined">key</span>
+                                    <input type="password" placeholder="Senha">
+                                </div>
+                            </div>
+                            <section>
+                                <button class="default-button">
+                                    Logar-se
+                                    <span class="material-symbols-outlined">login</span>
+                                </button>
+                            </section>
+                        </form>
+                        <section>
+                            <a class="underline-button" target="_blank" href="">
+                                Esqueceu a senha?
+                            </a>
+                            •
+                            <a class="underline-button" target="_blank" href="register_example.html">
+                                Crie uma conta
+                            </a>
+                        </section>
+                    </div>
+                </li>
+                <li tabindex="0" class="dropdown" style="display: none;">
+                    <a class="default-button" href="profile_example.html">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="index">
+        <article>
+            <section class="section-bar">
+                <div>Doações para despesas mensais</div>
+                <div>
+                    <button class="default-button">
+                        Doe Aqui! <img src="../../static/imgs/decoration/ko-fi.png" alt="">
+                    </button>
                 </div>
-            </div>
-            <div class="popup-buttons">
-                <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                <button class="submit">1d</button>
-                <button class="submit">3d</button>
-                <button class="submit">7d</button>
-                <button class="submit">1m</button>
-                <button class="submit">3m</button>
-                <button class="submit">Perma</button>
-            </div>
-        </form>
-    </dialog>
+            </section>
+            <section>
+                <p>Porque hostear um site não é de graça.</p>
+            </section>
+        </article>
 
-    <dialog class="popup-post">
-        <form action="">
-            <div class="popup-title">Criar Post</div>
-            <div class="popup-context">
-                <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
-            </div>
-            <div class="popup-context">
-                <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="255"></textarea>
-            </div>
-            <div class="popup-context">
-                <input type="file" id="fileInput" multiple accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-                    style="display: none;">
-                <button type="button" class="select-file-button"
-                    onclick="document.getElementById('fileInput').click()">Selecione um arquivo</button>
-                <div class="file-previews-container">
+        <article>
+            <section class="section-bar">
+                <div>Em alta</div>
+            </section>
+            <section>
+                <div class="trending">
+                    <a href="board_example.html">/bo/ - Boteco</a>
+                    <a href="thread1_example.html">
+                        <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </a>
                 </div>
-                <div class="popup-buttons">
-                    <button class="cancel" type="button" onclick="closeModal(this.closest('dialog'))">Cancelar</button>
-                    <button class="create">Publicar</button>
+                <div class="trending">
+                    <a href="board_example.html">/an/ - Animangá</a>
+                    <a href="thread1_example.html">
+                        <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </a>
                 </div>
-        </form>
-    </dialog>
+                <div class="trending">
+                    <a href="board_example.html">/jo/ - Jogos e Cultura</a>
+                    <a href="thread1_example.html">
+                        <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </a>
+                </div>
+                <div class="trending">
+                   <a href="board_example.html">/cri/ - Criações</a>
+                    <a href="thread1_example.html">
+                        <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </a>
+                </div>
+                <div class="trending">
+                    <a href="board_example.html">/pc/ - Computarias</a>
+                    <a href="thread1_example.html">
+                        <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </a>
+                </div>
+                <div class="trending">
+                    <a href="board_example.html">/flb/ - Faria Lima Bets</a>
+                    <a href="thread1_example.html">
+                        <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
 </body>
-
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const minimizeButtons = document.querySelectorAll('.side-title .minimize');
-
-        minimizeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const sideTitleDiv = button.parentElement;
-
-                let sideContentDiv = sideTitleDiv.nextElementSibling;
-                while (sideContentDiv && !sideContentDiv.classList.contains('side-content')) {
-                    sideContentDiv = sideContentDiv.nextElementSibling;
-                }
-
-                if (sideContentDiv) {
-                    sideContentDiv.classList.toggle('collapsed');
-
-                    button.classList.toggle('collapsed');
-                }
-            });
-        });
-    });
-</script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const minimizeButtons = document.querySelectorAll('.minimize');
-
-        minimizeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const article = button.closest('article');
-                if (!article) return;
-
-                // Encontra o post-bar pai do botão clicado
-                const parentPostBar = button.closest('.post-bar');
-                if (!parentPostBar) return;
-
-                // Seleciona todas as seções que vêm depois do parentPostBar dentro do mesmo article
-                let nextElement = parentPostBar.nextElementSibling;
-                while (nextElement) {
-                    if (nextElement.tagName === 'SECTION') {
-                        if (nextElement.style.display === 'none') {
-                            nextElement.style.display = ''; // Remove 'display: none' para voltar ao padrão
-                        } else {
-                            nextElement.style.display = 'none'; // Oculta a seção
-                        }
-                    }
-                    nextElement = nextElement.nextElementSibling;
-                }
-
-                // Rotaciona o ícone do botão minimize
-                const icon = button.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.classList.toggle('rotated');
-                }
-            });
-        });
-    });
-</script>
-
-<script>
-    function closeModal(dialogElement) {
-        if (dialogElement && dialogElement.close) {
-            dialogElement.close();
-        }
-    }
-
-    const triggerClasses = ['delete', 'pin', 'lock', 'warn', 'ban', 'block', 'report', 'moderate', 'post'];
-
-    document.addEventListener('click', function (event) {
-        const triggerSelector = triggerClasses.map(cls => '.' + cls).join(', ');
-
-        const clickedTrigger = event.target.closest(triggerSelector);
-
-        if (clickedTrigger) {
-            event.preventDefault();
-
-            let dialogClass = null;
-            for (const cls of triggerClasses) {
-                if (clickedTrigger.classList.contains(cls)) {
-                    dialogClass = 'popup-' + cls;
-                    break;
-                }
-            }
-
-            if (dialogClass) {
-                const dialog = document.querySelector('.' + dialogClass);
-
-                if (dialog) {
-                    dialog.showModal();
-                } else {
-                    console.error('Erro: Dialog com a classe "' + dialogClass + '" não encontrada.');
-                }
-            }
-        }
-    });
-</script>
-
-<script>
-    // Criar Post
-    const fileInput = document.getElementById('fileInput');
-    const filePreviewsContainer = document.querySelector('.file-previews-container');
-    let selectedFiles = [];
-
-    function createFilePreviewElement(file, index) {
-        const previewItem = document.createElement('div');
-        previewItem.classList.add('file-preview-item');
-        previewItem.dataset.originalIndex = index;
-
-        const thumbnailDiv = document.createElement('div');
-        thumbnailDiv.classList.add('file-preview-thumbnail');
-
-
-        const fileNameSpan = document.createElement('span');
-        fileNameSpan.classList.add('file-preview-name');
-        fileNameSpan.textContent = file.name;
-
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('remove-file-button');
-        const closeIconSpan = document.createElement('span');
-        closeIconSpan.classList.add('material-symbols-outlined');
-        closeIconSpan.textContent = 'close';
-        removeButton.appendChild(closeIconSpan);
-        removeButton.type = 'button';
-
-        removeButton.onclick = () => {
-            const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-            removeFilePreview(itemIndex);
-        };
-
-        previewItem.appendChild(thumbnailDiv);
-        previewItem.appendChild(fileNameSpan);
-        previewItem.appendChild(removeButton);
-
-        if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                img.src = e.target.result;
-                thumbnailDiv.appendChild(img);
-            };
-
-            reader.onerror = (e) => {
-                console.error('Erro ao ler arquivo de imagem:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-            };
-
-            reader.readAsDataURL(file);
-
-        } else if (file.type.startsWith('video/')) {
-            const video = document.createElement('video');
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            let videoObjectURL = null;
-
-            video.autoplay = false;
-            video.muted = true;
-            video.playsInline = true;
-
-            video.addEventListener('loadeddata', () => {
-                const thumbnailSize = 40;
-                canvas.width = thumbnailSize;
-                canvas.height = thumbnailSize;
-
-                video.currentTime = 0.1;
-            });
-
-            video.addEventListener('seeked', () => {
-                try {
-
-                    const videoRatio = video.videoWidth / video.videoHeight;
-                    const thumbnailRatio = canvas.width / canvas.height;
-                    let sx, sy, sWidth, sHeight;
-
-                    if (videoRatio > thumbnailRatio) {
-                        sHeight = video.videoHeight;
-                        sWidth = sHeight * thumbnailRatio;
-                        sx = (video.videoWidth - sWidth) / 2;
-                        sy = 0;
-                    } else {
-                        sWidth = video.videoWidth;
-                        sHeight = sWidth / thumbnailRatio;
-                        sx = 0;
-                        sy = (video.videoHeight - sHeight) / 2;
-                    }
-
-                    context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
-
-                    const img = document.createElement('img');
-                    img.src = canvas.toDataURL('image/jpeg');
-
-                    thumbnailDiv.appendChild(img);
-
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-
-                } catch (e) {
-                    console.error('Erro ao gerar thumbnail do vídeo:', file.name, e);
-                    const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                    removeFilePreview(itemIndex);
-                    if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-                }
-
-            }, { once: true });
-
-            video.addEventListener('error', (e) => {
-                console.error('Erro ao carregar vídeo para thumbnail:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-                const errorIcon = document.createElement('span');
-                errorIcon.textContent = '❌';
-                errorIcon.style.fontSize = '1.5rem';
-                thumbnailDiv.appendChild(errorIcon);
-
-                if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-            });
-
-            videoObjectURL = URL.createObjectURL(file);
-            video.src = videoObjectURL;
-
-        } else {
-            const fileIcon = document.createElement('span');
-            fileIcon.textContent = '📄';
-            fileIcon.style.fontSize = '1.5rem';
-            thumbnailDiv.appendChild(fileIcon);
-        }
-
-        return previewItem;
-    }
-
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        console.log('Contagem atual de arquivos:', currentFileCount);
-        if (currentFileCount < 3) {
-            document.querySelector('.select-file-button').disabled = false;
-        }
-    }
-
-    function addFiles(files) {
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        const filesToAdd = Array.from(files).slice(0, 3 - currentFileCount);
-
-        if (filesToAdd.length === 0) {
-            if (currentFileCount >= 3) {
-                selectButton.disabled = true;
-            }
-            return;
-        }
-
-        filesToAdd.forEach(file => {
-            let nextIndex = selectedFiles.indexOf(null);
-            if (nextIndex === -1) {
-                nextIndex = selectedFiles.length;
-                selectedFiles.push(file);
-            } else {
-                selectedFiles[nextIndex] = file;
-            }
-
-            const previewElement = createFilePreviewElement(file, nextIndex);
-
-            setTimeout(() => {
-                filePreviewsContainer.appendChild(previewElement);
-                const updatedFileCount = selectedFiles.filter(f => f !== null).length;
-                if (updatedFileCount >= 3) {
-                    selectButton.disabled = true;
-                }
-
-            }, 0);
-
-        });
-
-        console.log("Scheduled addition for:", filesToAdd.map(f => f ? f.name : null));
-        console.log("selectedFiles total (não-null) após agendar adição:", selectedFiles.filter(f => f !== null).length);
-    }
-
-    function removeFilePreview(index) {
-        console.log('Removendo arquivo no índice:', index);
-        const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-        if (itemToRemove) {
-            itemToRemove.remove();
-        }
-
-        if (index >= 0 && index < selectedFiles.length) {
-            selectedFiles[index] = null;
-        } else {
-            console.warn('Tentativa de remover índice inválido:', index);
-        }
-
-        const selectButton = document.querySelector('.select-file-button');
-        const currentFileCount = selectedFiles.filter(file => file !== null).length;
-        if (currentFileCount < 3) {
-            selectButton.disabled = false;
-        }
-
-        console.log("selectedFiles após remove:", selectedFiles.map(f => f ? f.name : null));
-        console.log('Contagem atual (não-null):', currentFileCount);
-    }
-
-    fileInput.addEventListener('change', (event) => {
-        if (event.target.files.length > 0) {
-            addFiles(event.target.files);
-            fileInput.value = '';
-        }
-    });
-
-    function getFilesToUpload() {
-        return selectedFiles.filter(file => file !== null);
-    }
-</script>
-
-<script>
-    // Configuração dos temas
-    const themeConfig = {
-        'Midnight': null, // Tema padrão (não carrega CSS adicional)
-        'Highnoon': '../../static/css/custom/highnoon.css',
-        'Minechan': '../../static/css/custom/minechan.css'
-    };
-
-    // Elementos do DOM
-    const themeButtons = document.querySelectorAll('.dropdown-themes .default-button');
-    let currentTheme = 'Midnight'; // Tema inicial
-
-    // Função para carregar um tema
-    function loadTheme(themeName) {
-        // Remove o tema anterior (se existir)
-        const existingTheme = document.getElementById('custom-theme');
-        if (existingTheme) {
-            existingTheme.remove();
-        }
-
-        // Carrega o novo tema (se não for o padrão)
-        const themePath = themeConfig[themeName];
-        if (themePath) {
-            const link = document.createElement('link');
-            link.id = 'custom-theme';
-            link.rel = 'stylesheet';
-            link.href = themePath;
-            document.head.appendChild(link);
-        }
-
-        // Atualiza o tema atual
-        currentTheme = themeName;
-
-        // Salva no localStorage
-        localStorage.setItem('selectedTheme', themeName);
-    }
-
-    // Função para atualizar a UI dos botões
-    function updateThemeButtons(selectedTheme) {
-        themeButtons.forEach(button => {
-            const buttonText = button.textContent.trim().replace('check_small', '').trim();
-
-            if (buttonText === selectedTheme) {
-                button.classList.add('selected-button');
-                // Adiciona o ícone de check se não existir
-                if (!button.querySelector('.material-symbols-outlined')) {
-                    const checkIcon = document.createElement('span');
-                    checkIcon.className = 'material-symbols-outlined';
-                    checkIcon.textContent = 'check_small';
-                    button.appendChild(checkIcon);
-                }
-            } else {
-                button.classList.remove('selected-button');
-                // Remove o ícone de check
-                const checkIcon = button.querySelector('.material-symbols-outlined');
-                if (checkIcon) {
-                    checkIcon.remove();
-                }
-            }
-        });
-    }
-
-    // Event listeners para os botões de tema
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const themeName = this.textContent.trim().replace('check_small', '').trim();
-
-            if (themeName !== currentTheme) {
-                loadTheme(themeName);
-                updateThemeButtons(themeName);
-            }
-        });
-    });
-
-    // Carregar tema salvo ao iniciar a página
-    document.addEventListener('DOMContentLoaded', function () {
-        const savedTheme = localStorage.getItem('selectedTheme');
-        if (savedTheme) {
-            loadTheme(savedTheme);
-            updateThemeButtons(savedTheme);
-        }
-    });
-</script>
 
 </html>

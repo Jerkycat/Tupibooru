@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <header>
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
+                            class="material-symbols-outlined">check_small</span></button>
+                    <button class="default-button">Highnoon</button>
+                    <button class="default-button">Minechan</button>
+                    <button class="default-button">Snowfall</button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">
+                        <form action="">
+                            <section>
+                                <a>Login</a>
+                            </section>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <input type="email" placeholder="Usuário ou Email">
+                                </section>
+                            </div>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">key</span>
+                                    <input type="password" placeholder="Senha">
+                                </section>
+                            </div>
+                            <section>
+                                <button class="default-button">
+                                    Logar-se
+                                    <span class="material-symbols-outlined">login</span>
+                                </button>
+                            </section>
+                        </form>
+                        <section>
+                            <a class="underline-button" target="_blank" href="">
+                                Esqueceu a senha?
+                            </a>
+                            •
+                            <a class="underline-button" target="_blank" href="register_example.html">
+                                Crie uma conta
+                            </a>
+                        </section>
+                    </div>
+                </li>
+                <li tabindex="0" class="dropdown" style="display: none;">
+                    <a class="default-button" href="profile_example.html">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="catalog">
+            <a href="">
+                <article>
+                    <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </article>
+            </a>
+            <a href="">
+                <article>
+                    <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </article>
+            </a>
+            <a href="">
+                <article>
+                    <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </article>
+            </a>
+            <a href="">
+                <article>
+                    <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </article>
+            </a>
+            <a href="">
+                <article>
+                    <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </article>
+            </a>
+            <a href="">
+                <article>
+                    <img src="../../static/imgs/examples/expost1.png" alt="">
+                        <p>Título do Post</p>
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </article>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <div id="container-popup" style="display: contents;"></div>
+
+    <script>
+        // Carrega automaticamente quando a página abre
+        async function carregarPopups() {
+            try {
+                const response = await fetch('popups_example.html');
+                const html = await response.text();
+                document.getElementById('container-popup').innerHTML = html;
+            } catch (error) {
+                console.error('Erro ao carregar popups:', error);
+            }
+        }
+
+        // Executa automaticamente
+        carregarPopups();
+    </script>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
+</body>
+
+</html>

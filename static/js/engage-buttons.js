@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const postEngageSections = document.querySelectorAll('.post-engage');
+    const postEngageSections = document.querySelectorAll('.post-engagement');
 
     postEngageSections.forEach(section => {
         const bumpButton = section.querySelector('.bump');

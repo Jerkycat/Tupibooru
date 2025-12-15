@@ -16,58 +16,183 @@
     --ui-u1: #ff918d;
     --ui-u2: #f5deb3;
 
-    --he-img: url(../imgs/banners/Midnight.png);
     --lo-img: url(../imgs/decoration/logos/mc-logo.png);
 
     --ad-ts: url(../imgs/ads/ad-test.png);
-    --ad-mg: url(../imgs/ads/ad-cri.png);
+    --ad-cri: url(../imgs/ads/ad-cri.png);
 }
 
-.navbar,  .other-main>div, .other-main .return, .ko-fi button, .trending-board, .post-buttons button, .post-buttons button a, .post-engage button, .pagination *, .user-profile, .account-username>div>button, .profile-bar button{
+/* Utility - Fonts */
+
+@font-face {
+    font-family: mainfont;
+    src: url(fonts/midnight-mainfont.ttf);
+}
+
+@font-face {
+    font-family: textfont;
+    src: url(fonts/midnight-textfont.ttf);
+}
+
+@font-face {
+    font-family: minechan-main;
+    src: url(fonts/minechan-mainfont.otf);
+}
+
+@font-face {
+    font-family: minechan-text;
+    src: url(fonts/minechan-textfont.ttf);
+}
+
+.navbar-desktop,
+.default-window p,
+.default-window .underline-button,
+main>.underline-button,
+.post-engagement button,
+.post-buttons>*,
+.pagination,
+.index .default-button,
+.trending a:first-child,
+.user-profile p,
+.badge {
     font-family: minechan-main;
 }
 
-.login-dropdown form input, .login-dropdown form button, .register-page form input, .register-page form button, .popup-context.captcha input, .index-main, .trending-content pre, .text-ad p, article, .post-text pre, .desktop-menu, footer, dialog, .popup-buttons, dialog textarea, .popup-reason, .dropdown-menu .dropdown, .dropdown-menu .dropdown div>*, .nav-menu ul, .case, .comment-input>form>*, .comment-post, .comment-button textarea, .settings-dropdown, .add-moderator-input, .post {
+aside,
+.board-ad a p,
+.default-window .default-button,
+.default-window .underline-button,
+.default-window input,
+article,
+article pre,
+.post-profile,
+.underline-button,
+.aside-button button,
+footer,
+dialog,
+dialog pre,
+dialog textarea,
+.input input,
+.input textarea,
+.comment-post,
+.comment-post textarea {
     font-family: minechan-text;
 }
 
-/* Main */
+/* Utility - Classes */
+
+/* Utility - Default Button */
+
+.default-button {
+    border-radius: 0;
+
+    outline: 0.126rem solid black;
+
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.default-button:hover {
+    cursor: pointer;
+    color: #FFFFA0;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+.default-button:active {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+/* Utility - Underline Button */
+
+/* Utility - Faux Button */
+
+/* Utility - Scroll  */
+
+/* Utility - Dropdown */
+
+/* Utility - Default-Window */
+
+.default-window {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+
+    gap: 0.5rem;
+}
+
+/* Utility - Input */
+
+.input {
+    border-radius: 0;
+}
+
+/* Utility - Markdown */
+
+/* Page - Main */
 
 body {
-    background: url("../../imgs/backgrounds/minechan_banner.png") no-repeat center top, 
-    url("../../imgs/backgrounds/minechan_transition.png") repeat-x center top, 
-    url("../../imgs/backgrounds/minechan_tile.png") repeat top;
+    background: url("../../imgs/backgrounds/minechan_banner.png") no-repeat center top,
+        url("../../imgs/backgrounds/minechan_transition.png") repeat-x center top,
+        url("../../imgs/backgrounds/minechan_tile.png") repeat top;
 }
 
 header {
     background-image: none;
 }
 
-.navbar {
+.themes .default-button {
+    border: none;
+    border-radius: 0;
+    background-color: rgba(111, 111, 111);
+    outline: 0.126rem solid black;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.themes .default-button:hover {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+    background-color: rgba(106, 106, 176);
+}
+
+.selected-theme {
+    color: #FFFFA0 !important;
+    text-shadow: 2px 2px #202013CC !important;
+    background-color: rgba(106, 106, 176) !important;
+}
+
+.navbar-desktop {
     border-radius: 0;
 
     font-size: 0.8rem;
 }
 
-.navbar > ul {
+.navbar-desktop>ul {
     background-color: transparent;
 
-    gap: 0.25rem;
+    gap: 0.5rem;
 }
 
-.navbar ul li {
+.navbar-desktop ul li {
     border-radius: 0;
 }
 
-.navbar ul li a {
+.navbar-desktop ul li>a {
     border-radius: 0;
 
     background-color: rgba(111, 111, 111);
 
     box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+
+    outline: 0.126rem solid black;
 }
 
-.navbar ul li:not(:focus) > a:hover {
+.navbar-desktop ul li a:active {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+.navbar-desktop ul li:not(:focus)>a:hover {
     scale: none;
 
     color: #FFFFA0;
@@ -84,12 +209,16 @@ li:has(.others-dropdown):focus-within {
 li:has(.others-dropdown):focus-within>a {
     color: #FFFFA0;
     text-shadow: 2px 2px #202013CC;
+
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
 }
 
 .login-dropdown {
-    border-radius: 0;
+    border-radius: 0.25rem;
 
     border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
 }
 
 .login-dropdown form div {
@@ -98,6 +227,8 @@ li:has(.others-dropdown):focus-within>a {
 
 .login-dropdown form button {
     border-radius: 0;
+
+    outline: 0.126rem solid black;
 
     box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
 }
@@ -109,101 +240,73 @@ li:has(.login-dropdown):focus-within {
 
 li:has(.login-dropdown):focus-within>a {
     color: #FFFFA0;
-    text-shadow: 2px 2px #202013CC;
-}
-
-.themes-button {
-    border: none;
-    border-radius: 0;
-
-    background-color: rgba(111, 111, 111);
-
-    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
-}
-
-.themes-button:hover {
-    color: #FFFFA0;
-    text-shadow: 2px 2px #202013CC;
 
     background-color: rgba(106, 106, 176);
-}
-
-.dropdown-themes {
-    background-color: transparent;
-}
-
-.dropdown-themes .default-button {
-    background-color: rgba(111, 111, 111);
-}
-
-.dropdown .default-button:hover {
-    color: #FFFFA0;
-    text-shadow: 2px 2px #202013CC;
-
-    background-color: rgba(106, 106, 176);
-}
-
-/* Main - Index */
-
-.index-post {
-    border-radius: 0;
-
-    border: 0.126rem solid #ffffff14;
-}
-
-.ko-fi button {
-    border-radius: 0;
-
-    text-shadow: 2px 2px #000A;
-    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
-}
-
-/* Main - Profile */
-
-.user-profile {
-    border-radius: 0;
-
-    border: 0.126rem solid #ffffff14;
-}
-
-.badge {
-    border-radius: 0;
-
-    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
-}
-
-.settings-dropdown {
-    top: 35%;
-
-    background-color: transparent;
-
-    border: none;
-
-    gap: 0.5rem;
-}
-
-.settings-dropdown .default-button {
-    background-color: var(--ui-c1);
-}
-
-.settings-dropdown .default-button:hover {
-    background-color: var(--ui-c3);
-}
-
-/* Utility */
-
-.default-button {
-    border-radius: 0;
-
-    text-shadow: 2px 2px #000A;
-    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
-}
-
-.default-button:hover {
-    cursor: pointer;
-    color: #FFFFA0;
 
     text-shadow: 2px 2px #202013CC;
+
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+/* Page - 404 */
+
+/* Page - Section Bar */
+
+/* Page - Navbar */
+
+/* Page - Aside */
+
+aside {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+/* Page - Footer */
+
+/* Page - Dropdown */
+
+.themes>div {
+    width: 8.5rem;
+}
+
+/* Page - Popups */
+
+dialog {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+dialog form > img {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+/* File Previews */
+
+.file-previews section {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+/* Popups - Manage  */
+
+/* Index - Main */
+
+/* Board - Main */
+
+article {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
 }
 
 button.button-active.bump {
@@ -220,25 +323,42 @@ button.button-active.sage {
     text-shadow: 2px 2px #202013CC;
 }
 
-@media (max-width: 600px) {
+/* Board - Ad */
 
-    .index-main, article {
-        font-family: minechan-text;
-    }
+/* Board - Pagination */
+
+.pagination {
+    gap: 0.5rem;
 }
 
-/* Post */
-
-article, .desktop-menu, .board-ad {
-    border-radius: 0;
-    
-    border: 0.126rem solid #ffffff14;
+.pagination .default-button {
+    background-color: var(--ui-c1);
 }
 
-/* Footer */
+/* Thread - Main */
 
-footer {
-    background-image: none;
+/* Catalog - Main */
 
-    outline: none;
+/* Profile - Main */
+
+/* Profile - Aside */
+
+.comment-post>section>div>section:first-child {
+    gap: 0.5rem;
 }
+
+.case {
+    padding: 0.5rem 0;
+}
+
+/* Profile - Comment Post */
+
+/* Mobile - Main */
+
+/* Mobile - Index */
+
+/* Mobile - Board */
+
+/* Mobile - Thread */
+
+/* Mobile - Profile */

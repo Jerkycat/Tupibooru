@@ -1,0 +1,124 @@
+/* Root */
+
+:root {
+    --ui-bg: #1C2C19e0;
+
+    --ui-ht: #D6E3F0;
+    
+    --ui-c1: #0d1a0f;
+    --ui-c2: #3d1a1ae0;
+    --ui-c3: #1C2C19e0;
+    --ui-c4: #4d1a1a;
+
+    --ui-bc: #7c4a4a;
+
+    --ui-ac: #f5bf60;
+    --ui-cc: #ff918d;
+
+    --he-img: url(../imgs/banners/Snowfall.png);
+    --lo-img: url(../imgs/decoration/logos/sf-logo.png);
+}
+
+/* Utility - Fonts */
+
+/* Utility - Classes */
+
+/* Utility - Default Button */
+
+/* Utility - Underline Button */
+
+/* Utility - Faux Button */
+
+/* Utility - Scroll  */
+
+/* Utility - Dropdown */
+
+/* Utility - Default-Window */
+
+/* Utility - Input */
+
+/* Utility - Markdown */
+
+span.spoiler.revealed {
+    background-color: var(--ui-c4);
+}
+
+/* Page - Main */
+
+body {
+    background-image: url('../../imgs/backgrounds/snowfall2.gif'), url('../../imgs/backgrounds/snowfall1.png');
+}
+
+header {
+    background-position: center;
+}
+
+/* Page - 404 */
+
+/* Page - Section Bar */
+
+/* Page - Navbar */
+
+/* Page - Aside */
+
+aside {
+    background-color: transparent;
+}
+
+.aside-button {
+    background-color: var(--ui-c1);
+}
+
+aside .aside-title {
+    background-color: var(--ui-c1);
+}
+
+aside .aside-content {
+    background-color: var(--ui-c3);
+}
+
+/* Page - Footer */
+
+footer {
+    background-image: linear-gradient(to right, #0d1a0fe0, #1C2C19e0);
+}
+
+/* Page - Dropdown */
+
+/* Page - Popups */
+
+/* File Previews */
+
+/* Popups - Manage  */
+
+/* Index - Main */
+
+.trending a:last-child:hover {
+    background-color: var(--ui-c4);
+}
+
+/* Board - Main */
+
+/* Board - Ad */
+
+/* Board - Pagination */
+
+/* Thread - Main */
+
+/* Catalog - Main */
+
+/* Profile - Main */
+
+/* Profile - Aside */
+
+/* Profile - Comment Post */
+
+/* Mobile - Main */
+
+/* Mobile - Index */
+
+/* Mobile - Board */
+
+/* Mobile - Thread */
+
+/* Mobile - Profile */

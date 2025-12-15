@@ -1,89 +1,86 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const pagination = document.querySelector('.pagination');
-    const totalPages = 20;
-    let currentPage = 1;
-    let visiblePages = [1, 2, 20]; // Páginas inicialmente visíveis
+// Adicione este script ao seu arquivo JS
 
-    // Função para atualizar a exibição da paginação
-    function updatePagination() {
-        pagination.innerHTML = '';
-
-        // Sempre mostra a página 1
-        const page1 = createPageButton(1);
-        if (currentPage === 1) {
-            page1.classList.add('button-active');
-        }
-        pagination.appendChild(page1);
-
-        // Lógica para as páginas intermediárias
-        if (currentPage <= 4) {
-            // Mostra páginas 2-5 quando currentPage <= 4
-            for (let i = 2; i <= Math.min(5, totalPages - 1); i++) {
-                pagination.appendChild(createPageButton(i));
-            }
-            if (totalPages > 6) {
-                pagination.appendChild(createDivider());
-            }
-        } else if (currentPage >= totalPages - 3) {
-            // Mostra páginas finais quando currentPage está perto do fim
-            pagination.appendChild(createDivider());
-            for (let i = totalPages - 4; i < totalPages; i++) {
-                pagination.appendChild(createPageButton(i));
+class SimplePaginator {
+    constructor(containerId, totalPages = 20) {
+        this.container = document.querySelector(containerId);
+        this.totalPages = totalPages;
+        this.currentPage = 1;
+        
+        this.render();
+    }
+    
+    getVisiblePages() {
+        const pages = [];
+        const current = this.currentPage;
+        const total = this.totalPages;
+        
+        if (total <= 7) {
+            for (let i = 1; i <= total; i++) {
+                pages.push(i);
             }
         } else {
-            // Mostra páginas no formato 1 ... current-1, current, current+1 ... last
-            pagination.appendChild(createDivider());
-            for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-                pagination.appendChild(createPageButton(i));
-            }
-            if (currentPage + 1 < totalPages - 1) {
-                pagination.appendChild(createDivider());
-            }
-        }
-
-        // Sempre mostra a última página
-        if (totalPages > 1) {
-            const lastPage = createPageButton(totalPages);
-            if (currentPage === totalPages) {
-                lastPage.classList.add('button-active');
-            }
-            if (!pagination.innerHTML.includes(lastPage.outerHTML)) {
-                pagination.appendChild(lastPage);
+            pages.push(1);
+            
+            if (current <= 3) {
+                pages.push(2, 3, 4, 5);
+                pages.push('separator');
+                pages.push(total);
+            } else if (current >= total - 2) {
+                pages.push('separator');
+                pages.push(total - 4, total - 3, total - 2, total - 1, total);
+            } else {
+                pages.push('separator');
+                pages.push(current - 1, current, current + 1);
+                pages.push('separator');
+                pages.push(total);
             }
         }
+        
+        return pages;
     }
-
-    // Função auxiliar para criar botões de página
-    function createPageButton(page) {
-        const button = document.createElement('a');
-        button.href = '#';
-        button.className = 'default-button';
-        button.textContent = page;
-        button.dataset.page = page;
-
-        if (page === currentPage) {
-            button.classList.add('button-active');
-        }
-
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            currentPage = parseInt(this.dataset.page);
-            updatePagination();
-            // Aqui você pode adicionar a lógica para carregar o conteúdo da página
-            console.log(`Página ${currentPage} carregada`);
+    
+    render() {
+        const pages = this.getVisiblePages();
+        this.container.innerHTML = '';
+        
+        pages.forEach(page => {
+            if (page === 'separator') {
+                const separator = document.createElement('span');
+                separator.className = 'pagination-separator';
+                separator.textContent = '—';
+                this.container.appendChild(separator);
+            } else {
+                const btn = document.createElement('button');
+                btn.className = 'default-button';
+                btn.textContent = page;
+                
+                if (page === this.currentPage) {
+                    btn.classList.add('button-active');
+                }
+                
+                btn.addEventListener('click', () => this.goToPage(page));
+                this.container.appendChild(btn);
+            }
         });
-
-        return button;
     }
-
-    // Função auxiliar para criar divisórias
-    function createDivider() {
-        const divider = document.createElement('span');
-        divider.className = 'divider';
-        divider.textContent = '-';
-        return divider;
+    
+    goToPage(page) {
+        if (page < 1 || page > this.totalPages || page === this.currentPage) {
+            return;
+        }
+        
+        this.currentPage = page;
+        this.render();
+        
+        // Aqui você pode adicionar lógica para carregar conteúdo
+        console.log(`Página ${page}`);
+        
+        // Scroll suave para o topo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
 
-    // Inicializa a paginação
-    updatePagination();
+// Inicializa quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+    const paginator = new SimplePaginator('.pagination', 20);
 });

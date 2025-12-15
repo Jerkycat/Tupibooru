@@ -1,222 +1,239 @@
-const fileInput = document.getElementById('fileInput');
-const filePreviewsContainer = document.querySelector('.file-previews-container');
-let selectedFiles = []; 
+// Gerenciamento de anexos de arquivos
+const MAX_FILES = 3;
+let attachedFiles = [];
+let fileInput = null;
 
-function createFilePreviewElement(file, index) {
-    const previewItem = document.createElement('div');
-    previewItem.classList.add('file-preview-item');
-    previewItem.dataset.originalIndex = index;
-
-    const thumbnailDiv = document.createElement('div');
-    thumbnailDiv.classList.add('file-preview-thumbnail');
-
-
-    const fileNameSpan = document.createElement('span');
-    fileNameSpan.classList.add('file-preview-name');
-    fileNameSpan.textContent = file.name;
-
-    const removeButton = document.createElement('button');
-    removeButton.classList.add('remove-file-button');
-    const closeIconSpan = document.createElement('span');
-    closeIconSpan.classList.add('material-symbols-outlined');
-    closeIconSpan.textContent = 'close';
-    removeButton.appendChild(closeIconSpan);
-    removeButton.type = 'button';
-
-    removeButton.onclick = () => {
-        const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-        removeFilePreview(itemIndex);
+// Função para obter elementos atualizados
+function getElements() {
+    return {
+        filePreviewsContainer: document.querySelector('.file-previews'),
+        selectFileButton: document.querySelector('.popup-post button[type="button"]:not(.cancel):not(.file-preview-remove)')
     };
-
-    previewItem.appendChild(thumbnailDiv);
-    previewItem.appendChild(fileNameSpan);
-    previewItem.appendChild(removeButton);
-
-    if (file.type.startsWith('image/')) {
-        const img = document.createElement('img');
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            img.src = e.target.result;
-            thumbnailDiv.appendChild(img);
-        };
-
-        reader.onerror = (e) => {
-            console.error('Erro ao ler arquivo de imagem:', file.name, e);
-            const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-            removeFilePreview(itemIndex);
-        };
-
-        reader.readAsDataURL(file);
-
-    } else if (file.type.startsWith('video/')) {
-        const video = document.createElement('video');
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-        let videoObjectURL = null; 
-
-        video.autoplay = false;
-        video.muted = true;
-        video.playsInline = true;
-
-        video.addEventListener('loadeddata', () => {
-            const thumbnailSize = 40;
-            canvas.width = thumbnailSize;
-            canvas.height = thumbnailSize;
-
-            video.currentTime = 0.1;
-        });
-
-        video.addEventListener('seeked', () => {
-            try {
-
-                const videoRatio = video.videoWidth / video.videoHeight;
-                const thumbnailRatio = canvas.width / canvas.height;
-                let sx, sy, sWidth, sHeight;
-
-                if (videoRatio > thumbnailRatio) {
-                    sHeight = video.videoHeight;
-                    sWidth = sHeight * thumbnailRatio;
-                    sx = (video.videoWidth - sWidth) / 2;
-                    sy = 0;
-                } else {
-                    sWidth = video.videoWidth;
-                    sHeight = sWidth / thumbnailRatio;
-                    sx = 0;
-                    sy = (video.videoHeight - sHeight) / 2;
-                }
-
-                context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
-
-                const img = document.createElement('img');
-                img.src = canvas.toDataURL('image/jpeg');
-
-                thumbnailDiv.appendChild(img);
-
-                if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-
-            } catch (e) {
-                console.error('Erro ao gerar thumbnail do vídeo:', file.name, e);
-                const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-                removeFilePreview(itemIndex);
-                if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-            }
-
-        }, { once: true });
-
-        video.addEventListener('error', (e) => {
-            console.error('Erro ao carregar vídeo para thumbnail:', file.name, e);
-            const itemIndex = parseInt(previewItem.dataset.originalIndex, 10);
-            removeFilePreview(itemIndex);
-            const errorIcon = document.createElement('span');
-            errorIcon.textContent = '❌'; 
-            errorIcon.style.fontSize = '1.5rem';
-            thumbnailDiv.appendChild(errorIcon);
-
-            if (videoObjectURL) URL.revokeObjectURL(videoObjectURL);
-        });
-
-        videoObjectURL = URL.createObjectURL(file);
-        video.src = videoObjectURL;
-
-    } else {
-        const fileIcon = document.createElement('span');
-        fileIcon.textContent = '📄';
-        fileIcon.style.fontSize = '1.5rem';
-        thumbnailDiv.appendChild(fileIcon);
-    }
-
-    return previewItem;
 }
 
-function removeFilePreview(index) {
-    console.log('Removendo arquivo no índice:', index);
-    const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-    if (itemToRemove) {
-        itemToRemove.remove();
-    }
+// Criar input file escondido
+function createFileInput() {
+    if (fileInput) return fileInput;
+    
+    fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.id = 'file-input';
+    fileInput.accept = 'image/*, video/*, .pdf, .txt';
+    fileInput.multiple = true;
+    fileInput.style.display = 'none';
+    document.body.appendChild(fileInput);
+    
+    fileInput.addEventListener('change', handleFileSelection);
+    
+    return fileInput;
+}
 
-    if (index >= 0 && index < selectedFiles.length) {
-        selectedFiles[index] = null;
-    } else {
-        console.warn('Tentativa de remover índice inválido:', index);
-    }
-
-    const currentFileCount = selectedFiles.filter(file => file !== null).length;
-    console.log('Contagem atual de arquivos:', currentFileCount);
-    if (currentFileCount < 3) {
-        document.querySelector('.select-file-button').disabled = false;
+// Função para inicializar o botão de seleção
+function initializeSelectButton() {
+    const { selectFileButton } = getElements();
+    
+    if (selectFileButton && !selectFileButton.dataset.initialized) {
+        selectFileButton.dataset.initialized = 'true';
+        selectFileButton.onclick = function(e) {
+            e.preventDefault();
+            if (!selectFileButton.disabled) {
+                const input = createFileInput();
+                input.click();
+            }
+        };
+        updateButtonState();
     }
 }
 
-function addFiles(files) {
-    const selectButton = document.querySelector('.select-file-button');
-    const currentFileCount = selectedFiles.filter(file => file !== null).length;
-    const filesToAdd = Array.from(files).slice(0, 3 - currentFileCount);
-
-    if (filesToAdd.length === 0) {
-        if (currentFileCount >= 3) {
-            selectButton.disabled = true;
-        }
-        return; 
-    }
-
-    filesToAdd.forEach(file => {
-        let nextIndex = selectedFiles.indexOf(null);
-        if (nextIndex === -1) {
-            nextIndex = selectedFiles.length;
-            selectedFiles.push(file); 
-        } else {
-            selectedFiles[nextIndex] = file; 
-        }
-
-        const previewElement = createFilePreviewElement(file, nextIndex);
-
-        setTimeout(() => {
-            filePreviewsContainer.appendChild(previewElement);
-            const updatedFileCount = selectedFiles.filter(f => f !== null).length;
-            if (updatedFileCount >= 3) {
-                selectButton.disabled = true;
+// Observar quando o popup é aberto
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        mutation.addedNodes.forEach(function(node) {
+            if (node.classList && node.classList.contains('popup-post')) {
+                initializePopup();
             }
-
-        }, 0); 
-
+        });
+        
+        // Verificar se o popup foi aberto (open attribute)
+        if (mutation.type === 'attributes' && mutation.attributeName === 'open') {
+            const popup = mutation.target;
+            if (popup.classList.contains('popup-post') && popup.hasAttribute('open')) {
+                initializePopup();
+            }
+        }
     });
-
-    console.log("Scheduled addition for:", filesToAdd.map(f => f ? f.name : null));
-    console.log("selectedFiles total (não-null) após agendar adição:", selectedFiles.filter(f => f !== null).length);
-}
-
-function removeFilePreview(index) {
-    console.log('Removendo arquivo no índice:', index);
-    const itemToRemove = filePreviewsContainer.querySelector(`.file-preview-item[data-original-index="${index}"]`);
-    if (itemToRemove) {
-        itemToRemove.remove();
-    }
-
-    if (index >= 0 && index < selectedFiles.length) {
-        selectedFiles[index] = null; 
-    } else {
-        console.warn('Tentativa de remover índice inválido:', index);
-    }
-
-    const selectButton = document.querySelector('.select-file-button');
-    const currentFileCount = selectedFiles.filter(file => file !== null).length;
-    if (currentFileCount < 3) {
-        selectButton.disabled = false;
-    }
-
-    console.log("selectedFiles após remove:", selectedFiles.map(f => f ? f.name : null));
-    console.log('Contagem atual (não-null):', currentFileCount);
-}
-
-fileInput.addEventListener('change', (event) => {
-    if (event.target.files.length > 0) {
-        addFiles(event.target.files);
-        fileInput.value = '';
-    }
 });
 
-function getFilesToUpload() {
-    return selectedFiles.filter(file => file !== null);
+// Inicializar popup
+function initializePopup() {
+    createFileInput();
+    initializeSelectButton();
+    
+    // Configurar botão de cancelar
+    const cancelButton = document.querySelector('.popup-post .cancel');
+    if (cancelButton && !cancelButton.dataset.initialized) {
+        cancelButton.dataset.initialized = 'true';
+        cancelButton.addEventListener('click', clearAllAttachments);
+    }
+    
+    // Limpar anexos ao abrir o popup
+    clearAllAttachments();
+}
+
+// Evento de mudança no input file
+function handleFileSelection(e) {
+    const files = Array.from(e.target.files);
+    const { filePreviewsContainer } = getElements();
+    
+    if (!filePreviewsContainer) {
+        console.error('Container de previews não encontrado. Verifique se o popup está aberto.');
+        return;
+    }
+    
+    files.forEach(file => {
+        // Verificar se já temos 3 arquivos
+        if (attachedFiles.length >= MAX_FILES) {
+            return;
+        }
+        
+        // Adicionar arquivo à lista
+        attachedFiles.push(file);
+        
+        // Criar preview
+        createFilePreview(file);
+    });
+    
+    // Resetar input
+    fileInput.value = '';
+    
+    // Atualizar estado do botão
+    updateButtonState();
+}
+
+// Função para criar preview de arquivo
+function createFilePreview(file) {
+    const { filePreviewsContainer } = getElements();
+    
+    if (!filePreviewsContainer) {
+        console.error('Container de previews não encontrado');
+        return;
+    }
+    
+    const section = document.createElement('section');
+    
+    // Preview (imagem ou ícone)
+    if (file.type.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.classList.add('file-preview-image');
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+        
+        section.appendChild(img);
+    } else {
+        const icon = document.createElement('span');
+        icon.classList.add('file-preview-icon', 'material-symbols-outlined');
+        
+        // Definir ícone baseado no tipo de arquivo
+        if (file.type.startsWith('video/')) {
+            icon.textContent = 'video_file';
+        } else if (file.type === 'application/pdf') {
+            icon.textContent = 'picture_as_pdf';
+        } else {
+            icon.textContent = 'draft';
+        }
+        
+        section.appendChild(icon);
+    }
+    
+    // Nome do arquivo
+    const fileName = document.createElement('span');
+    fileName.classList.add('file-preview-name');
+    fileName.textContent = file.name;
+    section.appendChild(fileName);
+    
+    // Botão de remover
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.classList.add('default-button');
+    removeBtn.classList.add('file-preview-remove');
+    removeBtn.innerHTML = '<span class="material-symbols-outlined">close</span>';
+    
+    removeBtn.addEventListener('click', function() {
+        // Remover arquivo da lista
+        const index = attachedFiles.indexOf(file);
+        if (index > -1) {
+            attachedFiles.splice(index, 1);
+        }
+        
+        // Remover preview
+        section.remove();
+        
+        // Atualizar estado do botão
+        updateButtonState();
+    });
+    
+    section.appendChild(removeBtn);
+    
+    // Adicionar ao container
+    filePreviewsContainer.appendChild(section);
+}
+
+// Função para atualizar o estado do botão
+function updateButtonState() {
+    const { selectFileButton } = getElements();
+    
+    if (!selectFileButton) return;
+    
+    if (attachedFiles.length >= MAX_FILES) {
+        selectFileButton.disabled = true;
+        selectFileButton.textContent = `Máximo de ${MAX_FILES} arquivos atingido`;
+    } else {
+        selectFileButton.disabled = false;
+        selectFileButton.textContent = `Selecione um arquivo (${attachedFiles.length}/${MAX_FILES})`;
+    }
+}
+
+// Limpar todos os anexos
+function clearAllAttachments() {
+    attachedFiles = [];
+    const { filePreviewsContainer } = getElements();
+    if (filePreviewsContainer) {
+        filePreviewsContainer.innerHTML = '';
+    }
+    updateButtonState();
+}
+
+// Inicializar quando o DOM estiver pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Observar mudanças no body para detectar quando o popup é adicionado
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['open']
+        });
+        
+        // Tentar inicializar se o popup já existir
+        if (document.querySelector('.popup-post')) {
+            initializePopup();
+        }
+    });
+} else {
+    // DOM já está pronto
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['open']
+    });
+    
+    // Tentar inicializar se o popup já existir
+    if (document.querySelector('.popup-post')) {
+        initializePopup();
+    }
 }

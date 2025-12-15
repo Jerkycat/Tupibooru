@@ -2,11 +2,13 @@
 const themeConfig = {
     'Midnight': null, // Tema padrão (não carrega CSS adicional)
     'Highnoon': '../../static/css/custom/highnoon.css',
-    'Minechan': '../../static/css/custom/minechan.css'
+    'Minechan': '../../static/css/custom/minechan.css',
+    'Snowfall': '../../static/css/custom/snowfall.css'
 };
 
 // Elementos do DOM
-const themeButtons = document.querySelectorAll('.dropdown-themes .default-button');
+const dropdown = document.querySelector('.dropdown.themes');
+const themeButtons = dropdown.querySelectorAll('div > button.default-button');
 let currentTheme = 'Midnight'; // Tema inicial
 
 // Função para carregar um tema
@@ -16,7 +18,7 @@ function loadTheme(themeName) {
     if (existingTheme) {
         existingTheme.remove();
     }
-
+    
     // Carrega o novo tema (se não for o padrão)
     const themePath = themeConfig[themeName];
     if (themePath) {
@@ -26,10 +28,10 @@ function loadTheme(themeName) {
         link.href = themePath;
         document.head.appendChild(link);
     }
-
+    
     // Atualiza o tema atual
     currentTheme = themeName;
-
+    
     // Salva no localStorage
     localStorage.setItem('selectedTheme', themeName);
 }
@@ -38,9 +40,9 @@ function loadTheme(themeName) {
 function updateThemeButtons(selectedTheme) {
     themeButtons.forEach(button => {
         const buttonText = button.textContent.trim().replace('check_small', '').trim();
-
+        
         if (buttonText === selectedTheme) {
-            button.classList.add('selected-button');
+            button.classList.add('selected-theme');
             // Adiciona o ícone de check se não existir
             if (!button.querySelector('.material-symbols-outlined')) {
                 const checkIcon = document.createElement('span');
@@ -49,7 +51,7 @@ function updateThemeButtons(selectedTheme) {
                 button.appendChild(checkIcon);
             }
         } else {
-            button.classList.remove('selected-button');
+            button.classList.remove('selected-theme');
             // Remove o ícone de check
             const checkIcon = button.querySelector('.material-symbols-outlined');
             if (checkIcon) {
@@ -61,21 +63,39 @@ function updateThemeButtons(selectedTheme) {
 
 // Event listeners para os botões de tema
 themeButtons.forEach(button => {
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
         const themeName = this.textContent.trim().replace('check_small', '').trim();
-
+        
         if (themeName !== currentTheme) {
             loadTheme(themeName);
             updateThemeButtons(themeName);
         }
+        
+        // Fecha o dropdown após selecionar (opcional)
+        dropdown.removeAttribute('tabindex');
+        setTimeout(() => dropdown.setAttribute('tabindex', '0'), 100);
     });
 });
 
 // Carregar tema salvo ao iniciar a página
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('selectedTheme');
-    if (savedTheme) {
+    
+    if (savedTheme && themeConfig.hasOwnProperty(savedTheme)) {
         loadTheme(savedTheme);
         updateThemeButtons(savedTheme);
+    } else {
+        // Garante que o tema padrão esteja marcado
+        updateThemeButtons(currentTheme);
+    }
+});
+
+// Previne que cliques nos botões fechem o dropdown prematuramente
+dropdown.addEventListener('click', function(e) {
+    if (e.target.closest('button.default-button')) {
+        e.stopPropagation();
     }
 });

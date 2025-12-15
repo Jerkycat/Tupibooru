@@ -1,263 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tupibooru</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../../static/css/midnight.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-            <div tabindex="0" class="themes">
-                <button class="themes-button">
-                    <span class="material-symbols-outlined">palette</span>
-                </button>
-                <div class="dropdown dropdown-themes">
-                    <button class="default-button selected-button">Midnight <span
+    <header>
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
                             class="material-symbols-outlined">check_small</span></button>
                     <button class="default-button">Highnoon</button>
                     <button class="default-button">Minechan</button>
                 </div>
             </div>
-            <nav class="navbar">
+        </div>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button" href="">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">negaa</div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="index">
+        <article>
+            <section class="section-bar">
+                <div>Regras</div>
+            </section>
+            <section>
                 <ul>
-                    <li><a href="">/bo/ - Boteco</a></li>
-                    <li><a href="">/an/ - Animangá</a></li>
-                    <li><a href="">/jo/ - Jogos e Cultura</a></li>
-                    <li><a href="">/cri/ - Criações</a></li>
-                    <li><a href="">/pc/ - Computarias</a></li>
-                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
-
-                    <li tabindex="0" style="display: none;">
-                        <a>Outros</a>
-                        <ul class="others-dropdown">
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/tv/ - Filmes e Séries</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                        </ul>
+                    <li>
+                        <a>1. Não poste, discuta, solicite ou envie links para conteúdos que violam as leis brasileiras.
+                        </a>
+                        <p>Ao postar você garante que todo conteúdo segue a LGPD e o Marco Civil da Internet, marcas
+                            e direitos autorais pertencem aos seus respectivos donos, arquivos enviados são de
+                            responsabilidade do usuário e comentários são propriedade de seus autores.</p>
                     </li>
-                    <li tabindex="0">
-                        <a>Conta</a>
-                        <div class="dropdown login-dropdown">
-                            <p>Login</p>
-                            <form action="">
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        mail
-                                    </span>
-                                    <input type="email" placeholder="Usuário ou Email">
-                                </div>
-                                <div>
-                                    <span class="material-symbols-outlined">
-                                        key
-                                    </span>
-                                    <input type="password" placeholder="Senha">
-                                </div>
-                                <button type="submit">Logar-se<span class="material-symbols-outlined">
-                                        login
-                                    </span></button>
-                            </form>
-                            <div><a href="">Esqueceu a senha?</a>•<a href="register_example.html">Crie uma conta</a>
-                            </div>
-                        </div>
+                    <li>
+                        <a>2. Conteúdos e discussões deste site são indicados exclusivamente para maiores de 16
+                            (dezesseis) anos.</a>
+                        <p>A entrada e o uso do site por menores de 16 anos são estritamente proibidos e constituem uma
+                            violação desta regra.</p>
+                    </li>
+                    <li>
+                        <a>3. Mantenha-se nos temas propostos de cada board, evite discussões políticas fora do /bo/ e
+                            não envie de material sexualmente explícito fora do /cri/.</a>
+                        <p>- Mantenha-se estritamente nos temas propostos de cada board, Postagens Off-Topic (fora do
+                            tópico) serão removidas. <br> <br>
+                            - Discussões políticas, além de altamente desicentivadas, devem ser
+                            limitadas exclusivamente ao board /bo/. <br> <br>
+                            - Não envie material sexualmente explícito ("Sexualmente explícito" refere-se a
+                            conteúdo que mostra ou descreve atos sexuais reais ou simulados, nudez genital, ou toques
+                            íntimos (genitais, seios, nádegas) com o propósito de excitação, incluindo pornografia,
+                            masturbação, uso de brinquedos sexuais e sexualização de partes do corpo) fora do /cri/,
+                            conteúdo ecchi ainda é permitido.
+                        </p>
+                    </li>
+                    <li>
+                        <a>4. Conteúdo de qualidade é de grande importância para esta comunidade, posts que não possuem
+                            qualidade intrínseca são desincentivados.</a>
+                        <p>Não polua as boards com posts de má vontade, não divulgue servidores do discord nem fale sobe
+                            panelinhas e/ou integrantes delas.
+                        </p>
+                    </li>
+                    <li>
+                        <a>5. Regras de etiqueta.</a>
+                        <p>Seja legal, não seja um cuzão com outras pessoas sem motivo e não espalhe informações,
+                            acontecimentos ou mídias pessoais sem o consentimento alheio, nem reclame da staff ou fique
+                            inventando historinhas, ninguem é pago para lhe aturar e você vai ser banido.
+                        </p>
                     </li>
                 </ul>
-            </nav>
-
-            <nav class="navbar-mobile">
-                <section>
-                    <button class="default-mb mobile-menu">
-                        <span class="material-symbols-outlined">
-                            menu
-                        </span>
-                    </button>
-                    <aside class="nav-menu">
-                        <ul>Menu de Boards
-                            <li><a href="">/bo/ - Boteco</a></li>
-                            <li><a href="">/an/ - Animangá</a></li>
-                            <li><a href="">/jo/ - Jogos e Cultura</a></li>
-                            <li><a href="">/cri/ - Criações</a></li>
-                            <li><a href="">/pc/ - Computarias</a></li>
-                            <li><a href="">/flb/ - Faria Lima Bets</a></li>
-                        </ul>
-                    </aside>
-                </section>
-                <section class="dropdown-menu">
-                    <button class="default-mb">
-                        <img class="dropdown-logo" alt="">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                        </span>
-                    </button>
-                    <div class="dropdown">
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    home
-                                </span>Homepage
-                            </a>
-                        </div>
-                        <div>
-                            <a href="">
-                                <span class="material-symbols-outlined">
-                                    view_list
-                                </span>Catálogo - Board
-                            </a>
-                        </div>
-                        <div>
-                            <button class="post">
-                                <span class="material-symbols-outlined">
-                                    add
-                                </span>Criar Post
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </nav>
-        </header>
-        <main class="index-main">
-            <div class="index-post">
-                <div class="index-title">
-                    Regras Gerais
-                </div>
-                <div class="index-content">
-                    <p>1. Não poste, discuta, solicite ou envie links para conteúdos que violam as leis brasileiras.</p>
-                    <p>2. Siga os temas propostos de cada board, evite discussões políticas e tente ao máximo de sua
-                        capacidade não enviar conteúdo NSFW.</p>
-                    - Conteúdo NSFW erótico, representações de genitálias e/ou mamilos são PROIBIDOS, porém,
-                    representações de nudez não erótica e conteúdo ecchi ainda são permitidos.
-                    <p>3. Conteúdo de qualidade é de grande importância para esta comunidade, posts que não possuem
-                        qualidade intrínseca são desincentivados, isto inclui:</p>
-                    - Copypastas. (Permitido no /bo/ e /jo/) <br>
-                    - Textos indecifráveis. <br>
-                    - Shitposts irônicos. (Permitido no /bo/ e /jo/) <br>
-                    - Spam ou Flood. <br>
-                    - Posts divulgando contas ou servidores do Discord. <br>
-                    - Discussões sobre panelinhas ou pessoas envolvidas. (Você será banido!)
-                    <p>4. Seja legal:</p> <br>
-                    - Ataque ideias, não pessoas.<br>
-                    - Não convoque raids.<br>
-                    - Não compartilhe Dox.<br>
-                    - Não reclame da Staff, nem invente histórias sobre a mesma.
-                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
             </div>
-        </main>
-        <footer>
-            <section>
-                <div class="footer-socials">
-                    <a href=""><img class="footer-logo" src="var(--lo-img)" alt="Tupibooru"></a>
-                    <div></div>
-                </div>
-                <div class="footer-copyright">
-                    <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
-                    </p>
-                    <p>© 2025 Rede Autumn.</p>
-                </div>
-            </section>
-            <section>
-                <div class="footer-extras">
-                    <p class="footer-title">Sobre</p>
-                    <a href="">F.A.Q</a>
-                    <a href="rules_example.html">Regras</a>
-                </div>
-            </section>
-        </footer>
-    </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
 </body>
-
-<script>
-    // Configuração dos temas
-    const themeConfig = {
-        'Midnight': null, // Tema padrão (não carrega CSS adicional)
-        'Highnoon': '../../static/css/custom/highnoon.css',
-        'Minechan': '../../static/css/custom/minechan.css'
-    };
-
-    // Elementos do DOM
-    const themeButtons = document.querySelectorAll('.dropdown-themes .default-button');
-    let currentTheme = 'Midnight'; // Tema inicial
-
-    // Função para carregar um tema
-    function loadTheme(themeName) {
-        // Remove o tema anterior (se existir)
-        const existingTheme = document.getElementById('custom-theme');
-        if (existingTheme) {
-            existingTheme.remove();
-        }
-
-        // Carrega o novo tema (se não for o padrão)
-        const themePath = themeConfig[themeName];
-        if (themePath) {
-            const link = document.createElement('link');
-            link.id = 'custom-theme';
-            link.rel = 'stylesheet';
-            link.href = themePath;
-            document.head.appendChild(link);
-        }
-
-        // Atualiza o tema atual
-        currentTheme = themeName;
-
-        // Salva no localStorage
-        localStorage.setItem('selectedTheme', themeName);
-    }
-
-    // Função para atualizar a UI dos botões
-    function updateThemeButtons(selectedTheme) {
-        themeButtons.forEach(button => {
-            const buttonText = button.textContent.trim().replace('check_small', '').trim();
-
-            if (buttonText === selectedTheme) {
-                button.classList.add('selected-button');
-                // Adiciona o ícone de check se não existir
-                if (!button.querySelector('.material-symbols-outlined')) {
-                    const checkIcon = document.createElement('span');
-                    checkIcon.className = 'material-symbols-outlined';
-                    checkIcon.textContent = 'check_small';
-                    button.appendChild(checkIcon);
-                }
-            } else {
-                button.classList.remove('selected-button');
-                // Remove o ícone de check
-                const checkIcon = button.querySelector('.material-symbols-outlined');
-                if (checkIcon) {
-                    checkIcon.remove();
-                }
-            }
-        });
-    }
-
-    // Event listeners para os botões de tema
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const themeName = this.textContent.trim().replace('check_small', '').trim();
-
-            if (themeName !== currentTheme) {
-                loadTheme(themeName);
-                updateThemeButtons(themeName);
-            }
-        });
-    });
-
-    // Carregar tema salvo ao iniciar a página
-    document.addEventListener('DOMContentLoaded', function () {
-        const savedTheme = localStorage.getItem('selectedTheme');
-        if (savedTheme) {
-            loadTheme(savedTheme);
-            updateThemeButtons(savedTheme);
-        }
-    });
-</script>
 
 </html>

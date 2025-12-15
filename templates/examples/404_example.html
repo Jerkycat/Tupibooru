@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tupibooru</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../../static/css/midnight.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
-    <main class="other-main">
-        <div class="other-cover">
-            <img class="error-img" src="../../static/imgs/decoration/404.png">
-            <div class="other-content">
-                <div class="other-title">
-                    Whoops! Página não encontrada
-                </div>
-                <div class="other-text">
-                    A página neste endereço não existe.
-                </div>
-            </div>
-            <button class="return" onclick="window.history.go(-1); return false;">
-                Fuck, go back!
-            </button>
+    <main>
+        <img class="error" src="../../static/imgs/decoration/404.png" alt="">
+        <div class="default-window">
+            <p> Whoops! Página não encontrada </p>
+            <p> A página neste endereço não existe. </p>
         </div>
+        <button class="underline-button return" onclick="window.history.go(-1); return false;">
+            Fuck, go back!
+        </button>
     </main>
 </body>
 
