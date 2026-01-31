@@ -8,5 +8,6 @@ import './popups.js'
 import './create-post.js'
 import './manage.js'
 import './comment-reply.js'
+import './spoilers.js'
 
 console.log("All scripts loaded via modules");

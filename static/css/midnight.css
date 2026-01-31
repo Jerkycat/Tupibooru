@@ -417,7 +417,6 @@ body {
     flex-direction: column;
 
     margin: 0 auto;
-    max-width: 80rem;
 
     background-color: var(--ui-bg);
 
@@ -851,10 +850,6 @@ footer section:not(:first-child) div p {
     margin-left: auto;
 }
 
-.themes>div {
-    width: 7.188rem;
-}
-
 .mini-profile {
     width: fit-content;
 }
@@ -1062,6 +1057,8 @@ dialog .underline-button:first-child {
 .file-previews section {
     display: flex;
     align-items: center;
+
+    max-width: 21.25rem;
 
     background-color: var(--ui-c3);
 
@@ -1584,7 +1581,8 @@ button.button-active.sage {
 /* Board - Ad */
 
 .board-ad {
-    width: 100%;
+    width: auto;
+    max-width: 55rem;
 }
 
 .board-ad.manga-ad a {
@@ -1635,11 +1633,12 @@ button.button-active.sage {
 
 .catalog>a {
     width: calc((100% - 4rem) / 5);
+    height: fit-content;
 }
 
 .catalog>a>article {
     width: 100%;
-    height: 100%;
+    height: fit-content;
 
     font-size: 0.75rem;
 
@@ -1710,6 +1709,10 @@ button.button-active.sage {
 }
 
 /* Thread - Main */
+
+.reply-bar div:has(.default-button) {
+    margin-left: auto;
+}
 
 /* Catalog - Main */
 

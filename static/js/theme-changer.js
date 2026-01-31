@@ -3,7 +3,8 @@ const themeConfig = {
     'Midnight': null, // Tema padrão (não carrega CSS adicional)
     'Highnoon': '../../static/css/custom/highnoon.css',
     'Minechan': '../../static/css/custom/minechan.css',
-    'Snowfall': '../../static/css/custom/snowfall.css'
+    'Snowfall': '../../static/css/custom/snowfall.css',
+    'eXPerience': '../../static/css/custom/experience.css'
 };
 
 // Elementos do DOM
@@ -41,22 +42,22 @@ function updateThemeButtons(selectedTheme) {
     themeButtons.forEach(button => {
         const buttonText = button.textContent.trim().replace('check_small', '').trim();
         
+        // Garante que todos os botões tenham o ícone de check
+        let checkIcon = button.querySelector('.material-symbols-outlined');
+        if (!checkIcon) {
+            checkIcon = document.createElement('span');
+            checkIcon.className = 'material-symbols-outlined';
+            checkIcon.textContent = 'check_small';
+            button.appendChild(checkIcon);
+        }
+        
+        // Controla a visibilidade da checkmark
         if (buttonText === selectedTheme) {
             button.classList.add('selected-theme');
-            // Adiciona o ícone de check se não existir
-            if (!button.querySelector('.material-symbols-outlined')) {
-                const checkIcon = document.createElement('span');
-                checkIcon.className = 'material-symbols-outlined';
-                checkIcon.textContent = 'check_small';
-                button.appendChild(checkIcon);
-            }
+            checkIcon.style.visibility = 'visible';
         } else {
             button.classList.remove('selected-theme');
-            // Remove o ícone de check
-            const checkIcon = button.querySelector('.material-symbols-outlined');
-            if (checkIcon) {
-                checkIcon.remove();
-            }
+            checkIcon.style.visibility = 'hidden';
         }
     });
 }
