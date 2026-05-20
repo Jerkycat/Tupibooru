@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tupibooru</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+    <!--<link rel="stylesheet" href="../../static/css/custom/midday.css">-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="index_example.html"><img class="header-logo" src="var(--lo-img)" alt="Tupibooru"></a>
+            {% include 'utils/theme-changer.html' %}
+            {% include 'utils/navbar.html' %}
+        </header>
+        <main class="index-main">
+            <div class="index-post">
+                <div class="index-title">
+                    Doações para despesas mensais
+                    <a href="https://ko-fi.com/redepotiguara" target="_blank" class="ko-fi"><button>Doe Aqui!<img
+                                src="../../static/imgs/decoration/ko-fi.png"></button></a>
+                </div>
+                <div class="index-content">Porque hostear um site não é de graça.</div>
+            </div>
+
+            <div class="index-post">
+                <div class="index-title">Em Alta</div>
+                <div class="index-content">
+                    <div class="trending">
+                        <div><a class="trending-board" href="">/bo/ - Boteco</a></div>
+                        <a class="trending-content">
+                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
+                            <div>
+                                <pre>Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.Este é um post de exemplo.
+Possui um único anexo.</pre>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="trending">
+                        <div><a class="trending-board" href="">/an/ - Animarias</a></div>
+                        <a class="trending-content">
+                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
+                            <div>
+                                <pre>Este é um post de exemplo.
+Possui um único anexo.
+                            </pre>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="trending">
+                        <div><a class="trending-board" href="">/tv/ - Filmes e Séries</a></div>
+                        <a class="trending-content">
+                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
+                            <div>
+                                <pre>Este é um post de exemplo.
+Possui um único anexo.
+                            </pre>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="trending">
+                        <div><a class="trending-board" href="">/cri/ - Criações</a></div>
+                        <a class="trending-content">
+                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
+                            <div>
+                                <pre>Este é um post de exemplo.
+Possui um único anexo.
+                            </pre>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="trending">
+                        <div><a class="trending-board" href="">/pc/ - Computarias</a></div>
+                        <a class="trending-content">
+                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
+                            <div>
+                                <pre>Este é um post de exemplo.
+Possui um único anexo.
+                            </pre>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="trending">
+                        <div><a class="trending-board" href="">/flb/ - Faria Lima Bets</a></div>
+                        <a class="trending-content">
+                            <div><img loading="lazy" src="../../static/imgs/decoration/expost1.png" alt=""></div>
+                            <div>
+                                <pre>Este é um post de exemplo.
+Possui um único anexo.
+                            </pre>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'utils/footer.html' %}
+        {% include 'utils/popups.html' %}
+        {% include 'utils/scripts/index-scripts.html' %}
+</body>
+
+</html>

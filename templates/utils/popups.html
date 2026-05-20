@@ -1,0 +1,676 @@
+<!-- Popups - Gerais -->
+
+<dialog class="popup-delete">
+    <form action="">
+        <section>Excluir Post</section>
+        <section>
+            <pre>Deseja mesmo excluir este post?
+Esta ação é irreversível!</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">
+                Cancelar
+            </button>
+            <button class="default-button submit">Excluir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-block">
+    <form action="">
+        <section>Bloquear Usuário</section>
+        <section>
+            <pre>Deseja bloquear este usuário?
+Você não verá mais posts dele(a).</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Bloquear</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-pin">
+    <form action="">
+        <section>Fixar Post</section>
+        <section>
+            <pre>Deseja fixar este post ao topo da página?</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">
+                Cancelar
+            </button>
+            <button class="default-button submit">Fixar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-report">
+    <form action="">
+        <section>Denunciar Post</section>
+        <section class="input">
+            <textarea name="Report" placeholder="Motivo da denúncia . . ." rows="5" maxlength="255"></textarea>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Denunciar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-ban">
+    <form action="">
+        <section>Banir Usuário</section>
+        <div>
+            Deseja banir este usuário? Selecione uma duração.
+            <select class="input" name="ban-type" id="ban-type">
+                <option value="local">
+                    Banir usuário apenas nesta board
+                </option>
+                <option value="global">
+                    Banir usuário globalmente
+                </option>
+            </select>
+            <section>
+                <input type="checkbox" id="delban">
+                <label for="delban">Excluir o histórico de posts deste usuário</label>
+            </section>
+        </div>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">1d</button>
+            <button class="default-button submit">3d</button>
+            <button class="default-button submit">7d</button>
+            <button class="default-button submit">1m</button>
+            <button class="default-button submit">3m</button>
+            <button class="default-button submit">Perma.</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-image">
+    <img class="popup-image-img" src="" alt="Imagem em destaque">
+</dialog>
+
+<!-- Popups - Board -->
+
+<dialog class="popup-lock">
+    <form action="">
+        <section>Trancar Post</section>
+        <section>
+            <pre>Deseja trancar este post?
+Outros usuários não poderão mais respondê-lo.</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Trancar</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-warn">
+    <form action="">
+        <section>Advertir Post</section>
+        <select class="input" name="warn-type" id="warn-type">
+            <option value="0">
+                Sem advertência de perfil
+            </option>
+            <option value="1">
+                Quebra de regras de board/global
+            </option>
+            <option value="2">
+                Conteúdo NSFW explícito
+            </option>
+            <option value="3">
+                Poluição de board/thread
+            </option>
+            <option value="4">
+                Inclusão digital
+            </option>
+        </select>
+        <section class="input">
+            <textarea name="warn" placeholder="Mensagem de advertência . . ." rows="3" maxlength="255"></textarea>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Advertir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-move">
+    <form action="">
+        <section>Mover Post para</section>
+        <select class="input" name="board-type" id="board-type">
+            <option value="an">
+                /an/ - Animangá
+            </option>
+            <option value="jo">
+                /jo/ - Jogos e Cultura
+            </option>
+            <option value="cri">
+                /cri/ - Criações
+            </option>
+            <option value="pc">
+                /pc/ - Computarias
+            </option>
+            <option value="flb">
+                /flb/ - Faria Lima Bets
+            </option>
+        </select>
+        <section class="input">
+            <textarea name="warn" placeholder="Adicionar mensagem . . ." rows="3" maxlength="255"></textarea>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Mover</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-moderate">
+    <form action="">
+        <section>Moderar Post</section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button lock">Trancar</button>
+            <button class="default-button move">Mover</button>
+            <button class="default-button pin">Fixar</button>
+            <button class="default-button warn">Advertir</button>
+            <button class="default-button ban">Banir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-post">
+    <form action="">
+        <section>Criar Post</section>
+        <section class="input">
+            <textarea name="Title" placeholder="Título (Opcional)" rows="1" maxlength="255"></textarea>
+        </section>
+        <section class="input">
+            <textarea name="Text" placeholder="Inserir mensagem . . ." rows="5" maxlength="4000"></textarea>
+        </section>
+        <button type="button" class="default-button" onclick="document.getElementById('file-input').click()">Selecione
+            um arquivo</button>
+        <div class="file-previews"></div>
+        <img src="../../static/imgs/examples/Captcha_Example.png" alt="">
+        <section class="input">
+            <span class="material-symbols-outlined">toys_and_games</span>
+            <input type="text" placeholder="Captcha">
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button create">Publicar</button>
+        </section>
+    </form>
+</dialog>
+
+<!-- Popups - Perfil -->
+
+<dialog class="popup-trust">
+    <form action="">
+        <section>Tornar Moderador Geral</section>
+        <section>
+            <pre>Deseja tornar este usuário num moderador?<br>
+Pense bem antes de realizar esta ação.</pre>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button submit">Confiar</button>
+        </section>
+    </form>
+</dialog>
+
+<!-- OBS, vai ter que fundir esses 2 de review num só. -->
+
+<dialog class="popup-reviewe1">
+    <form action="">
+        <section>Revisão de Caso - Nome de Usuário em /bo/</section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Aqui está um motivo de denúncia, ele feriu meus sentimentos.</article>
+        </section>
+        <section class="report-reason">
+            <article>Como um post pode ter mais de uma denúncia, decidi incluir todas assim.</article>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button dismiss">Dispensar Caso</button>
+            <button class="default-button lock">Trancar</button>
+            <button class="default-button warn">Advertir</button>
+            <button class="default-button ban">Banir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-reviewe2">
+    <form action="">
+        <section>Revisão de Caso - Nome de Usuário</section>
+        <section class="report-profile">
+            <article class="user-profile">
+                <section>
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section>
+                            <p>Nome de Usuário</p>
+                        </section>
+                        <section>
+                            <div class="badge supporter">Apoiador</div>
+                            <div class="badge pioneer">Pioneiro</div>
+                            <div class="badge gmod">Mod Geral</div>
+                            <div class="badge bmod">Mod de /bo/</div>
+                            <div class="badge admin">Administrador</div>
+                        </section>
+                        <section>
+                            <p>Membro desde: Data</p>
+                        </section>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma denuncia de perfil, é diferente de um post.</article>
+        </section>
+        <section class="report-reason">
+            <article>Como um post pode ter mais de uma denúncia, decidi incluir todas assim.</article>
+        </section>
+        <section>
+            <button class="underline-button cancel" type="button">Cancelar</button>
+            <button class="default-button dismiss">Dispensar Caso</button>
+            <button class="default-button lock">Trancar</button>
+            <button class="default-button warn">Advertir</button>
+            <button class="default-button ban">Banir</button>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-noob">
+    <form action="">
+        <section>Aviso - Incluso - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que não sabe existir na internet (Moralista).</pre>
+        </section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-porn">
+    <form action="">
+        <section>Aviso - Mago Frustrado - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que compartilhou pornografia explícita.</pre>
+        </section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-clown">
+    <form action="">
+        <section>Aviso - Incluso - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que propositalmente quebra regras.</pre>
+        </section>
+        <section class="report-profile">
+            <article class="user-profile">
+                <section>
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section>
+                            <p>Nome de Usuário</p>
+                        </section>
+                        <section>
+                            <div class="badge supporter">Apoiador</div>
+                            <div class="badge pioneer">Pioneiro</div>
+                            <div class="badge gmod">Mod Geral</div>
+                            <div class="badge bmod">Mod de /bo/</div>
+                            <div class="badge admin">Administrador</div>
+                        </section>
+                        <section>
+                            <p>Membro desde: Data</p>
+                        </section>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-dumb">
+    <form action="">
+        <section>Aviso - Lobotomita - Expira em: Data de Expiração</section>
+        <section>
+            <pre>Esse aviso é concecido a um usuário que quebrou alguma regra global ou de board.</pre>
+        </section>
+        <section>
+            <article>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="report-reason">
+            <article>Essa é uma mensagem que o moderador colocou acompanhada ao aviso.</article>
+        </section>
+    </form>
+</dialog>
+
+<dialog class="popup-manage">
+    <nav>
+        <button class="default-button tab-button button-active" data-tab="user">
+            <span class="material-symbols-outlined">person</span>
+            Usuário
+        </button>
+        <button class="default-button tab-button" data-tab="boards">
+            <span class="material-symbols-outlined">dashboard</span>
+            Boards
+        </button>
+    </nav>
+    
+    <form action="">
+        <!-- Tab Usuário -->
+        <div class="tab-content active" data-tab="user">
+            <div class="profile-header">
+                <div class="media-wrapper">
+                    <img src="../../static/imgs/examples/anon.png" alt="Foto de perfil" id="profile-image-manage">
+                </div>
+                <button type="button" class="default-button" onclick="document.getElementById('file-input-profile-manage').click()">
+                    <span class="material-symbols-outlined">upload</span>
+                    Trocar Foto
+                </button>
+                <input type="file" id="file-input-profile-manage" accept="image/*" style="display: none;">
+            </div>
+
+            <div class="field-group">
+                <label for="email-manage">Email</label>
+                <div class="input">
+                    <input type="email" id="email-manage" placeholder="Associe um email a sua conta...">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label for="password-manage">Mudar Senha</label>
+                <div class="input">
+                    <input type="password" id="password-manage" placeholder="Senha Antiga">
+                </div>
+                <div class="input">
+                    <input type="password" id="password-manage" placeholder="Nova Senha">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Boards -->
+        <div class="tab-content" data-tab="boards">
+            <div class="board-list">
+
+                <!-- Board /bo/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/bo/ - Boteco</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                            <div class="mod-item">
+                                <span>Moderador01</span>
+                                <button type="button" class="default-button remove-mod">
+                                    <span class="material-symbols-outlined">close</span>
+                                </button>
+                            </div>
+                            <div class="mod-item">
+                                <span>Moderador02</span>
+                                <button type="button" class="default-button remove-mod">
+                                    <span class="material-symbols-outlined">close</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /an/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/an/ - Animangá</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /jo/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/jo/ - Jogos e Cultura</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /cri/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/cri/ - Criações</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /pc/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/pc/ - Computarias</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Board /flb/ -->
+                <div class="board-item">
+                    <div class="aside-title">
+                        <span>/flb/ - Faria Lima Bets</span>
+                        <button type="button" class="default-button minimize collapsed">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div class="aside-content collapsed">
+                        <div class="mod-list">
+                        </div>
+                        <div class="field-group">
+                            <div class="input">
+                                <input type="text" placeholder="Nome do moderador" class="mod-input">
+                            </div>
+                        </div>
+                        <div class="board-controls">
+                            <button type="button" class="default-button add-mod">
+                                <span class="material-symbols-outlined">add</span>
+                                Adicionar Moderador
+                            </button>
+                            <button type="button" class="default-button captcha-toggle">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                Ativar CAPTCHA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <button class="underline-button cancel" type="button">
+                Cancelar
+            </button>
+            <button class="default-button submit" type="submit">
+                Salvar Mudanças
+            </button>
+        </section>
+    </form>
+</dialog>

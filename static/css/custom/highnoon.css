@@ -1,0 +1,139 @@
+/* Root */
+
+:root {
+    --ui-bg: #e5e7eb;
+    --ui-ht: #2c2e31;
+    --ui-tc: #1a202c;
+
+    --ui-c1: #fff;
+    --ui-c2: #d2e3f0;
+    --ui-c3: #dcdcdc;
+    --ui-c4: #f5f5f5;
+
+    --ui-bc: #1a202c;
+
+    --ui-ac: #5682d5;
+    --ui-cc: #966fd6;
+
+    --ui-u1: #e4443b;
+    --ui-u2: #f5bf60;
+
+    --he-img: url(../imgs/banners/Noon.png);
+    --lo-img: url(../imgs/decoration/logos/hn-logo.png);
+}
+
+/* Utility - Fonts */
+
+/* Utility - Classes */
+
+/* Utility - Default Button */
+
+/* Utility - Dropdown */
+
+/* Utility - Input */
+
+.input {
+    color: var(--ui-ht);
+}
+
+.input:focus-within {
+    color: var(--ui-tc) !important;
+
+    outline: 0.2rem solid var(--ui-ac);
+}
+
+/* Utility - Markdown */
+
+.greentext {
+    display: inline;
+
+    color: #45c878;
+}
+
+.redtext {
+    display: inline;
+
+    color: #e4443b;
+}
+
+/* Page - Main */
+
+/* Page - Navbar */
+
+/* Page - Footer */
+
+footer {
+    background-image: linear-gradient(to right, #ccdcfde0, #5682d5e0);
+}
+
+/* Page - Popups */
+
+dialog .input {
+    color: var(--ui-ht);
+}
+
+/* Index - Main */
+
+/* Board - Main */
+
+.post-profile img {
+    border: 0.063rem solid var(--ui-bc);
+}
+
+.post-text {
+    color: var(--ui-tc);
+}
+
+.bump {
+    color: var(--ui-tc);
+}
+
+button.button-active.bump {
+    color: var(--ui-c1);
+    background-color: var(--ui-ac);
+}
+
+.sage {
+    color: var(--ui-tc);
+}
+
+button.button-active.sage {
+    color: var(--ui-c1);
+    background-color: var(--ui-cc);
+}
+
+.block {
+    color: var(--ui-tc);
+}
+
+.report {
+    color: var(--ui-tc);
+}
+
+/* Board - Ad */
+
+.board-ad a p {
+    color: var(--ui-c1);
+}
+
+/* Board - Pagination */
+
+/* Thread - Main */
+
+/* Catalog - Main */
+
+/* Profile - Main */
+
+.badge {
+    color: var(--ui-tc);
+}
+
+/* Mobile - Main */
+
+/* Mobile - Index */
+
+/* Mobile - Board */
+
+/* Mobile - Thread */
+
+/* Mobile - Profile */

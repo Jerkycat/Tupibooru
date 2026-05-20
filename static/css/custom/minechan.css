@@ -1,0 +1,359 @@
+/* Root */
+
+:root {
+    --ui-bg: #16181C;
+    --ui-ht: #D6E3F0;
+    --ui-tc: #b0bac5;
+
+    --ui-c1: #26292F;
+    --ui-c2: #33363D;
+    --ui-c3: #40444C;
+    --ui-c4: #434956;
+
+    --ui-ac: #64d8b4;
+    --ui-cc: #f5bf60;
+
+    --ui-u1: #ff918d;
+    --ui-u2: #f5deb3;
+
+    --lo-img: url(../imgs/decoration/logos/mc-logo.png);
+
+    --ad-ts: url(../imgs/ads/ad-test.png);
+    --ad-cri: url(../imgs/ads/ad-cri.png);
+}
+
+/* Utility - Fonts */
+
+@font-face {
+    font-family: mainfont;
+    src: url(fonts/midnight-mainfont.ttf);
+}
+
+@font-face {
+    font-family: textfont;
+    src: url(fonts/midnight-textfont.ttf);
+}
+
+@font-face {
+    font-family: minechan-main;
+    src: url(fonts/minechan-mainfont.otf);
+}
+
+@font-face {
+    font-family: minechan-text;
+    src: url(fonts/minechan-textfont.ttf);
+}
+
+.navbar-desktop,
+.default-window p,
+.default-window .underline-button,
+main>.underline-button,
+.post-engagement button,
+.post-buttons>*,
+.pagination,
+.index .default-button,
+.trending a:first-child,
+.user-profile p,
+.badge {
+    font-family: minechan-main;
+}
+
+aside,
+.board-ad a p,
+.default-window .default-button,
+.default-window .underline-button,
+.default-window input,
+article,
+article pre,
+.post-profile,
+.underline-button,
+.aside-button button,
+footer,
+dialog,
+dialog pre,
+dialog textarea,
+.input input,
+.input textarea,
+.comment-post,
+.comment-post textarea {
+    font-family: minechan-text;
+}
+
+/* Utility - Classes */
+
+/* Utility - Default Button */
+
+.default-button {
+    border-radius: 0;
+
+    outline: 0.126rem solid black;
+
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.default-button:hover {
+    cursor: pointer;
+    color: #FFFFA0;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+.default-button:active {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+/* Utility - Underline Button */
+
+/* Utility - Faux Button */
+
+/* Utility - Scroll  */
+
+/* Utility - Dropdown */
+
+/* Utility - Default-Window */
+
+.default-window {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+
+    gap: 0.5rem;
+}
+
+/* Utility - Input */
+
+.input {
+    border-radius: 0;
+}
+
+/* Utility - Markdown */
+
+/* Page - Main */
+
+body {
+    background: url("../../imgs/backgrounds/minechan_banner.png") no-repeat center top,
+        url("../../imgs/backgrounds/minechan_transition.png") repeat-x center top,
+        url("../../imgs/backgrounds/minechan_tile.png") repeat top;
+}
+
+header {
+    background-image: none;
+}
+
+.themes .default-button {
+    border: none;
+    border-radius: 0;
+    background-color: rgba(111, 111, 111);
+    outline: 0.126rem solid black;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+.themes .default-button:hover {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+    background-color: rgba(106, 106, 176);
+}
+
+.selected-theme {
+    color: #FFFFA0 !important;
+    text-shadow: 2px 2px #202013CC !important;
+    background-color: rgba(106, 106, 176) !important;
+}
+
+.navbar-desktop {
+    border-radius: 0;
+}
+
+.navbar-desktop>ul {
+    background-color: transparent;
+
+    gap: 0.5rem;
+}
+
+.navbar-desktop ul li {
+    border-radius: 0;
+}
+
+.navbar-desktop ul li>a {
+    border-radius: 0;
+
+    font-size: 0.8rem !important;
+    background-color: rgba(111, 111, 111);
+
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+
+    outline: 0.126rem solid black;
+}
+
+.navbar-desktop ul li a:active {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+.navbar-desktop ul li:not(:focus)>a:hover {
+    scale: none;
+
+    color: #FFFFA0;
+
+    background-color: rgba(106, 106, 176);
+    text-shadow: 2px 2px #202013CC;
+}
+
+li:has(.others-dropdown):focus-within {
+    scale: none;
+    background-color: rgba(106, 106, 176);
+}
+
+li:has(.others-dropdown):focus-within>a {
+    color: #FFFFA0;
+    text-shadow: 2px 2px #202013CC;
+
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+.login-dropdown {
+    border-radius: 0.25rem;
+
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+.login-dropdown form div {
+    border-radius: 0;
+}
+
+.login-dropdown form button {
+    border-radius: 0;
+
+    outline: 0.126rem solid black;
+
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+li:has(.login-dropdown):focus-within {
+    scale: none;
+    background-color: rgba(106, 106, 176);
+}
+
+li:has(.login-dropdown):focus-within>a {
+    color: #FFFFA0;
+
+    background-color: rgba(106, 106, 176);
+
+    text-shadow: 2px 2px #202013CC;
+
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+/* Page - 404 */
+
+/* Page - Section Bar */
+
+/* Page - Navbar */
+
+/* Page - Aside */
+
+aside {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+/* Page - Footer */
+
+/* Page - Dropdown */
+
+/* Page - Popups */
+
+dialog {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+dialog form > img {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+/* File Previews */
+
+.file-previews section {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+/* Popups - Manage  */
+
+/* Index - Main */
+
+/* Board - Main */
+
+article {
+    border-radius: 0.25rem;
+    border: 0.126rem solid #ffffff14;
+
+    outline: 0.126rem solid black;
+}
+
+button.button-active.bump {
+    color: #FFFFA0 !important;
+    background-color: var(--ui-c3) !important;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+button.button-active.sage {
+    color: #FFFFA0 !important;
+    background-color: var(--ui-c3) !important;
+
+    text-shadow: 2px 2px #202013CC;
+}
+
+/* Board - Ad */
+
+/* Board - Pagination */
+
+.pagination {
+    gap: 0.5rem;
+}
+
+.pagination .default-button {
+    background-color: var(--ui-c1);
+}
+
+/* Thread - Main */
+
+/* Catalog - Main */
+
+/* Profile - Main */
+
+/* Profile - Aside */
+
+.comment-post>section>div>section:first-child {
+    gap: 0.5rem;
+}
+
+.case {
+    padding: 0.5rem 0;
+}
+
+/* Profile - Comment Post */
+
+/* Mobile - Main */
+
+/* Mobile - Index */
+
+/* Mobile - Board */
+
+/* Mobile - Thread */
+
+/* Mobile - Profile */

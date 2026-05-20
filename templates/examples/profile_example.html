@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <header class="desktop-header">
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
+                            class="material-symbols-outlined">check_small</span></button>
+                    <button class="default-button">Highnoon</button>
+                    <button class="default-button">Minechan</button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">
+                        <form action="">
+                            <section>
+                                <a>Login</a>
+                            </section>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <input type="email" placeholder="Usuário ou Email">
+                                </section>
+                            </div>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">key</span>
+                                    <input type="password" placeholder="Senha">
+                                </section>
+                            </div>
+                            <section>
+                                <button class="default-button">
+                                    Logar-se
+                                    <span class="material-symbols-outlined">login</span>
+                                </button>
+                            </section>
+                        </form>
+                        <section>
+                            <a class="underline-button" target="_blank" href="">
+                                Esqueceu a senha?
+                            </a>
+                            •
+                            <a class="underline-button" target="_blank" href="register_example.html">
+                                Crie uma conta
+                            </a>
+                        </section>
+                    </div>
+                </li>
+                <li tabindex="0" class="dropdown" style="display: none;">
+                    <a class="default-button" href="profile_example.html">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="mobile-header">
+        <section>
+            <button class="default-button">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            <aside class="nav-menu">
+                <ul>Menu de Boards
+                    <li><a href="">/bo/ - Boteco</a></li>
+                    <li><a href="">/an/ - Animangá</a></li>
+                    <li><a href="">/tv/ - Filmes e Séries</a></li>
+                    <li><a href="">/cri/ - Criações</a></li>
+                    <li><a href="">/pc/ - Computarias</a></li>
+                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
+                </ul>
+            </aside>
+        </section>
+        <section class="dropdown">
+            <button class="default-button">
+                <img class="mobile-logo" alt="">
+                <span class="material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+            <div class="default-window">
+                <div class="default-button">
+                    <a href="index_example.html">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>Homepage
+                    </a>
+                </div>
+                <div class="default-button">
+                    <a href="catalog_example.html">
+                        <span class="material-symbols-outlined">
+                            view_list
+                        </span>Catálogo - Board
+                    </a>
+                </div>
+                <button class="default-button post">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>Criar Post
+                </button>
+            </div>
+        </section>
+    </header>
+    
+    <main>
+        <div>
+            <article class="user-profile">
+                <section>
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section>
+                            <p>Nome de Usuário</p>
+                            <div tabindex="0" class="dropdown">
+                                <a class="default-button"><span
+                                        class="material-symbols-outlined">manage_accounts</span></a>
+                                <div class="default-window">
+                                    <button class="default-button manage">Painel de Usuário</button>
+                                    <button class="default-button trust">Tornar Mod. Geral</button>
+                                    <button class="default-button warn">Advertir Usuário</button>
+                                    <button class="default-button ban">Banir Usuário</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="badge supporter">Apoiador</div>
+                            <div class="badge pioneer">Pioneiro</div>
+                            <div class="badge gmod">Mod Geral</div>
+                            <div class="badge bmod">Mod de /bo/</div>
+                            <div class="badge admin">Administrador</div>
+                        </section>
+                        <section>
+                            <p>Membro desde: Data</p>
+                        </section>
+                    </div>
+                </section>
+                <section class="section-bar">
+                    <button class="default-button block">
+                        <span class="material-symbols-outlined">
+                            visibility_off
+                        </span>
+                        Bloquear
+                    </button>
+                    <button class="default-button report">
+                        <span class="material-symbols-outlined">
+                            warning
+                        </span>
+                        Denunciar
+                    </button>
+                </section>
+            </article>
+
+            <div class="default-window comment-type">
+                <div class="media-wrapper">
+                    <img src="../../static/imgs/examples/anon.png" alt="">
+                </div>
+                <div class="input">
+                    <form action="">
+                        <textarea name="" id="" rows="1" placeholder="Comentar..." maxlength="500"
+                            style="height: 20px;"></textarea>
+                        <button class="default-button">
+                            <span class="material-symbols-outlined">
+                                edit
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="comment-post">
+                <section class="comment-original">
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section class="comment-bar">
+                            <p>Nome de Usuário</p>
+                            <p>há 2 horas</p>
+                        </section>
+                        <section class="comment-content">
+                            <p>
+                                Esse é um exemplo de comentário com três linhas. <br>
+                                Comentários possuem um limite de 500 caracteres. <br>
+                                Imitei o youtube no estilo.
+                            </p>
+                        </section>
+                        <section class="comment-buttons">
+                            <button class="default-button">
+                                Responder
+                            </button>
+                            <div class="reply-type" style="display: block;">
+                                <form action="">
+                                    <textarea name="" id="" rows="1" placeholder="Comentar..."
+                                        maxlength="500"></textarea>
+                                    <div class="reply-buttons">
+                                        <button class="default-button">Responder</button>
+                                        <button class="default-button cancel" type="button">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                    <div>
+                        <div tabindex="0" class="dropdown">
+                            <a class="default-button">
+                                <span class="material-symbols-outlined">
+                                    more_vert
+                                </span>
+                            </a>
+                            <div class="default-window">
+                                <button class="default-button pin">
+                                    <span class="material-symbols-outlined">
+                                        keep
+                                    </span>Fixar no topo
+                                </button>
+                                <button class="default-button delete">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>Remover
+                                </button>
+                                <button class="default-button block">
+                                    <span class="material-symbols-outlined">
+                                        visibility_off
+                                    </span>
+                                    Bloquear
+                                </button>
+                                <button class="default-button report">
+                                    <span class="material-symbols-outlined">
+                                        warning
+                                    </span>Denunciar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="comment-reply">
+                    <div class="media-wrapper">
+                        <img src="../../static/imgs/examples/anon.png" alt="">
+                    </div>
+                    <div>
+                        <section class="comment-bar">
+                            <p>Nome de Usuário</p>
+                            <p>há 2 horas</p>
+                        </section>
+                        <section class="comment-content">
+                            <p>
+                                Esse é um exemplo de comentário de resposta. <br>
+                                Ele possui um padding maior para a esquerda, parecendo algo indentado.
+                            </p>
+                        </section>
+                        <section class="comment-buttons">
+                            <button class="default-button">
+                                Responder
+                            </button>
+                            <div class="reply-type" style="display: block;">
+                                <form action="">
+                                    <textarea name="" id="" rows="1" placeholder="Comentar..."
+                                        maxlength="500"></textarea>
+                                    <div class="reply-buttons">
+                                        <button class="default-button">Responder</button>
+                                        <button class="default-button cancel" type="button">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                    <div>
+                        <div tabindex="0" class="dropdown">
+                            <a class="default-button">
+                                <span class="material-symbols-outlined">
+                                    more_vert
+                                </span>
+                            </a>
+                            <div class="default-window">
+                                <button class="default-button pin">
+                                    <span class="material-symbols-outlined">
+                                        keep
+                                    </span>Fixar no topo
+                                </button>
+                                <button class="default-button delete">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>Remover
+                                </button>
+                                <button class="default-button block">
+                                    <span class="material-symbols-outlined">
+                                        visibility_off
+                                    </span>
+                                    Bloquear
+                                </button>
+                                <button class="default-button report">
+                                    <span class="material-symbols-outlined">
+                                        warning
+                                    </span>Denunciar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <aside>
+            <section class="aside-title">
+                <p>Situação de Perfil</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <section class="warns">
+                    <div class="warn-slot noob">
+                        <img src="../../static/imgs/warns/warn-noob.png" alt="">
+                    </div>
+                    <div class="warn-slot porn">
+                        <img src="../../static/imgs/warns/warn-porn.png" alt="">
+                    </div>
+                    <div class="warn-slot clown">
+                        <img src="../../static/imgs/warns/warn-clown.png" alt="">
+                    </div>
+                    <div class="warn-slot dumb">
+                        <img src="../../static/imgs/warns/warn-dumb.png" alt="">
+                    </div>
+                </section>
+            </section>
+            <section class="aside-title">
+                <p>Painel do Administrador</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <section class="case">
+                    <button class="default-button reviewe1">
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    </button>
+                    <p>Caso #1 - Post #4124</p>
+                </section>
+                <section class="case">
+                    <button class="default-button reviewe2">
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    </button>
+                    <p>Caso #2 - Nome de Usuário</p>
+                </section>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <div id="container-popup" style="display: contents;"></div>
+
+    <script>
+        // Carrega automaticamente quando a página abre
+        async function carregarPopups() {
+            try {
+                const response = await fetch('popups_example.html');
+                const html = await response.text();
+                document.getElementById('container-popup').innerHTML = html;
+            } catch (error) {
+                console.error('Erro ao carregar popups:', error);
+            }
+        }
+
+        // Executa automaticamente
+        carregarPopups();
+    </script>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
+</body>
+
+</html>

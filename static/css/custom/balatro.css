@@ -1,0 +1,218 @@
+/*
+ * Balatro Theme
+ * Fundo WebGL animado + UI em vidro escuro + filtro CRT
+ * Depende de: balatro.js (injetado pelo theme-changer.js)
+ */
+
+:root {
+    /* Fundo transparente: o canvas do shader aparece por baixo */
+    --ui-bg: transparent;
+
+    /* Texto */
+    --ui-ht: #f0e8ff;
+    --ui-tc: rgba(190, 170, 230, 0.85);
+
+    /* Camadas da UI – vidro escuro roxo (rgba para semi-transparência) */
+    --ui-c1: rgba(18,  8,  38, 0.80);
+    --ui-c2: rgba(25, 12,  50, 0.72);
+    --ui-c3: rgba(255, 255, 255, 0.09);
+    --ui-c4: rgba(255, 255, 255, 0.06);
+
+    /* Bordas */
+    --ui-bc: rgba(200, 160, 255, 0.18);
+
+    /* Destaques */
+    --ui-ac: #d4aaff;
+    --ui-cc: #80ccff;
+
+    /* Alertas */
+    --ui-u1: #ff7875;
+    --ui-u2: #ffd666;
+
+    /* Sem banner de header — o shader já é o fundo */
+    --he-img: none;
+
+    /* Logo: mantém o mesmo do Midnight. Troque se tiver um específico. */
+    --lo-img: url(../imgs/decoration/logos/mn-logo.png);
+}
+
+.navbar-desktop,
+.default-window p,
+.default-window .underline-button,
+main>.underline-button,
+.post-engagement button,
+.post-buttons>*,
+.pagination,
+.index .default-button,
+.trending a:first-child,
+.user-profile p,
+.badge,
+aside,
+.board-ad a p,
+.default-window .default-button,
+.default-window input,
+article,
+article pre,
+.post-profile,
+.underline-button,
+.aside-button button,
+footer,
+dialog,
+dialog .default-button,
+dialog .underline-button,
+dialog pre,
+dialog textarea,
+.input input,
+.input textarea,
+.comment-post,
+.comment-post textarea,
+.catalog pre,
+.pagination * {
+    font-family: balatro2;
+}
+
+/* ─── Fundo ─────────────────────────────────────────────────────────────── */
+
+html {
+    background: #0a0018; /* fallback se WebGL falhar */
+}
+
+body {
+    background-color: transparent;
+}
+
+main, footer, .default-button, .underline-button, .default-window a.underline-button {
+    font-size: 1rem;
+}
+
+.aside-title, .aside-button > .default-button, dialog .input, .navbar-desktop ul li > .default-button, dialog * {
+    font-size: 1.25rem;
+}
+
+/* ─── Overlay CRT ────────────────────────────────────────────────────────
+   Fica fixo em cima de tudo (z-index alto), sem bloquear cliques.
+   <dialog> elements usam o "top layer" do browser, então sempre ficam acima.
+ */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    pointer-events: none;
+
+    background-image: url(../../imgs/backgrounds/crt.png);
+    background-repeat: repeat;
+    background-size: 32px 32px;
+
+    opacity: 0.5; /* ajuste ao gosto: 0.1 sutil → 0.35 pesado */
+    mix-blend-mode: overlay;
+
+    animation: ScanlineAnimationLeft 2s linear infinite;
+}
+
+@keyframes ScanlineAnimationLeft {
+    from { background-position: 0 0; }
+    to   { background-position: 0 -32px; }
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────
+   IMPORTANTE: position + z-index elevam o stacking context do header
+   acima do aside, corrigindo o problema dos dropdowns.
+   backdrop-filter no header é seguro porque ele fica no topo do DOM.
+ */
+header.desktop-header {
+    position: relative;
+    z-index: 100;
+
+    background-color: rgba(10, 4, 28, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────────────────*/
+
+.navbar-desktop ul {
+    background-color: rgba(18, 8, 40, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 0.063rem solid var(--ui-bc);
+}
+
+/* ─── Panels / Windows ───────────────────────────────────────────────────*/
+
+.default-window {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* ─── Aside ──────────────────────────────────────────────────────────────
+   SEM backdrop-filter aqui: evita criar um novo stacking context que
+   colocaria o aside acima dos dropdowns do header.
+   A transparência vem só do rgba em --ui-c1.
+ */
+aside {
+    /* backdrop-filter removido intencionalmente — veja comentário acima */
+}
+
+/* ─── Articles ───────────────────────────────────────────────────────────
+   Mesmo motivo do aside: sem backdrop-filter para não criar stacking
+   contexts que bloqueiam os dropdowns mobile (.mobile-buttons).
+ */
+article {
+    /* backdrop-filter removido intencionalmente — veja comentário acima */
+}
+
+/* ─── Section Bar ────────────────────────────────────────────────────────*/
+
+.section-bar {
+    background-color: rgba(18, 8, 40, 0.85);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────*/
+
+footer {
+    background-image: none;
+    background-color: rgba(8, 3, 22, 0.90);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Input focus ────────────────────────────────────────────────────────*/
+
+.input:focus-within {
+    outline-color: var(--ui-ac);
+}
+
+/* ─── Spoiler ────────────────────────────────────────────────────────────*/
+
+span.spoiler {
+    color: transparent;
+    background-color: var(--ui-tc);
+}
+
+span.spoiler:hover {
+    color: var(--ui-ht);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.badge {
+    color: var(--ui-ht);
+
+    text-shadow: -1px 1px 0px black;
+}
+
+/* ─── Tema selecionado no dropdown ───────────────────────────────────────*/
+
+.selected-theme {
+    background-color: var(--ui-c3);
+}
+
+/* ─── Mobile header ──────────────────────────────────────────────────────
+   O mobile header também precisa ficar acima do conteúdo.
+ */
+header.mobile-header {
+    z-index: 100;
+    background-color: rgba(10, 4, 28, 0.70);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}

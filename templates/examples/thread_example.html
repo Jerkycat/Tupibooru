@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <header class="desktop-header">
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight <span
+                            class="material-symbols-outlined">check_small</span></button>
+                    <button class="default-button">Highnoon</button>
+                    <button class="default-button">Minechan</button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button active" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">negaa</div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="mobile-header">
+        <section>
+            <button class="default-button">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            <aside class="nav-menu">
+                <ul>Menu de Boards
+                    <li><a href="">/bo/ - Boteco</a></li>
+                    <li><a href="">/an/ - Animangá</a></li>
+                    <li><a href="">/tv/ - Filmes e Séries</a></li>
+                    <li><a href="">/cri/ - Criações</a></li>
+                    <li><a href="">/pc/ - Computarias</a></li>
+                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
+                </ul>
+            </aside>
+        </section>
+        <section class="dropdown">
+            <button class="default-button">
+                <img class="mobile-logo" alt="">
+                <span class="material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+            <div class="default-window">
+                <div class="default-button">
+                    <a href="index_example.html">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>Homepage
+                    </a>
+                </div>
+                <div class="default-button">
+                    <a href="catalog_example.html">
+                        <span class="material-symbols-outlined">
+                            view_list
+                        </span>Catálogo - Board
+                    </a>
+                </div>
+                <button class="default-button post">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>Criar Resposta
+                </button>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <article class="thread">
+
+            <section class="section-bar">
+                <div>
+                    <button class="faux-button post-profile">
+                        <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                    </button>
+                </div>
+                <div class="post-title"><a>Título do Post</a></div>
+                <div class="mobile-date" style="display: none;">
+                    <a href="">• Data do Post</a>
+                </div>
+                <div class="post-buttons">
+                    <button class="faux-button">
+                        <span class="material-symbols-outlined">keep</span>
+                    </button>
+                    <button class="default-button">
+                        <span class="material-symbols-outlined">policy</span>
+                    </button>
+                    <button class="default-button">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                    <button class="default-button return" onclick="window.history.go(-1); return false;">
+                        <span class="material-symbols-outlined">keyboard_return</span>
+                    </button>
+                </div>
+
+                <div tabindex="0" class="dropdown mobile-buttons">
+                    <button class="default-button">
+                        <span class="material-symbols-outlined">
+                            more_vert
+                        </span>
+                    </button>
+                    <div class="default-window">
+                        <button class="default-button post">
+                            <span class="material-symbols-outlined">reply
+                            </span>Responder
+                        </button>
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">
+                                policy
+                            </span>Moderar
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>Excluir Post
+                        </button>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">
+                                visibility_off
+                            </span>Bloquear
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">
+                                warning
+                            </span>Denunciar
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+            <section class="section-bar mobile-bar">
+                <div class="mobile-title">
+                    <a href="thread_example.html">Título do Post, fica aqui no mobile</a>
+                </div>
+            </section>
+            <section class="post-content">
+                <div class="post-media">
+                    <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png" alt="">
+                    </div>
+                </div>
+                <div class="post-text">
+                    <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                </div>
+            </section>
+            <section class="section-bar">
+                <div class="post-engagement">
+                    <button class="default-button bump">
+                        <span class="material-symbols-outlined">thumb_up</span>Bump
+                    </button>
+                    <button class="default-button sage">
+                        <span class="material-symbols-outlined">thumb_down</span>Sage
+                    </button>
+                </div>
+                <div class="post-date"><a class="faux-button">Data do Post</a></div>
+                <div class="post-buttons">
+                    <a class="default-button post">
+                        <span class="material-symbols-outlined">chat</span>2
+                    </a>
+                    <button class="default-button block">
+                        <span class="material-symbols-outlined">visibility_off</span>
+                    </button>
+                    <button class="default-button report">
+                        <span class="material-symbols-outlined">warning</span>
+                    </button>
+                </div>
+            </section>
+
+        </article>
+
+        <article>
+            <section class="reply-bar">
+                <div>
+                    <button class="underline-button post-profile">
+                        <img src="../../static/imgs/examples/anon.png" alt="">• Mymy Schoppenboer
+                    </button>
+                </div>
+                <div>
+                    •
+                </div>
+                <div>
+                    <a class="faux-button">Data do Post</a>
+                </div>
+                <div class="post-buttons">
+                    <button class="default-button moderate">
+                        <span class="material-symbols-outlined">policy</span>
+                    </button>
+                    <button class="default-button delete">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                    <button class="default-button block">
+                        <span class="material-symbols-outlined">visibility_off</span>
+                    </button>
+                    <button class="default-button report">
+                        <span class="material-symbols-outlined">warning</span>
+                    </button>
+                    <button class="default-button post">
+                        <span class="material-symbols-outlined">reply</span>
+                    </button>
+                </div>
+
+                <div tabindex="0" class="dropdown mobile-buttons">
+                    <button class="default-button">
+                        <span class="material-symbols-outlined">
+                            more_vert
+                        </span>
+                    </button>
+                    <div class="default-window">
+                        <button class="default-button post">
+                            <span class="material-symbols-outlined">reply
+                            </span>Responder
+                        </button>
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">
+                                policy
+                            </span>Moderar
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>Excluir Post
+                        </button>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">
+                                visibility_off
+                            </span>Bloquear
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">
+                                warning
+                            </span>Denunciar
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+            <section class="post-content">
+                <div class="post-text">
+                    <pre>Isso é uma resposta de usuário, sem anexos.
+<span class="greentext">&gt;testando verdetexto</span>
+<span class="redtext">&lt;testando vermelhotexto</span>
+testando a função de <span class="spoiler">spoiler.</span></pre>
+                </div>
+            </section>
+        </article>
+
+        <article>
+            <section class="reply-bar">
+                <div>
+                    <button class="underline-button post-profile">
+                        <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                    </button>
+                </div>
+                <div>
+                    •
+                </div>
+                <div>
+                    <a class="faux-button">Data do Post</a>
+                </div>
+                <div class="post-buttons">
+                    <button class="default-button moderate">
+                        <span class="material-symbols-outlined">policy</span>
+                    </button>
+                    <button class="default-button delete">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                    <button class="default-button block">
+                        <span class="material-symbols-outlined">visibility_off</span>
+                    </button>
+                    <button class="default-button report">
+                        <span class="material-symbols-outlined">warning</span>
+                    </button>
+                    <button class="default-button post">
+                        <span class="material-symbols-outlined">reply</span>
+                    </button>
+                </div>
+
+                <div tabindex="0" class="dropdown mobile-buttons">
+                    <button class="default-button">
+                        <span class="material-symbols-outlined">
+                            more_vert
+                        </span>
+                    </button>
+                    <div class="default-window">
+                        <button class="default-button post">
+                            <span class="material-symbols-outlined">reply
+                            </span>Responder
+                        </button>
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">
+                                policy
+                            </span>Moderar
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>Excluir Post
+                        </button>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">
+                                visibility_off
+                            </span>Bloquear
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">
+                                warning
+                            </span>Denunciar
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+            <section class="post-content">
+                <div class="post-media">
+                    <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png" alt="">
+                    </div>
+                    <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png" alt="">
+                    </div>
+                </div>
+                <div class="post-text">
+                    <pre>Isso é uma resposta anônima, com dois anexos.</pre>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <div id="container-popup" style="display: contents;"></div>
+
+    <script>
+        // Carrega automaticamente quando a página abre
+        async function carregarPopups() {
+            try {
+                const response = await fetch('popups_example.html');
+                const html = await response.text();
+                document.getElementById('container-popup').innerHTML = html;
+            } catch (error) {
+                console.error('Erro ao carregar popups:', error);
+            }
+        }
+
+        // Executa automaticamente
+        carregarPopups();
+    </script>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../static/css/midnight.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <header class="desktop-header">
+        <a href="index_example.html"><img class="header-logo" alt="Tupibooru"></a>
+        <div>
+            <div tabindex="0" class="dropdown themes">
+                <a class="default-button"><span class="material-symbols-outlined">palette</span></a>
+                <div class="default-window">
+                    <button class="default-button selected-theme">Midnight
+                        <span class="material-symbols-outlined">check_small</span></button>
+                    <button class="default-button">Highnoon
+                        <span class="material-symbols-outlined">check_small</span>
+                    </button>
+                    <button class="default-button">Minechan
+                        <span class="material-symbols-outlined">check_small</span>
+                    </button>
+                    <button class="default-button">Snowfall
+                        <span class="material-symbols-outlined">check_small</span>
+                    </button>
+                    <button class="default-button">eXPerience
+                        <span class="material-symbols-outlined">check_small</span>
+                    </button>
+                    <button class="default-button">Balatro
+                        <span class="material-symbols-outlined">check_small</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-desktop">
+            <ul>
+                <li><a class="default-button active" href="board_example.html">/bo/ - Boteco</a></li>
+                <li><a class="default-button" href="board_example.html">/an/ - Animangá</a></li>
+                <li><a class="default-button" href="board_example.html">/jo/ - Jogos e Cultura</a></li>
+                <li><a class="default-button" href="board_example.html">/cri/ - Criações</a></li>
+                <li><a class="default-button" href="board_example.html">/pc/ - Computarias</a></li>
+                <li><a class="default-button" href="board_example.html">/flb/ - Faria Lima Bets</a></li>
+                <li tabindex="0" class="dropdown">
+                    <a class="default-button">Conta</a>
+                    <div class="default-window">
+                        <form action="">
+                            <section>
+                                <a>Login</a>
+                            </section>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">mail</span>
+                                    <input type="email" placeholder="Usuário ou Email">
+                                </section>
+                            </div>
+                            <div>
+                                <section class="input">
+                                    <span class="material-symbols-outlined">key</span>
+                                    <input type="password" placeholder="Senha">
+                                </section>
+                            </div>
+                            <section>
+                                <button class="default-button">
+                                    Logar-se
+                                    <span class="material-symbols-outlined">login</span>
+                                </button>
+                            </section>
+                        </form>
+                        <section>
+                            <a class="underline-button" target="_blank" href="">
+                                Esqueceu a senha?
+                            </a>
+                            •
+                            <a class="underline-button" target="_blank" href="register_example.html">
+                                Crie uma conta
+                            </a>
+                        </section>
+                    </div>
+                </li>
+                <li tabindex="0" class="dropdown" style="display: none;">
+                    <a class="default-button" href="profile_example.html">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="mobile-header">
+        <section>
+            <button class="default-button">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            <aside class="nav-menu">
+                <ul>Menu de Boards
+                    <li><a href="">/bo/ - Boteco</a></li>
+                    <li><a href="">/an/ - Animangá</a></li>
+                    <li><a href="">/tv/ - Filmes e Séries</a></li>
+                    <li><a href="">/cri/ - Criações</a></li>
+                    <li><a href="">/pc/ - Computarias</a></li>
+                    <li><a href="">/flb/ - Faria Lima Bets</a></li>
+                </ul>
+            </aside>
+        </section>
+        <section class="dropdown">
+            <button class="default-button">
+                <img class="mobile-logo" alt="">
+                <span class="material-symbols-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+            <div class="default-window">
+                <div class="default-button">
+                    <a href="index_example.html">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>Homepage
+                    </a>
+                </div>
+                <div class="default-button">
+                    <a href="catalog_example.html">
+                        <span class="material-symbols-outlined">
+                            view_list
+                        </span>Catálogo - Board
+                    </a>
+                </div>
+                <button class="default-button post">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>Criar Post
+                </button>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div>
+            <article class="board-ad manga-ad">
+                <a href="https://www.youtube.com/@escolamangaka" target="_blank">
+                    <p>ADS BY REDE POTIGUARA</p>
+                </a>
+            </article>
+
+            <article>
+                <section class="section-bar">
+                    <div>
+                        <button class="faux-button post-profile">
+                            <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                        </button>
+                    </div>
+                    <div class="post-title"><a class="underline-button" href="thread_example.html">Título do Post</a>
+                    </div>
+                    <div class="mobile-date" style="display: none;">
+                        <a href="">• Data do Post</a>
+                    </div>
+                    <div class="post-buttons">
+                        <button class="faux-button pinned">
+                            <span class="material-symbols-outlined">keep</span>
+                        </button>
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">policy</span>
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                        <button class="default-button minimize">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                    <div tabindex="0" class="dropdown mobile-buttons">
+                        <button class="default-button">
+                            <span class="material-symbols-outlined">
+                                more_vert
+                            </span>
+                        </button>
+                        <div class="default-window">
+                            <button class="default-button moderate">
+                                <span class="material-symbols-outlined">
+                                    policy
+                                </span>Moderar
+                            </button>
+                            <button class="default-button delete">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>Excluir Post
+                            </button>
+                            <button class="default-button block">
+                                <span class="material-symbols-outlined">
+                                    visibility_off
+                                </span>Bloquear
+                            </button>
+                            <button class="default-button report">
+                                <span class="material-symbols-outlined">
+                                    warning
+                                </span>Denunciar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-bar mobile-bar">
+                    <div class="mobile-title">
+                        <a href="thread_example.html">Título do Post, fica aqui no mobile</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post de exemplo.
+Possui um único anexo.</pre>
+                    </div>
+                </section>
+                <section class="section-bar">
+                    <div class="post-engagement">
+                        <button class="default-button bump">
+                            <span class="material-symbols-outlined">thumb_up</span>Bump
+                        </button>
+                        <button class="default-button sage">
+                            <span class="material-symbols-outlined">thumb_down</span>Sage
+                        </button>
+                    </div>
+                    <div class="post-date"><a class="underline-button" href="thread_example.html">Data do Post</a></div>
+                    <div class="post-buttons">
+                        <a class="default-button" href="thread_example.html">
+                            <span class="material-symbols-outlined">chat</span>2
+                        </a>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">visibility_off</span>
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">warning</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="reply-bar">
+                    <div>
+                        <button class="underline-button post-profile">
+                            <img src="../../static/imgs/examples/anon.png" alt="">• Mymy Schoppenboer
+                        </button>
+                    </div>
+                    <div>
+                        •
+                    </div>
+                    <div>
+                        <a class="underline-button" href="thread_example.html">Data do Post</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-text">
+                        <pre>Isso é uma resposta de usuário, sem anexos.
+<span class="greentext">&gt;testando verdetexto</span>
+<span class="redtext">&lt;testando vermelhotexto</span>
+testando a função de <span class="spoiler">spoiler.</span></pre>
+                    </div>
+                </section>
+
+                <section class="reply-bar">
+                    <div>
+                        <button class="faux-button post-profile">
+                            <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                        </button>
+                    </div>
+                    <div>
+                        •
+                    </div>
+                    <div>
+                        <a class="underline-button" href="thread_example.html">Data do Post</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                        <div class="media-wrapper"><video controls src="../../static/imgs/examples/expost2.mp4"
+                                alt=""></video></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Isso é uma resposta anônima, com dois anexos.</pre>
+                    </div>
+                </section>
+            </article>
+
+            <article>
+                <section class="section-bar">
+                    <div>
+                        <button class="faux-button post-profile">
+                            <span class="material-symbols-outlined">no_accounts</span>• Anônimo
+                        </button>
+                    </div>
+                    <div class="post-title"><a class="underline-button" href="404_example.html">Título do Post</a></div>
+                    <div class="mobile-date" style="display: none;">
+                        <a href="">• Data do Post</a>
+                    </div>
+                    <div tabindex="0" class="dropdown mobile-buttons">
+                        <button class="default-button">
+                            <span class="material-symbols-outlined">
+                                more_vert
+                            </span>
+                        </button>
+                        <div class="default-window">
+                            <button class="default-button moderate">
+                                <span class="material-symbols-outlined">
+                                    policy
+                                </span>Moderar
+                            </button>
+                            <button class="default-button delete">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>Excluir Post
+                            </button>
+                            <button class="default-button block">
+                                <span class="material-symbols-outlined">
+                                    visibility_off
+                                </span>Bloquear
+                            </button>
+                            <button class="default-button report">
+                                <span class="material-symbols-outlined">
+                                    warning
+                                </span>Denunciar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="post-buttons">
+                        <button class="default-button moderate">
+                            <span class="material-symbols-outlined">policy</span>
+                        </button>
+                        <button class="default-button delete">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                        <button class="default-button minimize">
+                            <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="section-bar mobile-bar">
+                    <div class="mobile-title">
+                        <a href="thread_example.html">Título do Post, fica aqui no mobile</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-media">
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                        <div class="media-wrapper"><img loading="lazy" src="../../static/imgs/examples/expost1.png"
+                                alt=""></div>
+                    </div>
+                    <div class="post-text">
+                        <pre>Este é um post anônimo que possui três anexos.</pre>
+                    </div>
+                </section>
+                <section class="section-bar">
+                    <div class="post-engagement">
+                        <button class="default-button bump">
+                            <span class="material-symbols-outlined">thumb_up</span>Bump
+                        </button>
+                        <button class="default-button sage">
+                            <span class="material-symbols-outlined">thumb_down</span>Sage
+                        </button>
+                    </div>
+                    <div class="post-date"><a class="underline-button" href="404_example.html">Data do Post</a></div>
+                    <div class="post-buttons">
+                        <a class="default-button" href="404_example.html">
+                            <span class="material-symbols-outlined">chat</span>1
+                        </a>
+                        <button class="default-button block">
+                            <span class="material-symbols-outlined">visibility_off</span>
+                        </button>
+                        <button class="default-button report">
+                            <span class="material-symbols-outlined">warning</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="reply-bar">
+                    <div>
+                        <button class="underline-button post-profile">
+                            <img src="../../static/imgs/examples/anon.png" alt="">• Mymy Schoppenboer
+                        </button>
+                    </div>
+                    <div>
+                        •
+                    </div>
+                    <div>
+                        <a class="underline-button" href="404_example.html">Data do Post</a>
+                    </div>
+                </section>
+                <section class="post-content">
+                    <div class="post-text">
+                        <pre>Isso é uma resposta de usuário, sem anexos.</pre>
+                    </div>
+                </section>
+            </article>
+
+            <nav class="pagination"></nav>
+
+        </div>
+        <aside>
+            <section class="aside-button">
+                <a class="default-button" href="catalog_example.html"><span
+                        class="material-symbols-outlined">browse</span></a>
+                <button class="default-button post"><span class="material-symbols-outlined">add_circle</span>Criar um
+                    Post</button>
+            </section>
+            <section class="aside-title">
+                <p>Informações</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <p>Poste sobre oque quiser, contanto que siga as Regras Globais.</p>
+            </section>
+            <section class="aside-title">
+                <p>Regras Globais</p>
+                <button class="default-button minimize">
+                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+                </button>
+            </section>
+            <section class="aside-content">
+                <ul>
+                    <li>
+                        <a>1.</a>
+                        <p>Não poste, discuta, solicite ou envie links para conteúdos que violam as leis brasileiras.
+                        </p>
+                    </li>
+                    <li>
+                        <a>2.</a>
+                        <p>Conteúdos e discussões deste site são indicados exclusivamente para <strong>maiores de 18
+                                (dezoito) anos</strong>.
+                            <br> A entrada de menores é proibida.
+                        </p>
+                    </li>
+                    <li>
+                        <a>3.</a>
+                        <p>Mantenha-se nos temas propostos de cada board, evite discussões políticas fora do /bo/ e não
+                            envie de <strong>material sexualmente explícito</strong> fora do /cri/. <br>
+                            Visite o <a href="faq_example.html">FAQ</a> para mais informações.
+                        </p>
+                    </li>
+                    <li>
+                        <a>4.</a>
+                        <p>Conteúdo de qualidade é de
+                            grande importância para esta
+                            comunidade, posts que não
+                            possuem qualidade intrínseca
+                            são desincentivados, isto inclui:<br>
+                            - Coppypastas. <br>
+                            &nbsp;&nbsp;(Permitido no /bo/ e /jo/) <br>
+                            - Textos indecifráveis. <br>
+                            - Shitposts irônicos. <br>
+                            &nbsp;&nbsp;(Permitido no /bo/ e /jo/) <br>
+                            - Spam ou Flood. <br>
+                            - Posts divulgando contas ou
+                            servidores do Discord. <br>
+                            - Discussões sobre panelinhas ou pessoas envolvidas. <br>
+                            &nbsp;&nbsp;(Você vai ser banido!)
+                        </p>
+                    </li>
+                    <li>
+                        <a>5.</a>
+                        <p>Seja legal:<br>
+                            - Ataque ideias, não pessoas.<br>
+                            - Não compartilhe Dox.<br>
+                            - Não reclame da Staff, nem invente histórias sobre a mesma.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <section>
+            <div class="footer-socials">
+                <a href=""><img class="footer-logo" alt="Tupibooru"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>Baseado na engine do&nbsp;<a href="https://github.com/lainsec/rchan" target="_blank">rchan.</a>
+                </p>
+                <p>© 2025 Rede Autumn.</p>
+            </div>
+        </section>
+        <section>
+            <div class="footer-extras">
+                <p class="footer-title">Sobre</p>
+                <a href="faq_example.html">F.A.Q</a>
+                <a href="rules_example.html">Regras</a>
+            </div>
+        </section>
+    </footer>
+
+    <div id="container-popup" style="display: contents;"></div>
+
+    <script>
+        // Carrega automaticamente quando a página abre
+        async function carregarPopups() {
+            try {
+                const response = await fetch('popups_example.html');
+                const html = await response.text();
+                document.getElementById('container-popup').innerHTML = html;
+            } catch (error) {
+                console.error('Erro ao carregar popups:', error);
+            }
+        }
+
+        // Executa automaticamente
+        carregarPopups();
+    </script>
+
+    <script type="module" src="../../static/js/example-loader.js"></script>
+</body>
+
+</html>
