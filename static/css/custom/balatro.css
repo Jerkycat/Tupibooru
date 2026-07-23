@@ -81,7 +81,11 @@ body {
     background-color: transparent;
 }
 
+<<<<<<< HEAD
 main, footer, .default-button, .underline-button, .default-window a.underline-button {
+=======
+main, footer, .default-button, .underline-button, .default-window a.underline-button, .faux-button {
+>>>>>>> dc33044 (Pequeno Update)
     font-size: 1rem;
 }
 
@@ -104,7 +108,11 @@ body::after {
     background-repeat: repeat;
     background-size: 32px 32px;
 
+<<<<<<< HEAD
     opacity: 0.5; /* ajuste ao gosto: 0.1 sutil → 0.35 pesado */
+=======
+    opacity: 0.75;
+>>>>>>> dc33044 (Pequeno Update)
     mix-blend-mode: overlay;
 
     animation: ScanlineAnimationLeft 2s linear infinite;

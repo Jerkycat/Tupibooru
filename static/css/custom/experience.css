@@ -542,6 +542,13 @@ article a {
     color: var(--ui-tc);
 }
 
+<<<<<<< HEAD
+=======
+.board-ad a {
+    color: var(--ui-ht);
+}
+
+>>>>>>> dc33044 (Pequeno Update)
 .section-bar {
     outline: none;
 }
